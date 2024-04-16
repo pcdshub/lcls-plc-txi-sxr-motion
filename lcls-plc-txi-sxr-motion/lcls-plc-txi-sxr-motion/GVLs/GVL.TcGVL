@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <GVL Name="GVL" Id="{18ff9aec-bbfc-4603-a8b9-4d82b89f99b6}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+    {attribute 'pytmc' := 'pv: PLC:TXI:SXR:MOTION:ARB:01'}
+    fbArbiter1: FB_Arbiter(1);
+
+    // For all devices after Stopper
+    {attribute 'pytmc' := 'pv: PLC:TXI:SXR:MOTION:FFO:01'}
+    {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
+    fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='');
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

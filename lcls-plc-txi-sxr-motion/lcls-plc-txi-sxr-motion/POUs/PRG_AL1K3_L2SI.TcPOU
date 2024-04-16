@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="PRG_AL1K3_L2SI" Id="{b9065558-4333-4ee9-89fd-a00441a263a3}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_AL1K3_L2SI
+VAR
+    {attribute 'pytmc' := 'pv: AL1K3:L2SI'}
+    {attribute 'TcLinkTo' := '.fbLaser.iLaserINT := TIIB[AL1K3-EL4004-E4]^AO Outputs Channel 1^Analog output;
+                              .fbLaser.iShutdownINT := TIIB[AL1K3-EL4004-E4]^AO Outputs Channel 2^Analog output'}
+    fbAL1K3: FB_REF;
+
+    fbStateSetup: FB_StateSetupHelper;
+    stDefault: ST_PositionState := (
+        fVelocity := 10,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
+
+fbStateSetup(stPositionState:=fbAL1K3.stOut, fPosition:=-33.5, sPmpsState:='AL1K3:L2SI-OUT');
+fbStateSetup(stPositionState:=fbAL1K3.stIn, fPosition:=-75, sPmpsState:='AL1K3:L2SI-IN');
+
+fbAL1K3(
+    fbFFHWO := GVL.fbFastFaultOutput1,
+    fbArbiter := GVL.fbArbiter1,
+    stYStage := MAIN.M1,
+    sDeviceName := 'AL1K3:L2SI',
+    sTransitionKey := 'AL1K3:L2SI-TRANSITION',
+    bEnableMotion := TRUE,
+    bEnableBeamParams := TRUE,
+    bEnablePositionLimits := TRUE,
+);
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="PRG_PMPS" Id="{dff18baf-d3c9-4cb4-be04-4a60c54f1a90}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_PMPS
+VAR
+    fbArbiterIO: FB_SubSysToArbiter_IO;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//GVL.fbFastFaultOutput1.Execute(i_xVeto := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.L_Stopper.ST1K3]);
+fbArbiterIO(
+    //i_bVeto := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.L_Stopper.ST1K3],
+    Arbiter:=GVL.fbArbiter1,
+    fbFFHWO:=GVL.fbFastFaultOutput1);]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

@@ -17,10 +17,27 @@
     <LibraryReferences>{22eaf3b0-26ee-4555-9503-9c984f1cc5bc}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GVLs\GVL.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\MAIN.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\MAIN.TcPOU">
+    <Compile Include="POUs\PRG_01_PLCTASK.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_LOG.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_AL1K3_L2SI.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\PRG_PMPS.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -31,9 +48,21 @@
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderReference Include="LCLS General">
+      <DefaultResolution>LCLS General, * (SLAC)</DefaultResolution>
+      <Namespace>LCLS_General</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="lcls-twincat-common-components">
+      <DefaultResolution>lcls-twincat-common-components, * (SLAC)</DefaultResolution>
+      <Namespace>lcls_twincat_common_components</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="lcls-twincat-motion">
       <DefaultResolution>lcls-twincat-motion, * (SLAC)</DefaultResolution>
       <Namespace>lcls_twincat_motion</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="PMPS">
+      <DefaultResolution>PMPS, * (SLAC - LCLS)</DefaultResolution>
+      <Namespace>PMPS</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
@@ -49,8 +78,17 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderResolution Include="LCLS General">
+      <Resolution>LCLS General, 2.10.0 (SLAC)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="lcls-twincat-common-components">
+      <Resolution>lcls-twincat-common-components, 3.4.0 (SLAC)</Resolution>
+    </PlaceholderResolution>
     <PlaceholderResolution Include="lcls-twincat-motion">
       <Resolution>lcls-twincat-motion, 4.0.8 (SLAC)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="PMPS">
+      <Resolution>PMPS, 3.2.1 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_Standard">
       <Resolution>Tc2_Standard, 3.3.3.0 (Beckhoff Automation GmbH)</Resolution>
@@ -59,11 +97,16 @@
       <Resolution>Tc2_System, 3.4.26.0 (Beckhoff Automation GmbH)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="lcls-plc-txi-sxr-motion.tmc">
+      <SubType>Content</SubType>
+    </None>
+  </ItemGroup>
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-  <Data>
-    <o xml:space="preserve" t="OptionKey">
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
@@ -84,13 +127,13 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-  </Data>
-  <TypeList>
-    <Type n="Hashtable">System.Collections.Hashtable</Type>
-    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-    <Type n="String">System.String</Type>
-  </TypeList>
-</XmlArchive>
+        </Data>
+        <TypeList>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>
