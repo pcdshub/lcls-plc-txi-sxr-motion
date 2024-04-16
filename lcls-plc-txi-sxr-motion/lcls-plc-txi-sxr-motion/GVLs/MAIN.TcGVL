@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <GVL Name="MAIN" Id="{8acbadda-8bc5-4e8f-b423-248343258cfd}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+// AL1K3-L2SI: 1 Axis
+    {attribute 'pytmc' := 'pv: AL1K3:L2SI:MMS'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[AL1K3-EL7041-E1]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[AL1K3-EL7041-E1]^STM Status^Status^Digital input 2;
+                              .bBrakeRelease        := TIIB[AL1K3-EL2004-E3]^Channel 1^Output;
+                              .nRawEncoderULINT     := TIIB[AL1K3-EL5042-E2]^FB Inputs Channel 1^Position'}
+    M1: ST_MotionStage := (sName := 'AL1K3:L2SI:MMS');
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
