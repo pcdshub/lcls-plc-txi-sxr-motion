@@ -11,7 +11,78 @@ VAR_GLOBAL
                               .bBrakeRelease        := TIIB[AL1K3-EL2004-E3]^Channel 1^Output;
                               .nRawEncoderULINT     := TIIB[AL1K3-EL5042-E2]^FB Inputs Channel 1^Position'}
     M1: ST_MotionStage := (sName := 'AL1K3:L2SI:MMS');
+	
+	
+	
+	// AT1K3-SOLID: 4 axes 
+	//Copied form AT1K4 and need to confirm the order
+    (* Important note
 
+     AT1K2 Solid Attenuator notes (JJ-xray SN-??????????)
+	
+    	JJ    Label   EPICS    Stage     NC   Location
+
+    	1087      1   MMS:01   fbStage1  M2  Upstream-most
+    	1088      2   MMS:02   fbStage2  M3
+    	1086      3   MMS:03   fbStage3  M4
+   	    1089      4   MMS:04   fbStage4  M5  Downstream-most
+
+    *)
+    {attribute 'pytmc' := 'pv: AT1K3:L2SI:MMS:01'}
+    {attribute 'TcLinkTo' := '
+        .bLimitForwardEnable  := TIIB[AT1K3-EL7047-04]^STM Status^Status^Digital input 1;
+        .bLimitBackwardEnable := TIIB[AT1K3-EL7047-04]^STM Status^Status^Digital input 2;
+        .nRawEncoderULINT     := TIIB[AT1K3-EL5042-02]^FB Inputs Channel 2^Position;
+    '}
+    M2: ST_MotionStage := (sName := 'AT1K3:L2SI:MMS:01');
+
+    {attribute 'pytmc' := 'pv: AT1K3:L2SI:MMS:02'}
+    {attribute 'TcLinkTo' := '
+        .bLimitForwardEnable  := TIIB[AT1K3-EL7047-03]^STM Status^Status^Digital input 1;
+        .bLimitBackwardEnable := TIIB[AT1K3-EL7047-03]^STM Status^Status^Digital input 2;
+        .nRawEncoderULINT     := TIIB[AT1K3-EL5042-02]^FB Inputs Channel 1^Position;
+    '}
+    M3: ST_MotionStage := (sName := 'AT1K3:L2SI:MMS:02');
+
+    {attribute 'pytmc' := 'pv: AT1K3:L2SI:MMS:03'}
+    {attribute 'TcLinkTo' := '
+        .bLimitForwardEnable  := TIIB[AT1K3-EL7047-02]^STM Status^Status^Digital input 1;
+        .bLimitBackwardEnable := TIIB[AT1K3-EL7047-02]^STM Status^Status^Digital input 2;
+        .nRawEncoderULINT     := TIIB[AT1K3-EL5042-01]^FB Inputs Channel 2^Position;
+    '}
+    M4: ST_MotionStage := (sName := 'AT1K3:L2SI:MMS:03');
+
+    {attribute 'pytmc' := 'pv: AT1K3:L2SI:MMS:04'}
+    {attribute 'TcLinkTo' := '
+        .bLimitForwardEnable  := TIIB[AT1K3-EL7047-01]^STM Status^Status^Digital input 1;
+        .bLimitBackwardEnable := TIIB[AT1K3-EL7047-01]^STM Status^Status^Digital input 2;
+        .nRawEncoderULINT     := TIIB[AT1K3-EL5042-01]^FB Inputs Channel 1^Position;
+    '}
+    M5: ST_MotionStage := (sName := 'AT1K3:L2SI:MMS:04');
+
+	
+	// SL1K3-SCATTER: 4 Axes
+    {attribute 'pytmc' := 'pv: SL1K3:SCATTER:MMS:BOTTOM'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K3-EL7031-E1]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable := TIIB[SL1K3-EL7031-E1]^STM Status^Status^Digital input 1;
+                              .nRawEncoderUINT      := TIIB[SL1K3-EL5101-E2]^ENC Status compact^Counter value'}
+    M6: ST_MotionStage := (sName := 'SL1K3:SCATTER:MMS:BOTTOM');
+    {attribute 'pytmc' := 'pv: SL1K3:SCATTER:MMS:TOP'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K3-EL7031-E3]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable := TIIB[SL1K3-EL7031-E3]^STM Status^Status^Digital input 1;
+                              .nRawEncoderUINT      := TIIB[SL1K3-EL5101-E4]^ENC Status compact^Counter value'}
+    M7: ST_MotionStage := (sName := 'SL1K3:SCATTER:MMS:TOP');
+    {attribute 'pytmc' := 'pv: SL1K3:SCATTER:MMS:NORTH'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K3-EL7031-E5]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[SL1K3-EL7031-E5]^STM Status^Status^Digital input 2;
+                              .nRawEncoderUINT      := TIIB[SL1K3-EL5101-E6]^ENC Status compact^Counter value'}
+    M8: ST_MotionStage := (sName := 'SL1K4:SCATTER:MMS:NORTH');
+    {attribute 'pytmc' := 'pv: SL1K3:SCATTER:MMS:SOUTH'}
+    {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K3-EL7031-E7]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[SL1K3-EL7031-E7]^STM Status^Status^Digital input 2;
+                              .nRawEncoderUINT      := TIIB[SL1K3-EL5101-E8]^ENC Status compact^Counter value'}
+    M9: ST_MotionStage := (sName := 'SL1K3:SCATTER:MMS:SOUTH');
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

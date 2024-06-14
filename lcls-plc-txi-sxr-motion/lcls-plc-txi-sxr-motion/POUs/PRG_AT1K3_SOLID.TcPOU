@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="PRG_AT1K3_SOLID" Id="{ea78c8b5-92ba-4f6a-a34a-74754b259999}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_AT1K3_SOLID
+VAR
+    (* NOTE: use FALSE for simulation and production *)
+    (* NOTE: use TRUE when relying on visualization + actual hardware *)
+    bDebug : BOOL := FALSE;
+
+    nEnableMode : E_StageEnableMode;
+
+    {attribute 'pytmc' := '
+        pv: AT1K3:L2SI:MMS:01
+
+    '}
+    {attribute 'TcLinkTo' := '
+
+        .fbRTD_1.iRaw := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 1^Value;
+        .fbRTD_1.bError := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 1^Status^Error;
+        .fbRTD_1.bUnderrange := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 1^Status^Underrange;
+        .fbRTD_1.bOverrange := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 1^Status^Overrange;
+
+        .fbRTD_2.iRaw := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 2^Value;
+        .fbRTD_2.bError := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 2^Status^Error;
+        .fbRTD_2.bUnderrange := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 2^Status^Underrange;
+        .fbRTD_2.bOverrange := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 2^Status^Overrange
+
+    '}
+    fbStage1: FB_SXR_SATT_Stage;
+
+    {attribute 'pytmc' := 'pv: AT1K3:L2SI:MMS:02'}
+    {attribute 'TcLinkTo' := '
+
+        .fbRTD_1.iRaw := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 1^Value;
+        .fbRTD_1.bError := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 1^Status^Error;
+        .fbRTD_1.bUnderrange := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 1^Status^Underrange;
+        .fbRTD_1.bOverrange := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 1^Status^Overrange;
+
+        .fbRTD_2.iRaw := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 2^Value;
+        .fbRTD_2.bError := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 2^Status^Error;
+        .fbRTD_2.bUnderrange := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 2^Status^Underrange;
+        .fbRTD_2.bOverrange := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 2^Status^Overrange
+
+    '}
+    fbStage2: FB_SXR_SATT_Stage;
+
+    {attribute 'pytmc' := 'pv: AT1K3:L2SI:MMS:03'}
+    {attribute 'TcLinkTo' := '
+
+        .fbRTD_1.iRaw := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 1^Value;
+        .fbRTD_1.bError := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 1^Status^Error;
+        .fbRTD_1.bUnderrange := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 1^Status^Underrange;
+        .fbRTD_1.bOverrange := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 1^Status^Overrange;
+
+        .fbRTD_2.iRaw := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 2^Value;
+        .fbRTD_2.bError := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 2^Status^Error;
+        .fbRTD_2.bUnderrange := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 2^Status^Underrange;
+        .fbRTD_2.bOverrange := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 2^Status^Overrange
+    '}
+    fbStage3: FB_SXR_SATT_Stage;
+
+    {attribute 'pytmc' := 'pv: AT1K3:L2SI:MMS:04'}
+    {attribute 'TcLinkTo' := '
+
+        .fbRTD_1.iRaw := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 1^Value;
+        .fbRTD_1.bError := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 1^Status^Error;
+        .fbRTD_1.bUnderrange := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 1^Status^Underrange;
+        .fbRTD_1.bOverrange := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 1^Status^Overrange;
+
+        .fbRTD_2.iRaw := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 2^Value;
+        .fbRTD_2.bError := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 2^Status^Error;
+        .fbRTD_2.bUnderrange := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 2^Status^Underrange;
+        .fbRTD_2.bOverrange := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 2^Status^Overrange
+    '}
+    fbStage4: FB_SXR_SATT_Stage;
+
+    fbStateSetup: FB_StateSetupHelper;
+    stDefaultGood: ST_PositionState := (
+        fDelta := 0.2,
+        fVelocity := 1,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
+    fbBadStateSetup: FB_StateSetupHelper;
+    stDefaultBad: ST_PositionState := (
+        fPosition := 500,
+        fDelta := 0.2,
+        fVelocity := 1,
+        bMoveOk := FALSE,
+        bValid := FALSE
+    );
+
+    {attribute 'pytmc' :='pv: AT2K2:L2SI:FWM'}
+   
+    fbFlowMeter: FB_AnalogInput := (iTermBits:=15, fTermMax:=60, fTermMin:=0);
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+
+IF bDebug THEN
+    // NEVER: checkouts with the TwinCAT NC GUI.
+    nEnableMode := E_StageEnableMode.NEVER;
+ELSE
+    // ALWAYS: want active position correction at all times
+    nEnableMode := E_StageEnableMode.ALWAYS;
+END_IF
+
+(*
+
+    Solid Attenuator notes
+
+    AT2K2 is JJ-xray SN-11344.
+
+    JJ    Label   EPICS    Stage     NC   Location
+
+    10??      1   MMS:01   fbStage1  M2  Upstream-most
+    10??      2   MMS:02   fbStage2  M3
+    10??      3   MMS:03   fbStage3  M4
+    10??      4   MMS:04   fbStage4  M5  Downstream-most
+
+*)
+
+fbStateSetup(stPositionState:=stDefaultGood, bSetDefault:=TRUE);
+fbBadStateSetup(stPositionState:=stDefaultBad, bSetDefault:=TRUE);
+
+
+(* State setup - stage 1 *)
+fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=27.00);
+
+fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1');
+fbStage1.arrFilters[1].fFilterThickness_um := 0;
+fbStage1.arrFilters[1].sFilterMaterial     := '';
+
+fbBadStateSetup(stPositionState:=fbStage1.stFilter2, sName:='Filter 2');
+fbStage1.arrFilters[2].fFilterThickness_um := 0;
+fbStage1.arrFilters[2].sFilterMaterial     := '';
+
+fbBadStateSetup(stPositionState:=fbStage1.stFilter3, sName:='Filter 3');
+fbStage1.arrFilters[3].fFilterThickness_um := 0;
+fbStage1.arrFilters[3].sFilterMaterial     := '';
+
+fbBadStateSetup(stPositionState:=fbStage1.stFilter4, sName:='Filter 4');
+fbStage1.arrFilters[4].fFilterThickness_um := 0;
+fbStage1.arrFilters[4].sFilterMaterial     := '';
+
+fbStateSetup(stPositionState:=fbStage1.stFilter5, sName:='(5) 11.5 um Al', fPosition:=103.0);
+fbStage1.arrFilters[5].fFilterThickness_um := 11.5;
+fbStage1.arrFilters[5].sFilterMaterial     := 'Al';
+
+fbStateSetup(stPositionState:=fbStage1.stFilter6, sName:='(6) 6.18 um Al', fPosition:=119.0);
+fbStage1.arrFilters[6].fFilterThickness_um := 6.18;
+fbStage1.arrFilters[6].sFilterMaterial     := 'Al';
+
+fbStateSetup(stPositionState:=fbStage1.stFilter7, sName:='(7) 2.85 um Al', fPosition:=135.0);
+fbStage1.arrFilters[7].fFilterThickness_um := 2.85;
+fbStage1.arrFilters[7].sFilterMaterial     := 'Al';
+
+fbStateSetup(stPositionState:=fbStage1.stFilter8, sName:='(8) 1.52 um Al', fPosition:=150.0);
+fbStage1.arrFilters[8].fFilterThickness_um := 1.52;
+fbStage1.arrFilters[8].sFilterMaterial     := 'Al';
+
+fbStage1(stAxis:=Main.M2, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1, bEnable:=TRUE);
+
+
+(* State setup - stage 2 *)
+fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=27.72);
+
+fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1');
+fbStage2.arrFilters[1].fFilterThickness_um := 0;
+fbStage2.arrFilters[1].sFilterMaterial     := '';
+
+fbBadStateSetup(stPositionState:=fbStage2.stFilter2, sName:='Filter 2');
+fbStage2.arrFilters[2].fFilterThickness_um := 0;
+fbStage2.arrFilters[2].sFilterMaterial     := '';
+
+fbBadStateSetup(stPositionState:=fbStage2.stFilter3, sName:='Filter 3');
+fbStage2.arrFilters[3].fFilterThickness_um := 0;
+fbStage2.arrFilters[3].sFilterMaterial     := '';
+
+fbBadStateSetup(stPositionState:=fbStage2.stFilter4, sName:='Filter 4');
+fbStage2.arrFilters[4].fFilterThickness_um := 0;
+fbStage2.arrFilters[4].sFilterMaterial     := '';
+
+fbStateSetup(stPositionState:=fbStage2.stFilter5, sName:='(5) 6.18 um Al', fPosition:=103.0);
+fbStage2.arrFilters[5].fFilterThickness_um := 6.18;
+fbStage2.arrFilters[5].sFilterMaterial     := 'Al';
+
+fbStateSetup(stPositionState:=fbStage2.stFilter6, sName:='(6) 2.85 um Al', fPosition:=119.0);
+fbStage2.arrFilters[6].fFilterThickness_um := 2.85;
+fbStage2.arrFilters[6].sFilterMaterial     := 'Al';
+
+fbStateSetup(stPositionState:=fbStage2.stFilter7, sName:='(7) 1.52 um Al', fPosition:=135.0);
+fbStage2.arrFilters[7].fFilterThickness_um := 1.52;
+fbStage2.arrFilters[7].sFilterMaterial     := 'Al';
+
+fbStateSetup(stPositionState:=fbStage2.stFilter8, sName:='(8) 0.78 um Al', fPosition:=150.0);
+fbStage2.arrFilters[8].fFilterThickness_um := 0.78;
+fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
+
+fbStage2(stAxis:=Main.M3, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1, bEnable:=TRUE);
+
+
+(* State setup - stage 3 *)
+fbStateSetup(stPositionState:=fbStage3.stOut, sName:='Out', fPosition:=27.00);
+
+fbBadStateSetup(stPositionState:=fbStage3.stFilter1, sName:='Filter 1');
+fbStage3.arrFilters[1].fFilterThickness_um := 0;
+fbStage3.arrFilters[1].sFilterMaterial     := '';
+
+fbBadStateSetup(stPositionState:=fbStage3.stFilter2, sName:='Filter 2');
+fbStage3.arrFilters[2].fFilterThickness_um := 0;
+fbStage3.arrFilters[2].sFilterMaterial     := '';
+
+fbBadStateSetup(stPositionState:=fbStage3.stFilter3, sName:='Filter 3');
+fbStage3.arrFilters[3].fFilterThickness_um := 0;
+fbStage3.arrFilters[3].sFilterMaterial     := '';
+
+fbBadStateSetup(stPositionState:=fbStage3.stFilter4, sName:='Filter 4');
+fbStage3.arrFilters[4].fFilterThickness_um := 0;
+fbStage3.arrFilters[4].sFilterMaterial     := '';
+
+fbStateSetup(stPositionState:=fbStage3.stFilter5, sName:='(5) 2.85 um Al', fPosition:=103.0);
+fbStage3.arrFilters[5].fFilterThickness_um := 2.85;
+fbStage3.arrFilters[5].sFilterMaterial     := 'Al';
+
+fbStateSetup(stPositionState:=fbStage3.stFilter6, sName:='(6) 1.52 um Al', fPosition:=119.0);
+fbStage3.arrFilters[6].fFilterThickness_um := 1.52;
+fbStage3.arrFilters[6].sFilterMaterial     := 'Al';
+
+fbStateSetup(stPositionState:=fbStage3.stFilter7, sName:='(7) 0.78 um Al', fPosition:=135.0);
+fbStage3.arrFilters[7].fFilterThickness_um := 0.78;
+fbStage3.arrFilters[7].sFilterMaterial     := 'Al';
+
+fbStateSetup(stPositionState:=fbStage3.stFilter8, sName:='(8) 0.39 um Al', fPosition:=150.0);
+fbStage3.arrFilters[8].fFilterThickness_um := 0.39;
+fbStage3.arrFilters[8].sFilterMaterial     := 'Al';
+
+fbStage3(stAxis:=Main.M4, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1, bEnable:=TRUE);
+
+
+(* State setup - stage 4 *)
+fbStateSetup(stPositionState:=fbStage4.stOut, sName:='Out', fPosition:=28.03);
+
+fbBadStateSetup(stPositionState:=fbStage4.stFilter1, sName:='Filter 1');
+fbStage4.arrFilters[1].fFilterThickness_um := 0;
+fbStage4.arrFilters[1].sFilterMaterial     := '';
+
+fbBadStateSetup(stPositionState:=fbStage4.stFilter2, sName:='Filter 2');
+fbStage4.arrFilters[2].fFilterThickness_um := 0;
+fbStage4.arrFilters[2].sFilterMaterial     := '';
+
+fbBadStateSetup(stPositionState:=fbStage4.stFilter3, sName:='Filter 3');
+fbStage4.arrFilters[3].fFilterThickness_um := 0;
+fbStage4.arrFilters[3].sFilterMaterial     := '';
+
+fbBadStateSetup(stPositionState:=fbStage4.stFilter4, sName:='Filter 4');
+fbStage4.arrFilters[4].fFilterThickness_um := 0;
+fbStage4.arrFilters[4].sFilterMaterial     := '';
+
+fbStateSetup(stPositionState:=fbStage4.stFilter5, sName:='(5) 1.52 um Al', fPosition:=103.0);
+fbStage4.arrFilters[5].fFilterThickness_um := 1.52;
+fbStage4.arrFilters[5].sFilterMaterial     := 'Al';
+
+fbStateSetup(stPositionState:=fbStage4.stFilter6, sName:='(6) 0.78 um Al', fPosition:=119.0);
+fbStage4.arrFilters[6].fFilterThickness_um := 0.78;
+fbStage4.arrFilters[6].sFilterMaterial     := 'Al';
+
+fbStateSetup(stPositionState:=fbStage4.stFilter7, sName:='(7) 0.39 um Al', fPosition:=135.0);
+fbStage4.arrFilters[7].fFilterThickness_um := 0.39;
+fbStage4.arrFilters[7].sFilterMaterial     := 'Al';
+
+fbStateSetup(stPositionState:=fbStage4.stFilter8, sName:='(8) 0.20 um Al', fPosition:=150.0);
+fbStage4.arrFilters[8].fFilterThickness_um := 0.20;
+fbStage4.arrFilters[8].sFilterMaterial     := 'Al';
+
+fbStage4(stAxis:=Main.M5, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1, bEnable:=TRUE);
+
+
+GVL.rCurTrans[PMPS.K_Attenuators.AT2K2].nTran := LREAL_TO_REAL(
+    fbStage1.fTransmission *
+    fbStage2.fTransmission *
+    fbStage3.fTransmission *
+    fbStage4.fTransmission
+);
+
+fbFlowMeter();
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

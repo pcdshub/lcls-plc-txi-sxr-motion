@@ -9,6 +9,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[
 PRG_AL1K3_L2SI();
+PRG_SL1K3_SCATTER();
 PRG_PMPS();
 fbLogHandler();]]></ST>
     </Implementation>
