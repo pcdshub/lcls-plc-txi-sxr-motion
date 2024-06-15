@@ -1722,6 +1722,623 @@ External Setpoint Generation:
 							<Name>GVL.rReqTrans</Name>
 							<Type GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Type>
 						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbMotion.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[1].Axis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
+							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
+							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[1].bHome</Name>
+							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
+							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
+							<Type>ULINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[2].Axis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[2].bLimitForwardEnable</Name>
+							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[2].bLimitBackwardEnable</Name>
+							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[2].bHome</Name>
+							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[2].bHardwareEnable</Name>
+							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[2].nRawEncoderULINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
+							<Type>ULINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[2].nRawEncoderUINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[2].nRawEncoderINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[3].Axis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[3].bLimitForwardEnable</Name>
+							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[3].bLimitBackwardEnable</Name>
+							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[3].bHome</Name>
+							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[3].bHardwareEnable</Name>
+							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[3].nRawEncoderULINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
+							<Type>ULINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[3].nRawEncoderUINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[3].nRawEncoderINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbRTD_1.bError</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbRTD_1.bUnderrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbRTD_1.bOverrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbRTD_1.iRaw</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbRTD_2.bError</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbRTD_2.bUnderrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbRTD_2.bOverrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbRTD_2.iRaw</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbMotion.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[1].Axis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
+							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
+							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[1].bHome</Name>
+							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
+							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
+							<Type>ULINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[2].Axis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[2].bLimitForwardEnable</Name>
+							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[2].bLimitBackwardEnable</Name>
+							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[2].bHome</Name>
+							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[2].bHardwareEnable</Name>
+							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[2].nRawEncoderULINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
+							<Type>ULINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[2].nRawEncoderUINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[2].nRawEncoderINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[3].Axis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[3].bLimitForwardEnable</Name>
+							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[3].bLimitBackwardEnable</Name>
+							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[3].bHome</Name>
+							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[3].bHardwareEnable</Name>
+							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[3].nRawEncoderULINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
+							<Type>ULINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[3].nRawEncoderUINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[3].nRawEncoderINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbRTD_1.bError</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbRTD_1.bUnderrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbRTD_1.bOverrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbRTD_1.iRaw</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbRTD_2.bError</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbRTD_2.bUnderrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbRTD_2.bOverrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbRTD_2.iRaw</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbMotion.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[1].Axis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
+							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
+							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[1].bHome</Name>
+							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
+							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
+							<Type>ULINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[2].Axis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[2].bLimitForwardEnable</Name>
+							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[2].bLimitBackwardEnable</Name>
+							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[2].bHome</Name>
+							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[2].bHardwareEnable</Name>
+							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[2].nRawEncoderULINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
+							<Type>ULINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[2].nRawEncoderUINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[2].nRawEncoderINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[3].Axis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[3].bLimitForwardEnable</Name>
+							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[3].bLimitBackwardEnable</Name>
+							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[3].bHome</Name>
+							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[3].bHardwareEnable</Name>
+							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[3].nRawEncoderULINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
+							<Type>ULINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[3].nRawEncoderUINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[3].nRawEncoderINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbRTD_1.bError</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbRTD_1.bUnderrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbRTD_1.bOverrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbRTD_1.iRaw</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbRTD_2.bError</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbRTD_2.bUnderrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbRTD_2.bOverrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbRTD_2.iRaw</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbMotion.fbDriveVirtual.MasterAxis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[1].Axis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
+							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
+							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[1].bHome</Name>
+							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
+							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
+							<Type>ULINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[2].Axis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[2].bLimitForwardEnable</Name>
+							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[2].bLimitBackwardEnable</Name>
+							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[2].bHome</Name>
+							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[2].bHardwareEnable</Name>
+							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[2].nRawEncoderULINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
+							<Type>ULINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[2].nRawEncoderUINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[2].nRawEncoderINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[3].Axis.NcToPlc</Name>
+							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[3].bLimitForwardEnable</Name>
+							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[3].bLimitBackwardEnable</Name>
+							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[3].bHome</Name>
+							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[3].bHardwareEnable</Name>
+							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[3].nRawEncoderULINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
+							<Type>ULINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[3].nRawEncoderUINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[3].nRawEncoderINT</Name>
+							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbRTD_1.bError</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbRTD_1.bUnderrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbRTD_1.bOverrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbRTD_1.iRaw</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbRTD_2.bError</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbRTD_2.bUnderrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbRTD_2.bOverrange</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbRTD_2.iRaw</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbFlowMeter.iRaw</Name>
+							<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
+							<Type>INT</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
@@ -1882,6 +2499,130 @@ External Setpoint Generation:
 							<Name>GVL.rCurTrans</Name>
 							<Type GUID="{6D319B26-4590-2152-3DE7-3BA9B629CA65}">ARRAY [1..16] OF ST_PMPS_Attenuator_IO</Type>
 						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbMotion.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[1].Axis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
+							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[2].Axis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[2].bBrakeRelease</Name>
+							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[3].Axis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage1.fbStates.astMotionStageMax[3].bBrakeRelease</Name>
+							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbMotion.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[1].Axis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
+							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[2].Axis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[2].bBrakeRelease</Name>
+							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[3].Axis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage2.fbStates.astMotionStageMax[3].bBrakeRelease</Name>
+							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbMotion.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[1].Axis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
+							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[2].Axis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[2].bBrakeRelease</Name>
+							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[3].Axis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage3.fbStates.astMotionStageMax[3].bBrakeRelease</Name>
+							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbMotion.fbDriveVirtual.MasterAxis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[1].Axis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
+							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[2].Axis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[2].bBrakeRelease</Name>
+							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[3].Axis.PlcToNc</Name>
+							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
+						</Var>
+						<Var>
+							<Name>PRG_AT1K3_SOLID.fbStage4.fbStates.astMotionStageMax[3].bBrakeRelease</Name>
+							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="8" AreaNo="4">
 						<Name>PlcTask Retains</Name>
@@ -1943,6 +2684,46 @@ External Setpoint Generation:
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL7041-E1">
 				<Link VarA="PlcTask Inputs^MAIN.M1.bLimitBackwardEnable" VarB="STM Status^Status^Digital input 2" AutoLink="true"/>
 				<Link VarA="PlcTask Inputs^MAIN.M1.bLimitForwardEnable" VarB="STM Status^Status^Digital input 1" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL3202-01">
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage4.fbRTD_1.bError" VarB="RTD Inputs Channel 1^Status^Error" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage4.fbRTD_1.bOverrange" VarB="RTD Inputs Channel 1^Status^Overrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage4.fbRTD_1.bUnderrange" VarB="RTD Inputs Channel 1^Status^Underrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage4.fbRTD_1.iRaw" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage4.fbRTD_2.bError" VarB="RTD Inputs Channel 2^Status^Error" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage4.fbRTD_2.bOverrange" VarB="RTD Inputs Channel 2^Status^Overrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage4.fbRTD_2.bUnderrange" VarB="RTD Inputs Channel 2^Status^Underrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage4.fbRTD_2.iRaw" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL3202-02">
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage3.fbRTD_1.bError" VarB="RTD Inputs Channel 1^Status^Error" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage3.fbRTD_1.bOverrange" VarB="RTD Inputs Channel 1^Status^Overrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage3.fbRTD_1.bUnderrange" VarB="RTD Inputs Channel 1^Status^Underrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage3.fbRTD_1.iRaw" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage3.fbRTD_2.bError" VarB="RTD Inputs Channel 2^Status^Error" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage3.fbRTD_2.bOverrange" VarB="RTD Inputs Channel 2^Status^Overrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage3.fbRTD_2.bUnderrange" VarB="RTD Inputs Channel 2^Status^Underrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage3.fbRTD_2.iRaw" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL3202-03">
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage2.fbRTD_1.bError" VarB="RTD Inputs Channel 1^Status^Error" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage2.fbRTD_1.bOverrange" VarB="RTD Inputs Channel 1^Status^Overrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage2.fbRTD_1.bUnderrange" VarB="RTD Inputs Channel 1^Status^Underrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage2.fbRTD_1.iRaw" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage2.fbRTD_2.bError" VarB="RTD Inputs Channel 2^Status^Error" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage2.fbRTD_2.bOverrange" VarB="RTD Inputs Channel 2^Status^Overrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage2.fbRTD_2.bUnderrange" VarB="RTD Inputs Channel 2^Status^Underrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage2.fbRTD_2.iRaw" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL3202-04">
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage1.fbRTD_1.bError" VarB="RTD Inputs Channel 1^Status^Error" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage1.fbRTD_1.bOverrange" VarB="RTD Inputs Channel 1^Status^Overrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage1.fbRTD_1.bUnderrange" VarB="RTD Inputs Channel 1^Status^Underrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage1.fbRTD_1.iRaw" VarB="RTD Inputs Channel 1^Value" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage1.fbRTD_2.bError" VarB="RTD Inputs Channel 2^Status^Error" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage1.fbRTD_2.bOverrange" VarB="RTD Inputs Channel 2^Status^Overrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage1.fbRTD_2.bUnderrange" VarB="RTD Inputs Channel 2^Status^Underrange" AutoLink="true"/>
+				<Link VarA="PlcTask Inputs^PRG_AT1K3_SOLID.fbStage1.fbRTD_2.iRaw" VarB="RTD Inputs Channel 2^Value" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL5042-01">
 				<Link VarA="PlcTask Inputs^MAIN.M4.nRawEncoderULINT" VarB="FB Inputs Channel 2^Position" AutoLink="true"/>

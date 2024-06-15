@@ -10,11 +10,11 @@
 		<Box File="AL1K3-EL7041-E1.xti" Id="33">
 			<EtherCAT PortABoxInfo="#x0100000f"/>
 		</Box>
-		<Box File="AL1K3-EL5042-E2.xti" Id="34">
+		<Box File="AL1K3-EL5042-E2.xti" Id="82">
 			<EtherCAT PortABoxInfo="#x01000021"/>
 		</Box>
 		<Box File="AL1K3-EL2004-E3.xti" Id="35">
-			<EtherCAT PortABoxInfo="#x01000022"/>
+			<EtherCAT PortABoxInfo="#x01000052"/>
 		</Box>
 		<Box File="AL1K3-EL4004-E4.xti" Id="36">
 			<EtherCAT PortABoxInfo="#x01000023"/>
