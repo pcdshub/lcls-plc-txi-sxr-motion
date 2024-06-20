@@ -4,14 +4,28 @@
     <Declaration><![CDATA[PROGRAM PRG_PMPS
 VAR
     fbArbiterIO: FB_SubSysToArbiter_IO;
+	
+	{attribute 'TcLinkTo' := 'TIIB[PMPS_PRE]^IO Outputs^FFO'}
+	FFO AT %Q*:BOOL; //temp code until faults are in MPS crate
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//GVL.fbFastFaultOutput1.Execute(i_xVeto := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.L_Stopper.ST1K3]);
+      <ST><![CDATA[GVL.fbFastFaultOutput1.Execute(i_xVeto := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN]
+                                      AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT])
+                                       OR PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_IN]
+                                      AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT]);
 fbArbiterIO(
-    //i_bVeto := PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.L_Stopper.ST1K3],
+    i_bVeto := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN]
+                                      AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT])
+                                       OR PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_IN]
+                                      AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT],
     Arbiter:=GVL.fbArbiter1,
-    fbFFHWO:=GVL.fbFastFaultOutput1);]]></ST>
+    fbFFHWO:=GVL.fbFastFaultOutput1);
+	
+GVL.fbArbiter1.AddRequest(nReqID := 16#FAF7, stReqBp := PMPS_GVL.cstFullBeam, sDevName := 'plc-kfe-txi-mot');
+
+//TEMP FFO to arbiter
+FFO:= GVL.fbFastFaultOutput1.q_xFastFaultOut;]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

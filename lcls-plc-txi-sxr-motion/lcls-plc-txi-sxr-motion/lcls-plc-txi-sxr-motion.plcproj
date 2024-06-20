@@ -107,7 +107,7 @@
       <Resolution>lcls-twincat-motion, 4.0.8 (SLAC)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="PMPS">
-      <Resolution>PMPS, 3.2.1 (SLAC - LCLS)</Resolution>
+      <Resolution>PMPS, 3.3.0 (SLAC - LCLS)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="Tc2_Standard">
       <Resolution>Tc2_Standard, 3.3.3.0 (Beckhoff Automation GmbH)</Resolution>
