@@ -12,13 +12,13 @@ END_VAR
     <Implementation>
       <ST><![CDATA[GVL.fbFastFaultOutput1.Execute(i_xVeto := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN]
                                       AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT])
-                                       OR PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_IN]
-                                      AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT]);
+                                       OR PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_OUT]
+                                      AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN]);
 fbArbiterIO(
     i_bVeto := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN]
                                       AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT])
-                                       OR PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_IN]
-                                      AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT],
+                                       OR PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_OUT]
+                                      AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN],
     Arbiter:=GVL.fbArbiter1,
     fbFFHWO:=GVL.fbFastFaultOutput1);
 	
