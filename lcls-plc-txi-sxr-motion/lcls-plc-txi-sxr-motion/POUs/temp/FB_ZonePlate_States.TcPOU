@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="FB_ZonePlate_States" Id="{d27e90f5-8a3f-4562-a8f0-f90423b69349}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ZonePlate_States EXTENDS FB_PositionStateBase_WithPMPS
+VAR_INPUT
+     {attribute 'pytmc' := '
+        pv: SET
+        io: io
+    '}
+    enumSet: ENUM_ZonePlate_States;
+    stOut: DUT_PositionState;
+    stYag: DUT_PositionState;
+    stNe1: DUT_PositionState;
+    stNe2: DUT_PositionState;
+    stNe3: DUT_PositionState;
+    st3w1: DUT_PositionState;
+    st3w2: DUT_PositionState;
+    stO1: DUT_PositionState;
+    stO2: DUT_PositionState;
+    stTi1: DUT_PositionState;
+    stTi2: DUT_PositionState;
+    stN1: DUT_PositionState;
+    stN2:DUT_PositionState;
+    stC1: DUT_PositionState;
+    stC2: DUT_PositionState;
+    stW1: DuT_PositionState;
+END_VAR
+VAR_OUTPUT
+     {attribute 'pytmc' := '
+        pv: GET
+        io: i
+    '}
+    enumGet: ENUM_ZonePlate_States;
+END_VAR
+VAR
+    bInittwo: BOOL := TRUE;
+    fbStateDefaults: FB_PositionState_Defaults;
+    // These are the default values
+    // Set values on states prior to passing in for non-default values
+    //TODO correct these default positions
+    fDelta: LREAL := 1;
+    fVelocity: LREAL := 5;
+    fAccel: LREAL := 200;
+    fDecel: LREAL := 25;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[//State init
+IF (bInittwo) THEN
+    bInittwo := FALSE;
+    //Set theses for every state
+    stOut.sName := 'OUT';
+    stOut.bUseRawCounts:= FALSE;
+    stOut.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=stOut,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+    stYag.sName := 'Yag';
+    stYag.bUseRawCounts:= FALSE;
+    stYag.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=stYag,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+    stNe1.sName := 'Ne1';
+    stNe1.bUseRawCounts:= FALSE;
+    stNe1.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=stNe1,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+    stNe2.sName := 'Ne2';
+    stNe2.bUseRawCounts:= FALSE;
+    stNe2.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=stNe2,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+    stNe3.sName := 'Ne3';
+    stNe3.bUseRawCounts:= FALSE;
+    stNe3.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=stNe3,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+    st3w1.sName := '3w1';
+    st3w1.bUseRawCounts:= FALSE;
+    st3w1.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=st3w1,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+    st3w2.sName := '3w2';
+    st3w2.bUseRawCounts:= FALSE;
+    st3w2.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=st3w2,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+    stO1.sName := 'O1';
+    stO1.bUseRawCounts:= FALSE;
+    stO1.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=stO1,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+    stO2.sName := 'O2';
+    stO2.bUseRawCounts:= FALSE;
+    stO2.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=stO2,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+
+    stTi1.sName := 'Ti1';
+    stTi1.bUseRawCounts:= FALSE;
+    stTi1.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=stTi1,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+    stTi2.sName := 'Ti2';
+    stTi2.bUseRawCounts:= FALSE;
+    stTi2.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=stTi2,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+    stN1.sName := 'N1';
+    stN1.bUseRawCounts:= FALSE;
+    stN1.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=stN1,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+    stN2.sName := 'N2';
+    stN2.bUseRawCounts:= FALSE;
+    stN2.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=stN2,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+    stC1.sName := 'C1';
+    stC1.bUseRawCounts:= FALSE;
+    stC1.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=stC1,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+    stC2.sName := 'C2';
+    stC2.bUseRawCounts:= FALSE;
+    stC2.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=stC2,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+    stW1.sName := 'W1';
+    stW1.bUseRawCounts:= FALSE;
+    stW1.bValid := TRUE;
+        fbStateDefaults(
+        stPositionState:=stW1,
+        fVeloDefault:=fVelocity,
+        fDeltaDefault:=fDelta,
+        fAccelDefault:=fAccel,
+        fDecelDefault:=fDecel,
+    );
+
+//Add all states
+
+    arrStates[1] := stOut;
+    arrStates[2] := stYag;
+    arrStates[3] := stNe1;
+    arrStates[4] := stNe2;
+    arrStates[5] := stNe3;
+    arrStates[6] := st3w1;
+    arrStates[7] := st3w2;
+    arrStates[8] := stO1;
+    arrStates[9] := stO2;
+    arrStates[10] := stTi1;
+    arrStates[11] := stTi2;
+    arrStates[12] := stN1;
+    arrStates[13] := stN2;
+    arrStates[14] := stC1;
+    arrStates[15] := stC2;
+ //   arrStates[16] := stW1;
+
+END_IF
+
+setState := enumSet;
+Exec();
+enumGet := getState;
+enumSet := setState;]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
