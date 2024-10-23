@@ -91,7 +91,7 @@ VAR
     );
 
     {attribute 'pytmc' :='pv: AT1K3:L2SI:FWM'}
-   
+
     fbFlowMeter: FB_AnalogInput := (iTermBits:=15, fTermMax:=60, fTermMin:=0);
 END_VAR
 ]]></Declaration>

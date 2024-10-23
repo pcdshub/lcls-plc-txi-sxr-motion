@@ -10,8 +10,8 @@ VAR_GLOBAL
     {attribute 'pytmc' := 'pv: PLC:TXI:SXR:MOTION:FFO:01'}
     {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
     fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='');
-	
-	 {attribute 'pytmc' := 'pv: PLC:TXI:K:MOTION:PMPS:ReqTrans'}
+
+     {attribute 'pytmc' := 'pv: PLC:TXI:K:MOTION:PMPS:ReqTrans'}
     rReqTrans AT %I*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
     {attribute 'pytmc' := 'pv: PLC:TXI:K:MOTION:PMPS:CurTrans'}
     rCurTrans AT %Q*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;

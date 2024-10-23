@@ -1210,132 +1210,6 @@ External Setpoint Generation:
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbYStage.fbDriveVirtual.MasterAxis.NcToPlc</Name>
-							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[1].Axis.NcToPlc</Name>
-							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[1].bLimitForwardEnable</Name>
-							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[1].bLimitBackwardEnable</Name>
-							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[1].bHome</Name>
-							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[1].bHardwareEnable</Name>
-							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[1].nRawEncoderULINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
-							<Type>ULINT</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[1].nRawEncoderUINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[1].nRawEncoderINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[2].Axis.NcToPlc</Name>
-							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[2].bLimitForwardEnable</Name>
-							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[2].bLimitBackwardEnable</Name>
-							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[2].bHome</Name>
-							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[2].bHardwareEnable</Name>
-							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[2].nRawEncoderULINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
-							<Type>ULINT</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[2].nRawEncoderUINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[2].nRawEncoderINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[3].Axis.NcToPlc</Name>
-							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[3].bLimitForwardEnable</Name>
-							<Comment><![CDATA[ NC Forward Limit Switch: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[3].bLimitBackwardEnable</Name>
-							<Comment><![CDATA[ NC Backward Limit Switch: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[3].bHome</Name>
-							<Comment><![CDATA[ NO Home Switch: TRUE if at home]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[3].bHardwareEnable</Name>
-							<Comment><![CDATA[ NC STO Input: TRUE if ok to move]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[3].nRawEncoderULINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for ULINT (Biss-C)]]></Comment>
-							<Type>ULINT</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[3].nRawEncoderUINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for UINT (Relative Encoders)]]></Comment>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[3].nRawEncoderINT</Name>
-							<Comment><![CDATA[ Raw encoder IO for INT (LVDT)]]></Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbLaser.fbGetLasPercent.iRaw</Name>
-							<Comment><![CDATA[ Connect this input to the terminal]]></Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>PRG_SL1K3_SCATTER.fbSL1K3.fbTopBlade.fbDriveVirtual.MasterAxis.NcToPlc</Name>
 							<Type GUID="{72F5AAAA-16DF-4ED3-8367-F6C8C3ADAE99}" Namespace="MC">NCTOPLC_AXIS_REF</Type>
 						</Var>
@@ -1731,50 +1605,6 @@ External Setpoint Generation:
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbYStage.fbDriveVirtual.MasterAxis.PlcToNc</Name>
-							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[1].Axis.PlcToNc</Name>
-							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[1].bBrakeRelease</Name>
-							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[2].Axis.PlcToNc</Name>
-							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[2].bBrakeRelease</Name>
-							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[3].Axis.PlcToNc</Name>
-							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbStates.astMotionStageMax[3].bBrakeRelease</Name>
-							<Comment><![CDATA[ NC Brake Output: TRUE to release brake]]></Comment>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbLaser.iShutdownINT</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbLaser.iLaserINT</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
-							<Name>PRG_AL1K3_L2SI.fbAL1K3.fbLaser.fbSetLasPercent.iRaw</Name>
-							<Comment><![CDATA[ Connect this output to the terminal]]></Comment>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>PRG_SL1K3_SCATTER.fbSL1K3.fbTopBlade.fbDriveVirtual.MasterAxis.PlcToNc</Name>
 							<Type GUID="{63A84524-72E3-41C8-BEAB-4CCE44690A13}" Namespace="MC">PLCTONC_AXIS_REF</Type>
 						</Var>
@@ -1937,10 +1767,6 @@ External Setpoint Generation:
 		<OwnerA Name="TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL2004-E3">
 				<Link VarA="PlcTask Outputs^MAIN.M1.bBrakeRelease" VarB="Channel 1^Output" AutoLink="true"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL4004-E4">
-				<Link VarA="PlcTask Outputs^PRG_AL1K3_L2SI.fbAL1K3.fbLaser.iLaserINT" VarB="AO Outputs Channel 1^Analog output" AutoLink="true"/>
-				<Link VarA="PlcTask Outputs^PRG_AL1K3_L2SI.fbAL1K3.fbLaser.iShutdownINT" VarB="AO Outputs Channel 2^Analog output" AutoLink="true"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL5042-E2">
 				<Link VarA="PlcTask Inputs^MAIN.M1.nRawEncoderULINT" VarB="FB Inputs Channel 1^Position" AutoLink="true"/>
