@@ -15,6 +15,10 @@
     <Implicit_KindOfTask>{f086421c-be13-4034-8f4b-1504a8bf8952}</Implicit_KindOfTask>
     <Implicit_Jitter_Distribution>{8092b589-4dae-4f90-9b3f-b82a1e887878}</Implicit_Jitter_Distribution>
     <LibraryReferences>{22eaf3b0-26ee-4555-9503-9c984f1cc5bc}</LibraryReferences>
+    <Company>SLAC-LCLS</Company>
+    <Released>false</Released>
+    <Title>lcls-plc-txi-sxr-motion</Title>
+    <ProjectVersion>0.0.0</ProjectVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GVLs\GVL.TcGVL">
