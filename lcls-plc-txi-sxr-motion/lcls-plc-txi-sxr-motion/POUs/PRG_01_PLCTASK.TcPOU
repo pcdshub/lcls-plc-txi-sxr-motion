@@ -3,12 +3,14 @@
   <POU Name="PRG_01_PLCTASK" Id="{948ec821-0c9a-427d-b898-7036a31ff69a}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_01_PLCTASK
 VAR
-	 fbLogHandler: FB_LogHandler;
+     fbLogHandler: FB_LogHandler;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-PRG_AL1K3_L2SI();
+//PRG_AL1K3_L2SI();
+PRG_SL1K3_SCATTER();
+//PRG_AT1K3_SOLID();
 PRG_PMPS();
 fbLogHandler();]]></ST>
     </Implementation>

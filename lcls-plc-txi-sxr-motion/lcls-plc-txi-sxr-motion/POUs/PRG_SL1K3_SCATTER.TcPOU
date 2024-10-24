@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="PRG_SL1K3_SCATTER" Id="{1360fbdd-6b87-49fd-b21a-31ee7aa7acc7}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM PRG_SL1K3_SCATTER
+VAR
+    {attribute 'pytmc' := '
+        pv: SL1K3:SCATTER
+        io: io
+    '}
+    fbSL1K3: FB_SLITS;
+    //GET PMPS Move Ok bit
+    // Default True until it is properly linked to PMPS bit
+    bMoveOk:BOOL :=TRUE;
+    {attribute 'pytmc' := '
+    pv: SL1K3:SCATTER:GO;
+    io: io;
+    field: ZNAM False;
+    field: ONAM True;
+    '}
+    bExecuteMotion :BOOL :=FALSE;
+    bTest:BOOL:=FALSE;
+
+
+    rEncoderOffsetTop: INT;
+    rEncoderOffsetBottom: REAL := -15; (* 0+(-15)*)
+    rEncoderOffsetNorth: REAL := -15;(* 0+(-15)*)
+    rEncoderOffsetSouth: REAL := -15;(* 0+(-15)*)
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// M10, Axis 10
+// M11, Axis 11
+// M12, Axis 12
+// M13, Axis 13
+
+
+fbSL1K3.bMoveOk := bMoveOk;
+
+
+//Homing routine parameters
+Main.M6.fHomePosition:= 0;
+Main.M7.fHomePosition:= -31.5006;
+Main.M8.fHomePosition:= 0;
+Main.M9.fHomePosition:= -30.23;
+
+Main.M6.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
+Main.M7.nHomingMode := ENUM_EpicsHomeCmd.LOW_LIMIT;
+Main.M8.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
+Main.M9.nHomingMode := ENUM_EpicsHomeCmd.LOW_LIMIT;
+
+fbSL1K3.rEncoderOffsetTop := rEncoderOffsetTop;
+fbSL1K3.rEncoderOffsetBottom := rEncoderOffsetBottom;
+fbSL1K3.rEncoderOffsetNorth := rEncoderOffsetNorth;
+fbSL1K3.rEncoderOffsetSouth := rEncoderOffsetSouth;
+
+fbSL1K3(stTopBlade:=  Main.M7,
+        stBottomBlade:= Main.M6,
+        stNorthBlade:=  Main.M8,
+        stSouthBlade:=  Main.M9,
+        bExecuteMotion:=bExecuteMotion,
+        io_fbFFHWO := GVL.fbFastFaultOutput1,
+        fbArbiter := GVL.fbArbiter1);
+
+fbSL1K3.M_CheckPMPS(2);
+
+
+
+]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
