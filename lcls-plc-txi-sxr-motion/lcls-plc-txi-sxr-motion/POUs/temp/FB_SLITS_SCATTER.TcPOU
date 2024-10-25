@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
-  <POU Name="FB_SLITS_SCATTER" Id="{088f7e26-c5bb-497a-8c53-88a89420dd05}" SpecialFunc="None">
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="FB_SLITS_SCATTER" Id="{b7fc73e3-d7c7-061a-3eeb-9a9b02b36000}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SLITS_SCATTER EXTENDS FB_SLITS
 VAR_INPUT
 END_VAR

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
-  <GVL Name="GVL" Id="{18ff9aec-bbfc-4603-a8b9-4d82b89f99b6}">
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="GVL" Id="{a78c9729-a980-0963-1a01-5fb12e0c24b3}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
     {attribute 'pytmc' := 'pv: PLC:TXI:SXR:MOTION:ARB:01'}

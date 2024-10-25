@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
-  <POU Name="FB_ZonePlate_States" Id="{d27e90f5-8a3f-4562-a8f0-f90423b69349}" SpecialFunc="None">
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="FB_ZonePlate_States" Id="{6d0d9d30-9843-0a02-1a48-eb37b5252e4c}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ZonePlate_States EXTENDS FB_PositionStateBase_WithPMPS
 VAR_INPUT
      {attribute 'pytmc' := '

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
-  <POU Name="PRG_SL1K3_SCATTER" Id="{1360fbdd-6b87-49fd-b21a-31ee7aa7acc7}" SpecialFunc="None">
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="PRG_SL1K3_SCATTER" Id="{ac13f618-79fb-069d-00a2-23ddec3411c2}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_SL1K3_SCATTER
 VAR
     {attribute 'pytmc' := '

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
-  <POU Name="FB_SLITS_POWER" Id="{d889b456-91f0-0980-2255-32e7e69e3656}" SpecialFunc="None">
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="FB_SLITS_POWER" Id="{67fab993-838c-46e0-90ed-20d4700d8b53}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SLITS_POWER EXTENDS FB_SLITS
 VAR_INPUT
 END_VAR
@@ -56,7 +56,7 @@ END_VAR
       <ST><![CDATA[
 ACT_RTDs();]]></ST>
     </Implementation>
-    <Action Name="ACT_CalculatePositions" Id="{c0f7f59b-e975-4325-b55c-4cf79c9c8b01}">
+    <Action Name="ACT_CalculatePositions" Id="{7f84f85e-fb09-0c45-07e4-5ec40a0f3604}">
       <Implementation>
         <ST><![CDATA[//check if requested center or gap has changed
 //check that the requested values are within acceptable motion range
@@ -127,7 +127,7 @@ rActCenterY := LREAL_TO_REAL((((stTopBlade.stAxisStatus.fActPosition - rEncoderO
 ]]></ST>
       </Implementation>
     </Action>
-    <Action Name="ACT_RTDs" Id="{2824f268-7671-0ba5-2fec-76114d5b195e}">
+    <Action Name="ACT_RTDs" Id="{9757ffad-640d-44c5-9d54-6422dbc8a45b}">
       <Implementation>
         <ST><![CDATA[////RTDs
 RTD_TOP_1();

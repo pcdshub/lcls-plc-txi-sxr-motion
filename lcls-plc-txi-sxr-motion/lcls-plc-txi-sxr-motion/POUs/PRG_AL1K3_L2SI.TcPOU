@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
-  <POU Name="PRG_AL1K3_L2SI" Id="{b9065558-4333-4ee9-89fd-a00441a263a3}" SpecialFunc="None">
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="PRG_AL1K3_L2SI" Id="{0675589d-514f-0189-3b45-b237d731dea6}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_AL1K3_L2SI
 VAR
     {attribute 'pytmc' := 'pv: AL1K3:L2SI'}

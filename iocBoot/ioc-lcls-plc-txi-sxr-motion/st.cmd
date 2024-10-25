@@ -17,7 +17,7 @@
 #   LCLS General: * -> 2.10.0 (SLAC)
 #   lcls-twincat-common-components: * -> 3.5.0 (SLAC)
 #   lcls-twincat-motion: * -> 4.0.8 (SLAC)
-#   PMPS: * -> 3.2.1 (SLAC - LCLS)
+#   PMPS: * -> 3.3.0 (SLAC - LCLS)
 #   Tc2_Standard: * -> 3.3.3.0 (Beckhoff Automation GmbH)
 #   Tc2_System: * -> 3.4.26.0 (Beckhoff Automation GmbH)
 #   Tc3_Module: * (Beckhoff Automation GmbH)
@@ -40,7 +40,7 @@ epicsEnvSet("ASYN_PORT",        "ASYN_PLC")
 epicsEnvSet("IPADDR",           "172.21.136.36")
 epicsEnvSet("AMSID",            "172.21.136.36.1.1")
 epicsEnvSet("AMS_PORT",         "851")
-epicsEnvSet("ADS_MAX_PARAMS",   "3279")
+epicsEnvSet("ADS_MAX_PARAMS",   "3222")
 epicsEnvSet("ADS_SAMPLE_MS",    "50")
 epicsEnvSet("ADS_MAX_DELAY_MS", "100")
 epicsEnvSet("ADS_TIMEOUT_MS",   "1000")
@@ -262,8 +262,8 @@ dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPEN
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=lcls-twincat-common-components,VERSION=3.5.0,VENDOR=SLAC")
 #   lcls-twincat-motion: * -> 4.0.8 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=lcls-twincat-motion,VERSION=4.0.8,VENDOR=SLAC")
-#   PMPS: * -> 3.2.1 (SLAC - LCLS)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=PMPS,VERSION=3.2.1,VENDOR=SLAC - LCLS")
+#   PMPS: * -> 3.3.0 (SLAC - LCLS)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=PMPS,VERSION=3.3.0,VENDOR=SLAC - LCLS")
 #   Tc2_Standard: * -> 3.3.3.0 (Beckhoff Automation GmbH)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=Tc2_Standard,VERSION=3.3.3.0,VENDOR=Beckhoff Automation GmbH")
 #   Tc2_System: * -> 3.4.26.0 (Beckhoff Automation GmbH)
@@ -276,8 +276,8 @@ cd "$(IOC_TOP)"
 ## PLC Project Database files ##
 dbLoadRecords("lcls-plc-txi-sxr-motion.db", "PORT=$(ASYN_PORT),PREFIX=PLC:lcls-plc-txi-sxr-motion:,IOCNAME=$(IOC),IOC=$(IOC)")
 
-# Total records: 2279
-callbackSetQueueSize(6558)
+# Total records: 2222
+callbackSetQueueSize(6444)
 
 # Autosave and archive settings:
 save_restoreSet_status_prefix("PLC:lcls-plc-txi-sxr-motion:")

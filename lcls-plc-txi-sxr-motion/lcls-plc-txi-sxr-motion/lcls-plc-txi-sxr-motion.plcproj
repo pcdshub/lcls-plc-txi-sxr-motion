@@ -5,7 +5,7 @@
     <ProjectGuid>{bf730dc5-127c-4f60-b2b8-12339693bd05}</ProjectGuid>
     <SubObjectsSortedByName>True</SubObjectsSortedByName>
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
-    <WriteProductVersion>true</WriteProductVersion>
+    <WriteProductVersion>false</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>lcls_plc_txi_sxr_motion</Name>
     <ProgramVersion>3.1.4024.12</ProgramVersion>
@@ -19,6 +19,7 @@
     <Released>false</Released>
     <Title>lcls-plc-txi-sxr-motion</Title>
     <ProjectVersion>0.0.0</ProjectVersion>
+    <CombineIds>true</CombineIds>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GVLs\GVL.TcGVL">

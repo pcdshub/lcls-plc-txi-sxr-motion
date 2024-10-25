@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
-  <POU Name="FB_SLITS" Id="{b20ac175-27c9-0d05-3c79-6a95fe08ff7d}" SpecialFunc="None">
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="FB_SLITS" Id="{0d79ccb0-35b5-4265-8ec1-78a6689b4278}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_SLITS
 VAR_IN_OUT
     stTopBlade: ST_MotionStage;
@@ -225,7 +225,7 @@ ACT_Motion();
 ACT_CalculatePositions();
 //ACT_BLOCK();]]></ST>
     </Implementation>
-    <Action Name="ACT_BLOCK" Id="{906452df-02eb-097e-38ae-3a6de3e72e72}">
+    <Action Name="ACT_BLOCK" Id="{2f175f1a-1097-461e-8a16-285e75749377}">
       <Implementation>
         <ST><![CDATA[rTrig_Block (CLK:= bBlock);
 rTrig_Open (CLK:= bOpen);
@@ -250,7 +250,7 @@ if (rTrig_Close.Q) THEN
 END_IF]]></ST>
       </Implementation>
     </Action>
-    <Action Name="ACT_CalculatePositions" Id="{213af7c8-f6e0-07f8-143d-8f2da7508ac0}">
+    <Action Name="ACT_CalculatePositions" Id="{9e49fa0d-e49c-4898-a685-9d1e31c337c5}">
       <Implementation>
         <ST><![CDATA[//check if requested center or gap has changed
 //check that the requested values are within acceptable motion range
@@ -310,12 +310,12 @@ rActCenterY := LREAL_TO_REAL((((stTopBlade.stAxisStatus.fActPosition - rEncoderO
 ]]></ST>
       </Implementation>
     </Action>
-    <Action Name="ACT_Home" Id="{c9c2742f-fb28-0461-314d-2346c0d0ac12}">
+    <Action Name="ACT_Home" Id="{76b179ea-e954-4b01-83f5-317556431117}">
       <Implementation>
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Action>
-    <Action Name="ACT_Init" Id="{d74ad752-5668-0668-02f7-332a424a678a}">
+    <Action Name="ACT_Init" Id="{6839da97-4414-4908-b04f-2119d4d9da8f}">
       <Implementation>
         <ST><![CDATA[
 //  init the motion stages parameters
@@ -336,7 +336,7 @@ IF ( bInit) THEN
 END_IF]]></ST>
       </Implementation>
     </Action>
-    <Action Name="ACT_Motion" Id="{1115effc-f5e6-0ba0-030f-25f2a6eb6d15}">
+    <Action Name="ACT_Motion" Id="{ae66e239-e79a-44c0-b1b7-37c13078d010}">
       <Implementation>
         <ST><![CDATA[// Instantiate Function block for all the blades
 fbTopBlade(stMotionStage:=stTopBlade);
@@ -406,7 +406,7 @@ fbSouth(
 ]]></ST>
       </Implementation>
     </Action>
-    <Action Name="ACT_Zero" Id="{d0d8d9a1-499a-0282-08f7-c517261af3b1}">
+    <Action Name="ACT_Zero" Id="{6fabd464-5be6-4de2-ba4f-d724b0894eb4}">
       <Implementation>
         <ST><![CDATA[//ZERO BIAS
 
@@ -494,7 +494,7 @@ fbSetPosition_South(
     *)]]></ST>
       </Implementation>
     </Action>
-    <Method Name="M_CheckPMPS" Id="{5a65fdb2-ca05-46d5-ae39-949e671ee7ac}">
+    <Method Name="M_CheckPMPS" Id="{e516f077-d879-09b5-1c81-86adf18d5aa9}">
       <Declaration><![CDATA[METHOD M_CheckPMPS : BOOL
 VAR_INPUT
      index: int;
@@ -516,7 +516,7 @@ FFO(i_xOK := ,
     io_fbFFHWO := this^.io_fbFFHWO);]]></ST>
       </Implementation>
     </Method>
-    <Method Name="M_UpdatePMPS" Id="{01fb8a68-875e-498e-8761-a7079873ebc2}">
+    <Method Name="M_UpdatePMPS" Id="{be8887ad-9522-06ee-35d9-b5340ee056c7}">
       <Declaration><![CDATA[METHOD M_UpdatePMPS : BOOL
 VAR_INPUT
     index: int;

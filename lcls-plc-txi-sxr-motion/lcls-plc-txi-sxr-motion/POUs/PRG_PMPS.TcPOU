@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
-  <POU Name="PRG_PMPS" Id="{dff18baf-d3c9-4cb4-be04-4a60c54f1a90}" SpecialFunc="None">
+<TcPlcObject Version="1.1.0.1">
+  <POU Name="PRG_PMPS" Id="{6082866a-c1b5-03d4-0cbc-585353dca795}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM PRG_PMPS
 VAR
     fbArbiterIO: FB_SubSysToArbiter_IO;
