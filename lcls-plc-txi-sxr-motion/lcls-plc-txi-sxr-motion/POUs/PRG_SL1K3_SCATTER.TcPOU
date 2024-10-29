@@ -39,13 +39,13 @@ fbSL1K3.bMoveOk := bMoveOk;
 
 
 //Homing routine parameters
-Main.M6.fHomePosition:= 0;
-Main.M7.fHomePosition:= -31.5006;
+Main.M7.fHomePosition:= 0;
+Main.M6.fHomePosition:= -31.5006;
 Main.M8.fHomePosition:= 0;
 Main.M9.fHomePosition:= -30.23;
 
-Main.M6.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
-Main.M7.nHomingMode := ENUM_EpicsHomeCmd.LOW_LIMIT;
+Main.M7.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
+Main.M6.nHomingMode := ENUM_EpicsHomeCmd.LOW_LIMIT;
 Main.M8.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
 Main.M9.nHomingMode := ENUM_EpicsHomeCmd.LOW_LIMIT;
 
