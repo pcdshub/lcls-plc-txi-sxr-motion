@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<TcLicenseInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2011/11/TcLicenseInfo">
+	<TargetInfo>
+		<TcTargetDesc>
+			<TargetType>CX5000-CE</TargetType>
+			<TargetVersion>
+				<Version>3</Version>
+				<Revision>1</Revision>
+				<Build>4024</Build>
+			</TargetVersion>
+			<TargetFeatures>
+				<NetId>172.21.136.36.1.1</NetId>
+			</TargetFeatures>
+			<Hardware>
+				<Model>CX2020-0110</Model>
+				<SerialNo>62930</SerialNo>
+				<CPUVersion>4.1</CPUVersion>
+				<Date>25.4.19</Date>
+				<CPUArchitecture>0</CPUArchitecture>
+			</Hardware>
+			<OsImage>
+				<ImageDevice>CX20x0</ImageDevice>
+				<ImageVersion>6.08g</ImageVersion>
+				<ImageLevel>HPS</ImageLevel>
+				<OsName>Windows CE</OsName>
+				<OsVersion>7.0</OsVersion>
+			</OsImage>
+		</TcTargetDesc>
+	</TargetInfo>
+	<LicenseInfo>
+		<SystemId Level="50" SerialNo="62930" MacAddress="00010541cbdc">{C66EB421-4410-37CD-92C5-7545C2601D3B}</SystemId>
+		<PurchaseOrder><![CDATA[01490521]]></PurchaseOrder>
+		<IssueTime>2025-02-25T19:40:00</IssueTime>
+		<License>
+			<LicenseId>{66689887-CCBD-452C-AC9A-039D997C6E66}</LicenseId>
+			<Name>TC3 PLC</Name>
+			<OrderNo>TC1200</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{520DE751-9DB6-47CB-8240-BD5C466E7E64}</LicenseId>
+			<Name>TC3 NC PTP</Name>
+			<OrderNo>TF5000</OrderNo>
+		</License>
+	</LicenseInfo>
+</TcLicenseInfo>
