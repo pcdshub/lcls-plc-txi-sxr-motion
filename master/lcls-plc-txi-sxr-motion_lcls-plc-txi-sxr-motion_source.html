@@ -7,7 +7,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DUTs &mdash; pcdshub/lcls-plc-txi-sxr-motion  documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
       <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
@@ -504,7 +504,7 @@ END_VAR
 <span class="n">END_IF</span>
 
 
-<span class="o">//</span><span class="n">Calculate</span> <span class="n">requested</span> <span class="n">target</span> <span class="n">positions</span> <span class="kn">from</span> <span class="nn">requested</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span>
+<span class="o">//</span><span class="n">Calculate</span> <span class="n">requested</span> <span class="n">target</span> <span class="n">positions</span> <span class="kn">from</span><span class="w"> </span><span class="nn">requested</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span>
 <span class="n">fPosTopBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="n">rReqApertureSizeY</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterY</span> <span class="o">+</span> <span class="n">rEncoderOffsetTop</span><span class="p">)</span> <span class="p">;</span>
 <span class="n">fPosBottomBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">rReqApertureSizeY</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterY</span><span class="o">+</span><span class="n">rEncoderOffsetBottom</span><span class="p">);</span>
 
@@ -512,7 +512,7 @@ END_VAR
 <span class="n">fPosSouthBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">rReqApertureSizeX</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterX</span> <span class="o">+</span> <span class="n">rEncoderOffsetSouth</span><span class="p">);</span>
 
 
-<span class="o">//</span><span class="n">Calculate</span> <span class="n">actual</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span> <span class="kn">from</span> <span class="nn">actual</span> <span class="n">stages</span> <span class="n">positions</span>
+<span class="o">//</span><span class="n">Calculate</span> <span class="n">actual</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span> <span class="kn">from</span><span class="w"> </span><span class="nn">actual</span> <span class="n">stages</span> <span class="n">positions</span>
 <span class="n">rActApertureSizeX</span> <span class="o">:=</span> <span class="n">LREAL_TO_REAL</span><span class="p">((</span><span class="n">stNorthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetNorth</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">stSouthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span><span class="o">-</span> <span class="n">rEncoderOffsetSouth</span><span class="p">));</span>
 
 <span class="n">rActApertureSizeY</span> <span class="o">:=</span> <span class="n">LREAL_TO_REAL</span><span class="p">((</span><span class="n">stTopBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetTop</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">stBottomBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetBottom</span><span class="p">));</span>
@@ -861,7 +861,7 @@ END_VAR
 <span class="n">END_IF</span>
 
 
-<span class="o">//</span><span class="n">Calculate</span> <span class="n">requested</span> <span class="n">target</span> <span class="n">positions</span> <span class="kn">from</span> <span class="nn">requested</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span>
+<span class="o">//</span><span class="n">Calculate</span> <span class="n">requested</span> <span class="n">target</span> <span class="n">positions</span> <span class="kn">from</span><span class="w"> </span><span class="nn">requested</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span>
 <span class="n">fPosTopBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="n">rReqApertureSizeY</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterY</span> <span class="o">+</span> <span class="n">rEncoderOffsetTop</span><span class="p">)</span> <span class="p">;</span>
 <span class="n">fPosBottomBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">rReqApertureSizeY</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterY</span><span class="o">+</span><span class="n">rEncoderOffsetBottom</span><span class="p">);</span>
 
@@ -869,7 +869,7 @@ END_VAR
 <span class="n">fPosSouthBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">rReqApertureSizeX</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterX</span> <span class="o">+</span> <span class="n">rEncoderOffsetSouth</span><span class="p">);</span>
 
 
-<span class="o">//</span><span class="n">Calculate</span> <span class="n">actual</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span> <span class="kn">from</span> <span class="nn">actual</span> <span class="n">stages</span> <span class="n">positions</span>
+<span class="o">//</span><span class="n">Calculate</span> <span class="n">actual</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span> <span class="kn">from</span><span class="w"> </span><span class="nn">actual</span> <span class="n">stages</span> <span class="n">positions</span>
 <span class="n">rActApertureSizeX</span> <span class="o">:=</span> <span class="n">LREAL_TO_REAL</span><span class="p">((</span><span class="n">stNorthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetNorth</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">stSouthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span><span class="o">-</span> <span class="n">rEncoderOffsetSouth</span><span class="p">));</span>
 
 <span class="n">rActApertureSizeY</span> <span class="o">:=</span> <span class="n">LREAL_TO_REAL</span><span class="p">((</span><span class="n">stTopBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetTop</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">stBottomBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetBottom</span><span class="p">));</span>
@@ -1174,7 +1174,7 @@ END_VAR
 <span class="n">VAR</span>
      <span class="n">fbLogHandler</span><span class="p">:</span> <span class="n">FB_LogHandler</span><span class="p">;</span>
 <span class="n">END_VAR</span>
-<span class="o">//</span><span class="n">PRG_AL1K3_L2SI</span><span class="p">();</span>
+<span class="n">PRG_AL1K3_L2SI</span><span class="p">();</span>
 <span class="n">PRG_SL1K3_SCATTER</span><span class="p">();</span>
 <span class="o">//</span><span class="n">PRG_AT1K3_SOLID</span><span class="p">();</span>
 <span class="n">PRG_PMPS</span><span class="p">();</span>
@@ -1615,13 +1615,13 @@ END_PROGRAM
 
 
 <span class="o">//</span><span class="n">Homing</span> <span class="n">routine</span> <span class="n">parameters</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M6</span><span class="o">.</span><span class="n">fHomePosition</span><span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M7</span><span class="o">.</span><span class="n">fHomePosition</span><span class="o">:=</span> <span class="o">-</span><span class="mf">31.5006</span><span class="p">;</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M7</span><span class="o">.</span><span class="n">fHomePosition</span><span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M6</span><span class="o">.</span><span class="n">fHomePosition</span><span class="o">:=</span> <span class="o">-</span><span class="mf">30.6</span><span class="p">;</span>
 <span class="n">Main</span><span class="o">.</span><span class="n">M8</span><span class="o">.</span><span class="n">fHomePosition</span><span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M9</span><span class="o">.</span><span class="n">fHomePosition</span><span class="o">:=</span> <span class="o">-</span><span class="mf">30.23</span><span class="p">;</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M9</span><span class="o">.</span><span class="n">fHomePosition</span><span class="o">:=</span> <span class="o">-</span><span class="mf">30.5</span><span class="p">;</span>
 
-<span class="n">Main</span><span class="o">.</span><span class="n">M6</span><span class="o">.</span><span class="n">nHomingMode</span> <span class="o">:=</span> <span class="n">ENUM_EpicsHomeCmd</span><span class="o">.</span><span class="n">HIGH_LIMIT</span><span class="p">;</span>
-<span class="n">Main</span><span class="o">.</span><span class="n">M7</span><span class="o">.</span><span class="n">nHomingMode</span> <span class="o">:=</span> <span class="n">ENUM_EpicsHomeCmd</span><span class="o">.</span><span class="n">LOW_LIMIT</span><span class="p">;</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M7</span><span class="o">.</span><span class="n">nHomingMode</span> <span class="o">:=</span> <span class="n">ENUM_EpicsHomeCmd</span><span class="o">.</span><span class="n">HIGH_LIMIT</span><span class="p">;</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M6</span><span class="o">.</span><span class="n">nHomingMode</span> <span class="o">:=</span> <span class="n">ENUM_EpicsHomeCmd</span><span class="o">.</span><span class="n">LOW_LIMIT</span><span class="p">;</span>
 <span class="n">Main</span><span class="o">.</span><span class="n">M8</span><span class="o">.</span><span class="n">nHomingMode</span> <span class="o">:=</span> <span class="n">ENUM_EpicsHomeCmd</span><span class="o">.</span><span class="n">HIGH_LIMIT</span><span class="p">;</span>
 <span class="n">Main</span><span class="o">.</span><span class="n">M9</span><span class="o">.</span><span class="n">nHomingMode</span> <span class="o">:=</span> <span class="n">ENUM_EpicsHomeCmd</span><span class="o">.</span><span class="n">LOW_LIMIT</span><span class="p">;</span>
 
@@ -1663,7 +1663,7 @@ END_PROGRAM
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, SLAC National Accelerator Laboratory.</p>
+    <p>&#169; Copyright 2025, SLAC National Accelerator Laboratory.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

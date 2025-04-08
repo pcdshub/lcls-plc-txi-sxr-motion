@@ -206,7 +206,7 @@ Axis 6: SL1K3-BOTTOM-M6
     Enc:MaxCount, #x0000ffff
     Enc:SoftEndMaxControl:Enable, true
     Enc:SoftEndMinControl:Enable, true
-    Enc:SoftEndMinControl:Range, -30.6
+    Enc:SoftEndMinControl:Range, -31
     Id, 6
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 2.2
@@ -232,6 +232,7 @@ Axis 7: SL1K3-TOP-M7
     Enc:Inverse, true
     Enc:MaxCount, #x0000ffff
     Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 0.3
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -30.84
     Id, 7
@@ -259,6 +260,7 @@ Axis 8: SL1K3-NORTH-M8
     Enc:Inverse, true
     Enc:MaxCount, #x0000ffff
     Enc:SoftEndMaxControl:Enable, true
+    Enc:SoftEndMaxControl:Range, 0.5
     Enc:SoftEndMinControl:Enable, true
     Enc:SoftEndMinControl:Range, -30.9
     Id, 8
@@ -286,7 +288,7 @@ Axis 9: SL1K3-SOUTH-M9
     Enc:MaxCount, #x0000ffff
     Enc:SoftEndMaxControl:Enable, true
     Enc:SoftEndMinControl:Enable, true
-    Enc:SoftEndMinControl:Range, -30.5
+    Enc:SoftEndMinControl:Range, -31.5
     Id, 9
     OtherSettings:AllowMotionCmdToSlave, true
     Velo:Maximum, 2.2

@@ -362,5 +362,7 @@ Links
         TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M7.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^SL1K3-TOP-M7, Inputs^FromPlc
         TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M8.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^SL1K3-NORTH-M8, Inputs^FromPlc
         TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M9.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^SL1K3-SOUTH-M9, Inputs^FromPlc
+        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^PRG_AL1K3_L2SI.fbAL1K3.fbLaser.iLaserINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL4004-E4, AO Outputs Channel 1^Analog output
+        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^PRG_AL1K3_L2SI.fbAL1K3.fbLaser.iShutdownINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL4004-E4, AO Outputs Channel 2^Analog output
         TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^PRG_PMPS.FFO, TIID^Device 1 (EtherCAT)^Term 7 (EK1200)^PMPS_PRE, IO Outputs^FFO
         TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^PRG_PMPS.fbArbiterIO.q_stRequestedBP, TIID^Device 1 (EtherCAT)^Term 7 (EK1200)^PMPS_PRE, IO Outputs^RequestedBP
