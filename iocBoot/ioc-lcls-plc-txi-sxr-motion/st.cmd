@@ -1,9 +1,9 @@
-#!c:/Repos/ads-ioc/R0.6.1///bin/rhel7-x86_64/adsIoc
+#!c:/Repos/ads-ioc/R0.8.0///bin/rhel7-x86_64/adsIoc
 ################### AUTO-GENERATED DO NOT EDIT ###################
 #
 #         Project: lcls-plc-txi-sxr-motion.tsproj
 #        PLC name: lcls-plc-txi-sxr-motion (lcls-plc-txi-sxr-motion Instance)
-# Generated using: pytmc 2.15.2.dev0+g73bd2d9.d20230727
+# Generated using: pytmc 2.18.2
 # Project version: unknown
 #    Project hash: unknown
 #     PLC IP/host: 172.21.136.36
@@ -17,10 +17,10 @@
 #   LCLS General: * -> 2.10.0 (SLAC)
 #   lcls-twincat-common-components: * -> 3.5.0 (SLAC)
 #   lcls-twincat-motion: * -> 4.0.8 (SLAC)
-#   PMPS: * -> 3.2.1 (SLAC - LCLS)
+#   PMPS: * -> 3.3.0 (SLAC - LCLS)
 #   Tc2_Standard: * -> 3.3.3.0 (Beckhoff Automation GmbH)
 #   Tc2_System: * -> 3.4.26.0 (Beckhoff Automation GmbH)
-#   Tc3_Module: * (Beckhoff Automation GmbH)
+#   Tc3_Module: * -> 3.3.21.0 (Beckhoff Automation GmbH)
 #
 ################### AUTO-GENERATED DO NOT EDIT ###################
 < envPaths
@@ -251,10 +251,10 @@ dbLoadRecords("save_restoreStatus.db", "P=PLC:lcls-plc-txi-sxr-motion:")
 dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 
 ## TwinCAT task, application, and project information databases ##
-dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:lcls-plc-txi-sxr-motion,IDX=2")
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:lcls-plc-txi-sxr-motion,IDX=2,TASK_PORT=351")
 dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:lcls-plc-txi-sxr-motion")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,PROJECT=lcls-plc-txi-sxr-motion.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.15.2.dev0+g73bd2d9.d20230727,PLC_HOST=172.21.136.36")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,PROJECT=lcls-plc-txi-sxr-motion.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.18.2,PLC_HOST=172.21.136.36")
 
 #   LCLS General: * -> 2.10.0 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=LCLS_General,VERSION=2.10.0,VENDOR=SLAC")
@@ -262,14 +262,14 @@ dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPEN
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=lcls-twincat-common-components,VERSION=3.5.0,VENDOR=SLAC")
 #   lcls-twincat-motion: * -> 4.0.8 (SLAC)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=lcls-twincat-motion,VERSION=4.0.8,VENDOR=SLAC")
-#   PMPS: * -> 3.2.1 (SLAC - LCLS)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=PMPS,VERSION=3.2.1,VENDOR=SLAC - LCLS")
+#   PMPS: * -> 3.3.0 (SLAC - LCLS)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=PMPS,VERSION=3.3.0,VENDOR=SLAC - LCLS")
 #   Tc2_Standard: * -> 3.3.3.0 (Beckhoff Automation GmbH)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=Tc2_Standard,VERSION=3.3.3.0,VENDOR=Beckhoff Automation GmbH")
 #   Tc2_System: * -> 3.4.26.0 (Beckhoff Automation GmbH)
 dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=Tc2_System,VERSION=3.4.26.0,VENDOR=Beckhoff Automation GmbH")
-#   Tc3_Module: * (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=Tc3_Module,VERSION=*,VENDOR=Beckhoff Automation GmbH")
+#   Tc3_Module: * -> 3.3.21.0 (Beckhoff Automation GmbH)
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=Tc3_Module,VERSION=3.3.21.0,VENDOR=Beckhoff Automation GmbH")
 
 cd "$(IOC_TOP)"
 
