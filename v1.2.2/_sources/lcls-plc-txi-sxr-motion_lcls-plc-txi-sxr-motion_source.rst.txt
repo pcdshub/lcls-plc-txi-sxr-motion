@@ -1,0 +1,1588 @@
+
+
+DUTs
+----
+
+
+GVLs
+----
+
+
+Global_Version
+^^^^^^^^^^^^^^
+
+::
+
+    {attribute 'TcGenerated'}
+    {attribute 'no-analysis'}
+    {attribute 'linkalways'}
+    // This function has been automatically generated from the project information.
+    VAR_GLOBAL CONSTANT
+        {attribute 'const_non_replaced'}
+        stLibVersion_lcls_plc_txi_sxr_motion : ST_LibVersion := (iMajor := 1, iMinor := 2, iBuild := 2, iRevision := 0, nFlags := 1, sVersion := '1.2.2');
+    END_VAR
+
+
+
+
+GVL
+^^^
+
+::
+
+    {attribute 'qualified_only'}
+    VAR_GLOBAL
+        {attribute 'pytmc' := 'pv: PLC:TXI:SXR:MOTION:ARB:01'}
+        fbArbiter1: FB_Arbiter(1);
+
+        // For all devices after Stopper
+        {attribute 'pytmc' := 'pv: PLC:TXI:SXR:MOTION:FFO:01'}
+        {attribute 'TcLinkTo' := '.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output'}
+        fbFastFaultOutput1: FB_HardwareFFOutput := (bAutoReset := TRUE, i_sNetID:='');
+
+         {attribute 'pytmc' := 'pv: PLC:TXI:K:MOTION:PMPS:ReqTrans'}
+        rReqTrans AT %I*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
+        {attribute 'pytmc' := 'pv: PLC:TXI:K:MOTION:PMPS:CurTrans'}
+        rCurTrans AT %Q*		: ARRAY [1..PMPS_GVL.AUX_ATTENUATORS] OF ST_PMPS_Attenuator_IO;
+
+
+    END_VAR
+
+
+
+
+MAIN
+^^^^
+
+::
+
+    {attribute 'qualified_only'}
+    VAR_GLOBAL
+
+    // AL1K3-L2SI: 1 Axis
+        {attribute 'pytmc' := 'pv: AL1K3:L2SI:MMS'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[AL1K3-EL7041-E1]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[AL1K3-EL7041-E1]^STM Status^Status^Digital input 2;
+                                  .bBrakeRelease        := TIIB[AL1K3-EL2004-E3]^Channel 1^Output;
+                                  .nRawEncoderULINT     := TIIB[AL1K3-EL5042-E2]^FB Inputs Channel 1^Position'}
+        M1: ST_MotionStage := (sName := 'AL1K3:L2SI:MMS');
+
+
+
+        // AT1K3-SOLID: 4 axes
+        //Copied form AT1K4 and need to confirm the order
+        (* Important note
+
+         AT1K2 Solid Attenuator notes (JJ-xray SN-??????????)
+
+            JJ    Label   EPICS    Stage     NC   Location
+
+            1087      1   MMS:01   fbStage1  M2  Upstream-most
+            1088      2   MMS:02   fbStage2  M3
+            1086      3   MMS:03   fbStage3  M4
+               1089      4   MMS:04   fbStage4  M5  Downstream-most
+
+        *)
+        {attribute 'pytmc' := 'pv: AT1K3:L2SI:MMS:01'}
+        {attribute 'TcLinkTo' := '
+            .bLimitForwardEnable  := TIIB[AT1K3-EL7047-04]^STM Status^Status^Digital input 1;
+            .bLimitBackwardEnable := TIIB[AT1K3-EL7047-04]^STM Status^Status^Digital input 2;
+            .nRawEncoderULINT     := TIIB[AT1K3-EL5042-02]^FB Inputs Channel 2^Position;
+        '}
+        M2: ST_MotionStage := (sName := 'AT1K3:L2SI:MMS:01');
+
+        {attribute 'pytmc' := 'pv: AT1K3:L2SI:MMS:02'}
+        {attribute 'TcLinkTo' := '
+            .bLimitForwardEnable  := TIIB[AT1K3-EL7047-03]^STM Status^Status^Digital input 1;
+            .bLimitBackwardEnable := TIIB[AT1K3-EL7047-03]^STM Status^Status^Digital input 2;
+            .nRawEncoderULINT     := TIIB[AT1K3-EL5042-02]^FB Inputs Channel 1^Position;
+        '}
+        M3: ST_MotionStage := (sName := 'AT1K3:L2SI:MMS:02');
+
+        {attribute 'pytmc' := 'pv: AT1K3:L2SI:MMS:03'}
+        {attribute 'TcLinkTo' := '
+            .bLimitForwardEnable  := TIIB[AT1K3-EL7047-02]^STM Status^Status^Digital input 1;
+            .bLimitBackwardEnable := TIIB[AT1K3-EL7047-02]^STM Status^Status^Digital input 2;
+            .nRawEncoderULINT     := TIIB[AT1K3-EL5042-01]^FB Inputs Channel 2^Position;
+        '}
+        M4: ST_MotionStage := (sName := 'AT1K3:L2SI:MMS:03');
+
+        {attribute 'pytmc' := 'pv: AT1K3:L2SI:MMS:04'}
+        {attribute 'TcLinkTo' := '
+            .bLimitForwardEnable  := TIIB[AT1K3-EL7047-01]^STM Status^Status^Digital input 1;
+            .bLimitBackwardEnable := TIIB[AT1K3-EL7047-01]^STM Status^Status^Digital input 2;
+            .nRawEncoderULINT     := TIIB[AT1K3-EL5042-01]^FB Inputs Channel 1^Position;
+        '}
+        M5: ST_MotionStage := (sName := 'AT1K3:L2SI:MMS:04');
+
+
+        // SL1K3-SCATTER: 4 Axes
+        {attribute 'pytmc' := 'pv: SL1K3:SCATTER:MMS:BOTTOM'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K3-EL7031-E1]^STM Status^Status^Digital input 2;
+                                  .bLimitBackwardEnable := TIIB[SL1K3-EL7031-E1]^STM Status^Status^Digital input 1;
+                                  .nRawEncoderUINT      := TIIB[SL1K3-EL5101-E2]^ENC Status compact^Counter value'}
+        M6: ST_MotionStage := (sName := 'SL1K3:SCATTER:MMS:BOTTOM');
+        {attribute 'pytmc' := 'pv: SL1K3:SCATTER:MMS:TOP'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K3-EL7031-E3]^STM Status^Status^Digital input 2;
+                                  .bLimitBackwardEnable := TIIB[SL1K3-EL7031-E3]^STM Status^Status^Digital input 1;
+                                  .nRawEncoderUINT      := TIIB[SL1K3-EL5101-E4]^ENC Status compact^Counter value'}
+        M7: ST_MotionStage := (sName := 'SL1K3:SCATTER:MMS:TOP');
+        {attribute 'pytmc' := 'pv: SL1K3:SCATTER:MMS:NORTH'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K3-EL7031-E5]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[SL1K3-EL7031-E5]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderUINT      := TIIB[SL1K3-EL5101-E6]^ENC Status compact^Counter value'}
+        M8: ST_MotionStage := (sName := 'SL1K4:SCATTER:MMS:NORTH');
+        {attribute 'pytmc' := 'pv: SL1K3:SCATTER:MMS:SOUTH'}
+        {attribute 'TcLinkTo' := '.bLimitForwardEnable  := TIIB[SL1K3-EL7031-E7]^STM Status^Status^Digital input 1;
+                                  .bLimitBackwardEnable := TIIB[SL1K3-EL7031-E7]^STM Status^Status^Digital input 2;
+                                  .nRawEncoderUINT      := TIIB[SL1K3-EL5101-E8]^ENC Status compact^Counter value'}
+        M9: ST_MotionStage := (sName := 'SL1K3:SCATTER:MMS:SOUTH');
+
+    END_VAR
+
+
+
+
+POUs
+----
+
+
+FB_SLITS
+^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_SLITS
+    VAR_IN_OUT
+        stTopBlade: ST_MotionStage;
+        stBottomBlade: ST_MotionStage;
+        stNorthBlade: ST_MotionStage;
+        stSouthBlade: ST_MotionStage;
+        bExecuteMotion:BOOL ;
+        io_fbFFHWO    :    FB_HardwareFFOutput;
+        fbArbiter: FB_Arbiter();
+    END_VAR
+
+    VAR_INPUT
+
+        {attribute 'pytmc' := '
+        pv: PMPS_OK;
+        io: i;
+        field: ZNAM False
+        field: ONAM True
+        '}
+        bMoveOk:BOOL;
+
+            (*Offsets*)
+        {attribute 'pytmc' := '
+        pv: Offset_Top;
+        io: io;
+        '}
+        rEncoderOffsetTop: REAL;
+        {attribute 'pytmc' := '
+        pv: ZeroOffset_Bottom;
+        io: io;
+        '}
+        rEncoderOffsetBottom: REAL;
+        {attribute 'pytmc' := '
+        pv: ZeroOffset_North;
+        io: io;
+        '}
+        rEncoderOffsetNorth: REAL;
+        {attribute 'pytmc' := '
+        pv: ZeroOffset_South;
+        io: io;
+        '}
+        rEncoderOffsetSouth: REAL;
+        i_DevName : STRING; //device name for FFO and PMPS diagnostics
+         {attribute 'pytmc' := '
+        pv: Home;
+        io: i;
+        field: ZNAM False
+        field: ONAM True
+        '}
+        bHome:BOOL:=FALSE;
+    END_VAR
+
+    VAR
+        fbTopBlade: FB_MotionStage;
+        fbBottomBlade: FB_MotionStage;
+        fbNorthBlade: FB_MotionStage;
+        fbSouthBlade: FB_MotionStage;
+        fPosTopBlade: LREAL;
+        fPosBottomBlade: LREAL;
+        fPosNorthBlade: LREAL;
+        fPosSouthBlade: LREAL;
+
+        (*Motion Parameters*)
+        fSmallDelta: LREAL := 0.01;
+        fBigDelta: LREAL := 10;
+        fMaxVelocity: LREAL := 0.2;
+        fHighAccel: LREAL := 0.8;
+        fLowAccel: LREAL := 0.1;
+
+        stTop: DUT_PositionState;
+        stBOTTOM: DUT_PositionState;
+        stNorth: DUT_PositionState;
+        stSouth: DUT_PositionState;
+
+        {attribute 'pytmc' := 'pv: TOP'}
+        fbTop: FB_StatePTPMove;
+        {attribute 'pytmc' := 'pv: BOTTOM'}
+        fbBottom: FB_StatePTPMove;
+        {attribute 'pytmc' := 'pv: NORTH'}
+        fbNorth: FB_StatePTPMove;
+        {attribute 'pytmc' := 'pv: SOUTH'}
+        fbSouth: FB_StatePTPMove;
+
+        (*EPICS pvs*)
+        {attribute 'pytmc' := '
+        pv: XWID_REQ;
+        io: io;
+        '}
+        rReqApertureSizeX : REAL;
+        {attribute 'pytmc' := '
+        pv: YWID_REQ;
+        io: io;
+        '}
+        rReqApertureSizeY : REAL;
+        {attribute 'pytmc' := '
+        pv: XCEN_REQ;
+        io: io;
+        '}
+        rReqCenterX: REAL;
+        {attribute 'pytmc' := '
+        pv: YCEN_REQ;
+        io: io;
+        '}
+        rReqCenterY: REAL;
+
+        {attribute 'pytmc' := '
+        pv: ACTUAL_XWIDTH;
+        io: io;
+        '}
+        rActApertureSizeX : REAL;
+
+        {attribute 'pytmc' := '
+        pv: ACTUAL_YWIDTH;
+        io: io;
+        '}
+        rActApertureSizeY : REAL;
+        {attribute 'pytmc' := '
+        pv: ACTUAL_XCENTER;
+        io: io;
+        '}
+        rActCenterX: REAL;
+        {attribute 'pytmc' := '
+        pv: ACTUAL_YCENTER;
+        io: io;
+        '}
+        rActCenterY: REAL;
+
+        {attribute 'pytmc' := '
+        pv: XCEN_SETZERO;
+        io: io;
+        '}
+        rSetCenterX: BOOL;
+        {attribute 'pytmc' := '
+        pv: YCEN_SETZERO;
+        io: io;
+        '}
+        rSetCenterY: BOOL;
+
+
+        {attribute 'pytmc' := '
+        pv: OPEN;
+        io: io;
+        field: ZNAM False
+        field: ONAM True
+        '}
+        bOpen: BOOL;
+
+        {attribute 'pytmc' := '
+        pv: CLOSE;
+        io: io;
+        field: ZNAM False
+        field: ONAM True
+        '}
+        bClose: BOOL;
+
+        {attribute 'pytmc' := '
+        pv: BLOCK;
+        io: io;
+        field: ZNAM False
+        field: ONAM True
+        '}
+        bBlock: BOOL;
+
+
+         {attribute 'pytmc' := '
+        pv: HOME_READY;
+        io: i;
+        field: ZNAM False
+        field: ONAM True
+        '}
+        bHomeReady:BOOL:=FALSE;
+
+
+            //Local variables
+        bInit: BOOL :=true;
+        rTrig_Block: R_TRIG;
+        rTrig_Open: R_TRIG;
+        rTrig_Close: R_TRIG;
+
+        //old values
+        rOldReqApertureSizeX : REAL;
+        rOldReqApertureSizeY : REAL;
+        rOldReqCenterX: REAL;
+        rOldReqCenterY: REAL;
+
+        bExecuteMotionX: BOOL;
+        bExecuteMotionY: BOOL;
+
+
+        fPosBlock: LREAL;
+        fPosClose: LREAL;
+        fPosOpen: LREAL;
+
+
+        // For logging
+        fbLogger : FB_LogMessage := (eSubsystem:=E_SubSystem.MOTION);
+        tErrorPresent : R_TRIG;
+        tAction : R_TRIG;
+        tOverrideActivated : R_TRIG;
+
+        FFO    :    FB_FastFault :=(
+            i_DevName := 'Slits',
+            i_Desc := 'Fault occurs when slits gap or center is in an unsafe condition',
+            i_TypeCode := 16#1010);
+
+
+        bTest: BOOL;
+
+        AptArrayStatus AT %Q* : ST_PMPS_Aperture_IO;
+        AptArrayReq AT %I* : ST_PMPS_Aperture_IO;
+
+    END_VAR
+    ACT_init();
+
+    // Instantiate Function block for all the blades
+    ACT_Motion();
+    //SET and GET the requested and Actual values
+    ACT_CalculatePositions();
+    //ACT_BLOCK();
+
+    END_FUNCTION_BLOCK
+
+    ACTION ACT_BLOCK:
+    rTrig_Block (CLK:= bBlock);
+    rTrig_Open (CLK:= bOpen);
+    rTrig_Close (CLK:= bClose);
+
+    if (rTrig_Block.Q) THEN
+        //BLOCK
+
+        bBlock := false;
+    END_IF
+
+    if (rTrig_Open.Q) THEN
+
+
+        bOpen := false;
+    END_IF
+
+    if (rTrig_Close.Q) THEN
+
+
+        bClose := false;
+    END_IF
+    END_ACTION
+
+    ACTION ACT_CalculatePositions:
+    //check if requested center or gap has changed
+    //check that the requested values are within acceptable motion range
+    IF (rOldReqApertureSizeX <> rReqApertureSizeX) THEN
+            rOldReqApertureSizeX := rReqApertureSizeX;
+            bExecuteMotionX := TRUE;
+            fbLogger(sMsg:='Requested new X gap.', eSevr:=TcEventSeverity.Verbose);
+    END_IF
+
+    IF (rOldReqCenterX <> rReqCenterX) THEN
+        rOldReqCenterX := rReqCenterX;
+        bExecuteMotionX := TRUE;
+        fbLogger(sMsg:='Requested new X center', eSevr:=TcEventSeverity.Verbose);
+       // ELSE
+          //  rReqCenterX := rActCenterX;
+    END_IF
+
+    IF (rOldReqApertureSizeY <> rReqApertureSizeY) THEN
+            rOldReqApertureSizeY := rReqApertureSizeY;
+            bExecuteMotionY := TRUE;
+            fbLogger(sMsg:='Requested new Y gap.', eSevr:=TcEventSeverity.Verbose);
+
+    END_IF
+
+    IF (rOldReqCenterY <> rReqCenterY) THEN
+        rOldReqCenterY := rReqCenterY;
+        bExecuteMotionY := TRUE;
+        fbLogger(sMsg:='Requested new Y center.', eSevr:=TcEventSeverity.Verbose);
+       // ELSE
+          //  rReqCenterY := rActCenterY;
+    END_IF
+
+
+    //Calculate requested target positions from requested gap and center
+    fPosTopBlade := (rReqApertureSizeY/2) + (rReqCenterY + rEncoderOffsetTop) ;
+    fPosBottomBlade := (-1*rReqApertureSizeY/2) + (rReqCenterY+rEncoderOffsetBottom);
+
+    fPosNorthBlade := (rReqApertureSizeX/2) + (rReqCenterX + rEncoderOffsetNorth);
+    fPosSouthBlade := (-1*rReqApertureSizeX/2) + (rReqCenterX + rEncoderOffsetSouth);
+
+
+    //Calculate actual gap and center from actual stages positions
+    rActApertureSizeX := LREAL_TO_REAL((stNorthBlade.stAxisStatus.fActPosition - rEncoderOffsetNorth) - (stSouthBlade.stAxisStatus.fActPosition- rEncoderOffsetSouth));
+
+    rActApertureSizeY := LREAL_TO_REAL((stTopBlade.stAxisStatus.fActPosition - rEncoderOffsetTop) - (stBottomBlade.stAxisStatus.fActPosition - rEncoderOffsetBottom));
+
+    rActCenterX := LREAL_TO_REAL((((stNorthBlade.stAxisStatus.fActPosition - rEncoderOffsetNorth)  + (stSouthBlade.stAxisStatus.fActPosition - rEncoderOffsetSouth ))/2));
+
+    rActCenterY := LREAL_TO_REAL((((stTopBlade.stAxisStatus.fActPosition - rEncoderOffsetTop) + (stBottomBlade.stAxisStatus.fActPosition - rEncoderOffsetBottom))/2));
+
+
+
+    //Update PMPS Arbiter with the Actual Size and Center of the Aperture
+    END_ACTION
+
+    ACTION ACT_Home:
+
+    END_ACTION
+
+    ACTION ACT_Init:
+    //  init the motion stages parameters
+    IF ( bInit) THEN
+        stTopBlade.bHardwareEnable := TRUE;
+        stBottomBlade.bHardwareEnable := TRUE;
+        stNorthBlade.bHardwareEnable := TRUE;
+        stSouthBlade.bHardwareEnable := TRUE;
+        stTopBlade.bPowerSelf :=TRUE;
+        stBottomBlade.bPowerSelf :=TRUE;
+        stNorthBlade.bPowerSelf :=TRUE;
+        stSouthBlade.bPowerSelf :=TRUE;
+        stTopBlade.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+        stBottomBlade.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+        stNorthBlade.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+        stSouthBlade.nBrakeMode := ENUM_StageBrakeMode.NO_BRAKE;
+        FFO.i_DevName := i_DevName;
+    END_IF
+    END_ACTION
+
+    ACTION ACT_Motion:
+    // Instantiate Function block for all the blades
+    fbTopBlade(stMotionStage:=stTopBlade);
+    fbBottomBlade(stMotionStage:=stBottomBlade);
+    fbNorthBlade(stMotionStage:=stNorthBlade);
+    fbSouthBlade(stMotionStage:=stSouthBlade);
+
+    // PTP Motion for each blade
+    stTop.sName := 'Top';
+    stTop.fPosition := fPosTopBlade;
+    stTop.fDelta := fSmallDelta;
+    stTop.fVelocity := fMaxVelocity;
+    stTop.fAccel := fHighAccel;
+    stTop.fDecel := fHighAccel;
+
+    stBOTTOM.sName := 'Bottom';
+    stBOTTOM.fPosition := fPosBottomBlade;
+    stBOTTOM.fDelta := fSmallDelta;
+    stBOTTOM.fVelocity := fMaxVelocity;
+    stBOTTOM.fAccel := fHighAccel;
+    stBOTTOM.fDecel := fHighAccel;
+
+    stNorth.sName := 'North';
+    stNorth.fPosition := fPosNorthBlade;
+    stNorth.fDelta := fSmallDelta;
+    stNorth.fVelocity := fMaxVelocity;
+    stNorth.fAccel := fHighAccel;
+    stNorth.fDecel := fHighAccel;
+
+    stSouth.sName := 'South';
+    stSouth.fPosition := fPosSouthBlade;
+    stSouth.fDelta := fSmallDelta;
+    stSouth.fVelocity := fMaxVelocity;
+    stSouth.fAccel := fHighAccel;
+    stSouth.fDecel := fHighAccel;
+
+    IF (bExecuteMotionY) THEN
+        fbTop.bExecute := fbBottom.bExecute := bExecuteMotionY;
+        bExecuteMotionY:= FALSE;
+    END_IF
+
+    IF (bExecuteMotionX) THEN
+        fbNorth.bExecute := fbSouth.bExecute := bExecuteMotionX;
+        bExecuteMotionX:= FALSE;
+    END_IF
+
+
+    fbTop(
+        stPositionState:=stTop,
+        bMoveOk:=bMoveOk,
+        stMotionStage:=stTopBlade);
+
+    fbBottom(
+        stPositionState:=stBOTTOM,
+        bMoveOk:=bMoveOk,
+        stMotionStage:=stBottomBlade);
+
+    fbNorth(
+        stPositionState:=stNorth,
+        bMoveOk:=bMoveOk,
+        stMotionStage:=stNorthBlade);
+
+    fbSouth(
+        stPositionState:=stSouth,
+        bMoveOk:=bMoveOk,
+        stMotionStage:=stSouthBlade);
+    END_ACTION
+
+    ACTION ACT_Zero:
+    //ZERO BIAS
+
+    // Set Y center to zero
+
+    // Set X center to zero
+    (*
+    if (rSetCenterY)THEN
+            rSetCenterY := false;
+            // Set Current Position
+            fbSetPosition_TOP.Position :=  stTopBlade.stAxisStatus.fActPosition - rActCenterY ;
+            fbSetPosition_TOP.Execute := TRUE;
+            fbSetPosition_Bottom.Position := stBottomBlade.stAxisStatus.fActPosition - rActCenterY;
+            fbSetPosition_Bottom.Execute := TRUE;
+    END_IF
+
+    if (rSetCenterX)THEN
+            rSetCenterX := false;
+            // Set Current Position
+            fbSetPosition_North.Position := stNorthBlade.stAxisStatus.fActPosition - rActCenterX ;
+            fbSetPosition_North.Execute := TRUE;
+            fbSetPosition_South.Position := stSouthBlade.stAxisStatus.fActPosition - rActCenterX ; ;
+            fbSetPosition_South.Execute := TRUE;
+    END_IF
+
+
+    //Reset
+    if (fbSetPosition_TOP.Done ) THEN
+        fbSetPosition_TOP.Execute := FALSE;
+    END_IF
+    if (fbSetPosition_Bottom.Done ) THEN
+        fbSetPosition_Bottom.Execute := FALSE;
+    END_IF
+    if (fbSetPosition_North.Done ) THEN
+        fbSetPosition_North.Execute := FALSE;
+    END_IF
+    if (fbSetPosition_South.Done ) THEN
+        fbSetPosition_South.Execute := FALSE;
+    END_IF
+
+    // Set Encoder Position
+    //Clear position lag error
+    stSetPositionOptions.ClearPositionLag := TRUE;
+    fbSetPosition_TOP(
+        Axis:=  stTopBlade.Axis ,
+        Execute:= ,
+        Position:= 0 ,
+        Mode:= FALSE,
+        Options:= stSetPositionOptions,
+        Done=> ,
+        Busy=> ,
+        Error=> ,
+        ErrorID=> );
+    fbSetPosition_Bottom(
+        Axis:= stBottomBlade.Axis ,
+        Execute:= ,
+        Position:= 0 ,
+        Mode:= FALSE,
+        Options:= stSetPositionOptions,
+        Done=> ,
+        Busy=> ,
+        Error=> ,
+        ErrorID=> );
+    fbSetPosition_North(
+        Axis:= stNorthBlade.Axis ,
+        Execute:= ,
+        Position:= 0 ,
+        Mode:= FALSE,
+        Options:= stSetPositionOptions,
+        Done=> ,
+        Busy=> ,
+        Error=> ,
+        ErrorID=> );
+    fbSetPosition_South(
+        Axis:= stSouthBlade.Axis ,
+        Execute:= ,
+        Position:= 0 ,
+        Mode:= FALSE,
+        Options:= stSetPositionOptions,
+        Done=> ,
+        Busy=> ,
+        Error=> ,
+        ErrorID=> );
+
+        *)
+    END_ACTION
+
+    METHOD M_CheckPMPS : BOOL
+    VAR_INPUT
+         index: int;
+    END_VAR
+    IF(rActApertureSizeX < (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width)+0.001)
+        OR (rActApertureSizeY < (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height)+0.001) THEN
+            FFO.i_xOK := FALSE;
+        ELSE
+            FFO.i_xOK := TRUE;
+    END_IF
+
+    (*FAST FAULT*)
+    FFO(i_xOK := ,
+        i_xReset := ,
+        i_xAutoReset :=TRUE,
+        io_fbFFHWO := this^.io_fbFFHWO);
+    END_METHOD
+
+    METHOD M_UpdatePMPS : BOOL
+    VAR_INPUT
+        index: int;
+    END_VAR
+    //Keep updating the status of the apertures PMPS
+    This^.AptArrayStatus.Height := This^.rActApertureSizeY;
+    This^.AptArrayStatus.Width := This^.rActApertureSizeX;
+    This^.AptArrayStatus.xOK := NOT (This^.stTopBlade.bError) AND NOT (This^.stBottomBlade.bError)
+                                     AND NOT (This^.stNorthBlade.bError) AND NOT (This^.stNorthBlade.bError);
+
+    //Evaluate that the current center on the X and the y direction didn't exceed limits
+    //Fast fault when it does.
+    IF(rActCenterX > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Width/2))
+        OR (rActCenterY > (PMPS_GVL.stCurrentBeamParameters.astApertures[index].Height/2)) THEN
+            FFO.i_xOK := FALSE;
+        ELSE
+            FFO.i_xOK := TRUE;
+    END_IF
+
+    //Evaluate that the requested gaps on the X and the y direction is not larger than the current gap
+    // narrow  the gap if the requested is larger
+    IF(bTest) THEN
+        IF (This^.rActApertureSizeX > AptArrayReq.Width) THEN
+            rReqApertureSizeX := AptArrayReq.Width;
+        END_IF
+        IF (This^.rActApertureSizeY > AptArrayReq.Height) THEN
+             rReqApertureSizeY := AptArrayReq.Height;
+        END_IF
+    END_IF
+
+
+    (*FAST FAULT*)
+    FFO(i_xOK := ,
+        i_xReset := ,
+        i_xAutoReset :=TRUE,
+        io_fbFFHWO := io_fbFFHWO);
+    END_METHOD
+
+
+
+
+FB_SLITS_POWER
+^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_SLITS_POWER EXTENDS FB_SLITS
+    VAR_INPUT
+    END_VAR
+    VAR
+         {attribute 'pytmc' := '
+            pv: FSW
+        '}
+        fbFlowSwitch: FB_XTES_Flowswitch;
+
+
+
+        //RTDs
+        {attribute 'pytmc' := '
+            pv: TOP:RTD:01
+        '}
+        RTD_TOP_1: FB_TempSensor;
+        {attribute 'pytmc' := '
+            pv: TOP:RTD:02
+        '}
+        RTD_TOP_2: FB_TempSensor;
+        {attribute 'pytmc' := '
+            pv: BOTTOM:RTD:01
+        '}
+        RTD_Bottom_1: FB_TempSensor;
+        {attribute 'pytmc' := '
+            pv: BOTTOM:RTD:02
+        '}
+        RTD_Bottom_2: FB_TempSensor;
+
+        {attribute 'pytmc' := '
+            pv: NORTH:RTD:01
+        '}
+        RTD_North_1: FB_TempSensor;
+        {attribute 'pytmc' := '
+            pv: NORTH:RTD:02
+        '}
+        RTD_North_2: FB_TempSensor;
+        {attribute 'pytmc' := '
+            pv: SOUTH:RTD:01
+        '}
+        RTD_South_1: FB_TempSensor;
+        {attribute 'pytmc' := '
+            pv: SOUTH:RTD:02
+        '}
+        RTD_South_2: FB_TempSensor;
+
+
+
+    END_VAR
+    ACT_RTDs();
+
+    END_FUNCTION_BLOCK
+
+    ACTION ACT_CalculatePositions:
+    //check if requested center or gap has changed
+    //check that the requested values are within acceptable motion range
+    IF (rOldReqApertureSizeX <> rReqApertureSizeX) THEN
+        IF (rReqApertureSizeX <= AptArrayReq.Width)  THEN
+            rOldReqApertureSizeX := rReqApertureSizeX;
+            bExecuteMotionX := TRUE;
+            fbLogger(sMsg:='Requested new X gap.', eSevr:=TcEventSeverity.Verbose);
+        ELSE
+            fbLogger(sMsg:='Requested new X gap is larger than PMPS request.', eSevr:=TcEventSeverity.Verbose);
+        END_IF
+      //  ELSE
+        //    rReqApertureSizeX := rActApertureSizeX;
+    END_IF
+
+    IF (rOldReqCenterX <> rReqCenterX) THEN
+        rOldReqCenterX := rReqCenterX;
+        bExecuteMotionX := TRUE;
+        fbLogger(sMsg:='Requested new X center', eSevr:=TcEventSeverity.Verbose);
+       // ELSE
+          //  rReqCenterX := rActCenterX;
+    END_IF
+
+    IF (rOldReqApertureSizeY <> rReqApertureSizeY) THEN
+        IF rReqApertureSizeY <= AptArrayReq.Height THEN
+            rOldReqApertureSizeY := rReqApertureSizeY;
+            bExecuteMotionY := TRUE;
+            fbLogger(sMsg:='Requested new Y gap.', eSevr:=TcEventSeverity.Verbose);
+        ELSE
+            fbLogger(sMsg:='Requested new Y gap is larger than PMPS request.', eSevr:=TcEventSeverity.Verbose);
+        END_IF
+       // ELSE
+           // rReqApertureSizeY := rActApertureSizeY;
+    END_IF
+
+    IF (rOldReqCenterY <> rReqCenterY) THEN
+        rOldReqCenterY := rReqCenterY;
+        bExecuteMotionY := TRUE;
+        fbLogger(sMsg:='Requested new Y center.', eSevr:=TcEventSeverity.Verbose);
+       // ELSE
+          //  rReqCenterY := rActCenterY;
+    END_IF
+
+
+    //Calculate requested target positions from requested gap and center
+    fPosTopBlade := (rReqApertureSizeY/2) + (rReqCenterY + rEncoderOffsetTop) ;
+    fPosBottomBlade := (-1*rReqApertureSizeY/2) + (rReqCenterY+rEncoderOffsetBottom);
+
+    fPosNorthBlade := (rReqApertureSizeX/2) + (rReqCenterX + rEncoderOffsetNorth);
+    fPosSouthBlade := (-1*rReqApertureSizeX/2) + (rReqCenterX + rEncoderOffsetSouth);
+
+
+    //Calculate actual gap and center from actual stages positions
+    rActApertureSizeX := LREAL_TO_REAL((stNorthBlade.stAxisStatus.fActPosition - rEncoderOffsetNorth) - (stSouthBlade.stAxisStatus.fActPosition- rEncoderOffsetSouth));
+
+    rActApertureSizeY := LREAL_TO_REAL((stTopBlade.stAxisStatus.fActPosition - rEncoderOffsetTop) - (stBottomBlade.stAxisStatus.fActPosition - rEncoderOffsetBottom));
+
+    rActCenterX := LREAL_TO_REAL((((stNorthBlade.stAxisStatus.fActPosition - rEncoderOffsetNorth)  + (stSouthBlade.stAxisStatus.fActPosition - rEncoderOffsetSouth ))/2));
+
+    rActCenterY := LREAL_TO_REAL((((stTopBlade.stAxisStatus.fActPosition - rEncoderOffsetTop) + (stBottomBlade.stAxisStatus.fActPosition - rEncoderOffsetBottom))/2));
+
+
+
+    //Update PMPS Arbiter with the Actual Size and Center of the Aperture
+    END_ACTION
+
+    ACTION ACT_RTDs:
+    ////RTDs
+    RTD_TOP_1();
+    RTD_TOP_2();
+    RTD_Bottom_1();
+    RTD_Bottom_2();
+    RTD_North_1();
+    RTD_North_2();
+    RTD_South_1();
+    RTD_South_2();
+
+    //Flow Switch
+    fbFlowSwitch();
+    END_ACTION
+
+
+Related:
+    * `FB_SLITS`_
+
+
+FB_SLITS_SCATTER
+^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_SLITS_SCATTER EXTENDS FB_SLITS
+    VAR_INPUT
+    END_VAR
+    VAR
+
+
+
+    END_VAR
+
+
+    END_FUNCTION_BLOCK
+
+
+Related:
+    * `FB_SLITS`_
+
+
+FB_ZonePlate_States
+^^^^^^^^^^^^^^^^^^^
+
+::
+
+    FUNCTION_BLOCK FB_ZonePlate_States EXTENDS FB_PositionStateBase_WithPMPS
+    VAR_INPUT
+         {attribute 'pytmc' := '
+            pv: SET
+            io: io
+        '}
+        enumSet: ENUM_ZonePlate_States;
+        stOut: DUT_PositionState;
+        stYag: DUT_PositionState;
+        stNe1: DUT_PositionState;
+        stNe2: DUT_PositionState;
+        stNe3: DUT_PositionState;
+        st3w1: DUT_PositionState;
+        st3w2: DUT_PositionState;
+        stO1: DUT_PositionState;
+        stO2: DUT_PositionState;
+        stTi1: DUT_PositionState;
+        stTi2: DUT_PositionState;
+        stN1: DUT_PositionState;
+        stN2:DUT_PositionState;
+        stC1: DUT_PositionState;
+        stC2: DUT_PositionState;
+        stW1: DuT_PositionState;
+    END_VAR
+    VAR_OUTPUT
+         {attribute 'pytmc' := '
+            pv: GET
+            io: i
+        '}
+        enumGet: ENUM_ZonePlate_States;
+    END_VAR
+    VAR
+        bInittwo: BOOL := TRUE;
+        fbStateDefaults: FB_PositionState_Defaults;
+        // These are the default values
+        // Set values on states prior to passing in for non-default values
+        //TODO correct these default positions
+        fDelta: LREAL := 1;
+        fVelocity: LREAL := 5;
+        fAccel: LREAL := 200;
+        fDecel: LREAL := 25;
+    END_VAR
+    //State init
+    IF (bInittwo) THEN
+        bInittwo := FALSE;
+        //Set theses for every state
+        stOut.sName := 'OUT';
+        stOut.bUseRawCounts:= FALSE;
+        stOut.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=stOut,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+        stYag.sName := 'Yag';
+        stYag.bUseRawCounts:= FALSE;
+        stYag.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=stYag,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+        stNe1.sName := 'Ne1';
+        stNe1.bUseRawCounts:= FALSE;
+        stNe1.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=stNe1,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+        stNe2.sName := 'Ne2';
+        stNe2.bUseRawCounts:= FALSE;
+        stNe2.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=stNe2,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+        stNe3.sName := 'Ne3';
+        stNe3.bUseRawCounts:= FALSE;
+        stNe3.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=stNe3,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+        st3w1.sName := '3w1';
+        st3w1.bUseRawCounts:= FALSE;
+        st3w1.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=st3w1,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+        st3w2.sName := '3w2';
+        st3w2.bUseRawCounts:= FALSE;
+        st3w2.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=st3w2,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+        stO1.sName := 'O1';
+        stO1.bUseRawCounts:= FALSE;
+        stO1.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=stO1,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+        stO2.sName := 'O2';
+        stO2.bUseRawCounts:= FALSE;
+        stO2.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=stO2,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+
+        stTi1.sName := 'Ti1';
+        stTi1.bUseRawCounts:= FALSE;
+        stTi1.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=stTi1,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+        stTi2.sName := 'Ti2';
+        stTi2.bUseRawCounts:= FALSE;
+        stTi2.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=stTi2,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+        stN1.sName := 'N1';
+        stN1.bUseRawCounts:= FALSE;
+        stN1.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=stN1,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+        stN2.sName := 'N2';
+        stN2.bUseRawCounts:= FALSE;
+        stN2.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=stN2,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+        stC1.sName := 'C1';
+        stC1.bUseRawCounts:= FALSE;
+        stC1.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=stC1,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+        stC2.sName := 'C2';
+        stC2.bUseRawCounts:= FALSE;
+        stC2.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=stC2,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+        stW1.sName := 'W1';
+        stW1.bUseRawCounts:= FALSE;
+        stW1.bValid := TRUE;
+            fbStateDefaults(
+            stPositionState:=stW1,
+            fVeloDefault:=fVelocity,
+            fDeltaDefault:=fDelta,
+            fAccelDefault:=fAccel,
+            fDecelDefault:=fDecel,
+        );
+
+    //Add all states
+
+        arrStates[1] := stOut;
+        arrStates[2] := stYag;
+        arrStates[3] := stNe1;
+        arrStates[4] := stNe2;
+        arrStates[5] := stNe3;
+        arrStates[6] := st3w1;
+        arrStates[7] := st3w2;
+        arrStates[8] := stO1;
+        arrStates[9] := stO2;
+        arrStates[10] := stTi1;
+        arrStates[11] := stTi2;
+        arrStates[12] := stN1;
+        arrStates[13] := stN2;
+        arrStates[14] := stC1;
+        arrStates[15] := stC2;
+     //   arrStates[16] := stW1;
+
+    END_IF
+
+    setState := enumSet;
+    Exec();
+    enumGet := getState;
+    enumSet := setState;
+
+    END_FUNCTION_BLOCK
+
+
+
+
+PRG_01_PLCTASK
+^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_01_PLCTASK
+    VAR
+         fbLogHandler: FB_LogHandler;
+    END_VAR
+    PRG_AL1K3_L2SI();
+    PRG_SL1K3_SCATTER();
+    //PRG_AT1K3_SOLID();
+    PRG_PMPS();
+    fbLogHandler();
+
+    END_PROGRAM
+
+
+Related:
+    * `PRG_AL1K3_L2SI`_
+    * `PRG_AT1K3_SOLID`_
+    * `PRG_PMPS`_
+    * `PRG_SL1K3_SCATTER`_
+
+
+PRG_AL1K3_L2SI
+^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_AL1K3_L2SI
+    VAR
+        {attribute 'pytmc' := 'pv: AL1K3:L2SI'}
+        {attribute 'TcLinkTo' := '.fbLaser.iLaserINT := TIIB[AL1K3-EL4004-E4]^AO Outputs Channel 1^Analog output;
+                                  .fbLaser.iShutdownINT := TIIB[AL1K3-EL4004-E4]^AO Outputs Channel 2^Analog output'}
+        fbAL1K3: FB_REF;
+
+        fbStateSetup: FB_StateSetupHelper;
+        stDefault: ST_PositionState := (
+            fVelocity := 10,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
+    END_VAR
+    fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
+
+    fbStateSetup(stPositionState:=fbAL1K3.stOut, fPosition:=-33.5, sPmpsState:='AL1K3:L2SI-OUT');
+    fbStateSetup(stPositionState:=fbAL1K3.stIn, fPosition:=-75, sPmpsState:='AL1K3:L2SI-IN');
+
+    fbAL1K3(
+        fbFFHWO := GVL.fbFastFaultOutput1,
+        fbArbiter := GVL.fbArbiter1,
+        stYStage := MAIN.M1,
+        sDeviceName := 'AL1K3:L2SI',
+        sTransitionKey := 'AL1K3:L2SI-TRANSITION',
+        bEnableMotion := TRUE,
+        bEnableBeamParams := TRUE,
+        bEnablePositionLimits := TRUE,
+    );
+
+    END_PROGRAM
+
+
+Related:
+    * `GVL`_
+    * `MAIN`_
+
+
+PRG_AT1K3_SOLID
+^^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_AT1K3_SOLID
+    VAR
+        (* NOTE: use FALSE for simulation and production *)
+        (* NOTE: use TRUE when relying on visualization + actual hardware *)
+        bDebug : BOOL := FALSE;
+
+        nEnableMode : E_StageEnableMode;
+
+        {attribute 'pytmc' := '
+            pv: AT1K3:L2SI:MMS:01
+
+        '}
+        {attribute 'TcLinkTo' := '
+
+            .fbRTD_1.iRaw := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 1^Value;
+            .fbRTD_1.bError := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 1^Status^Error;
+            .fbRTD_1.bUnderrange := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 1^Status^Underrange;
+            .fbRTD_1.bOverrange := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 1^Status^Overrange;
+
+            .fbRTD_2.iRaw := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 2^Value;
+            .fbRTD_2.bError := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 2^Status^Error;
+            .fbRTD_2.bUnderrange := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 2^Status^Underrange;
+            .fbRTD_2.bOverrange := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 2^Status^Overrange
+
+        '}
+        fbStage1: FB_SXR_SATT_Stage;
+
+        {attribute 'pytmc' := 'pv: AT1K3:L2SI:MMS:02'}
+        {attribute 'TcLinkTo' := '
+
+            .fbRTD_1.iRaw := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 1^Value;
+            .fbRTD_1.bError := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 1^Status^Error;
+            .fbRTD_1.bUnderrange := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 1^Status^Underrange;
+            .fbRTD_1.bOverrange := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 1^Status^Overrange;
+
+            .fbRTD_2.iRaw := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 2^Value;
+            .fbRTD_2.bError := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 2^Status^Error;
+            .fbRTD_2.bUnderrange := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 2^Status^Underrange;
+            .fbRTD_2.bOverrange := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 2^Status^Overrange
+
+        '}
+        fbStage2: FB_SXR_SATT_Stage;
+
+        {attribute 'pytmc' := 'pv: AT1K3:L2SI:MMS:03'}
+        {attribute 'TcLinkTo' := '
+
+            .fbRTD_1.iRaw := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 1^Value;
+            .fbRTD_1.bError := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 1^Status^Error;
+            .fbRTD_1.bUnderrange := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 1^Status^Underrange;
+            .fbRTD_1.bOverrange := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 1^Status^Overrange;
+
+            .fbRTD_2.iRaw := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 2^Value;
+            .fbRTD_2.bError := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 2^Status^Error;
+            .fbRTD_2.bUnderrange := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 2^Status^Underrange;
+            .fbRTD_2.bOverrange := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 2^Status^Overrange
+        '}
+        fbStage3: FB_SXR_SATT_Stage;
+
+        {attribute 'pytmc' := 'pv: AT1K3:L2SI:MMS:04'}
+        {attribute 'TcLinkTo' := '
+
+            .fbRTD_1.iRaw := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 1^Value;
+            .fbRTD_1.bError := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 1^Status^Error;
+            .fbRTD_1.bUnderrange := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 1^Status^Underrange;
+            .fbRTD_1.bOverrange := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 1^Status^Overrange;
+
+            .fbRTD_2.iRaw := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 2^Value;
+            .fbRTD_2.bError := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 2^Status^Error;
+            .fbRTD_2.bUnderrange := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 2^Status^Underrange;
+            .fbRTD_2.bOverrange := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 2^Status^Overrange
+        '}
+        fbStage4: FB_SXR_SATT_Stage;
+
+        fbStateSetup: FB_StateSetupHelper;
+        stDefaultGood: ST_PositionState := (
+            fDelta := 0.2,
+            fVelocity := 1,
+            bMoveOk := TRUE,
+            bValid := TRUE
+        );
+        fbBadStateSetup: FB_StateSetupHelper;
+        stDefaultBad: ST_PositionState := (
+            fPosition := 500,
+            fDelta := 0.2,
+            fVelocity := 1,
+            bMoveOk := FALSE,
+            bValid := FALSE
+        );
+
+        {attribute 'pytmc' :='pv: AT1K3:L2SI:FWM'}
+
+        fbFlowMeter: FB_AnalogInput := (iTermBits:=15, fTermMax:=60, fTermMin:=0);
+    END_VAR
+    IF bDebug THEN
+        // NEVER: checkouts with the TwinCAT NC GUI.
+        nEnableMode := E_StageEnableMode.NEVER;
+    ELSE
+        // ALWAYS: want active position correction at all times
+        nEnableMode := E_StageEnableMode.ALWAYS;
+    END_IF
+
+    (*
+
+        Solid Attenuator notes
+
+        AT2K2 is JJ-xray SN-11344.
+
+        JJ    Label   EPICS    Stage     NC   Location
+
+        10??      1   MMS:01   fbStage1  M2  Upstream-most
+        10??      2   MMS:02   fbStage2  M3
+        10??      3   MMS:03   fbStage3  M4
+        10??      4   MMS:04   fbStage4  M5  Downstream-most
+
+    *)
+
+    fbStateSetup(stPositionState:=stDefaultGood, bSetDefault:=TRUE);
+    fbBadStateSetup(stPositionState:=stDefaultBad, bSetDefault:=TRUE);
+
+
+    (* State setup - stage 1 *)
+    fbStateSetup(stPositionState:=fbStage1.stOut, sName:='Out', fPosition:=27.00);
+
+    fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:='Filter 1');
+    fbStage1.arrFilters[1].fFilterThickness_um := 0;
+    fbStage1.arrFilters[1].sFilterMaterial     := '';
+
+    fbBadStateSetup(stPositionState:=fbStage1.stFilter2, sName:='Filter 2');
+    fbStage1.arrFilters[2].fFilterThickness_um := 0;
+    fbStage1.arrFilters[2].sFilterMaterial     := '';
+
+    fbBadStateSetup(stPositionState:=fbStage1.stFilter3, sName:='Filter 3');
+    fbStage1.arrFilters[3].fFilterThickness_um := 0;
+    fbStage1.arrFilters[3].sFilterMaterial     := '';
+
+    fbBadStateSetup(stPositionState:=fbStage1.stFilter4, sName:='Filter 4');
+    fbStage1.arrFilters[4].fFilterThickness_um := 0;
+    fbStage1.arrFilters[4].sFilterMaterial     := '';
+
+    fbStateSetup(stPositionState:=fbStage1.stFilter5, sName:='(5) 11.5 um Al', fPosition:=103.0);
+    fbStage1.arrFilters[5].fFilterThickness_um := 11.5;
+    fbStage1.arrFilters[5].sFilterMaterial     := 'Al';
+
+    fbStateSetup(stPositionState:=fbStage1.stFilter6, sName:='(6) 6.18 um Al', fPosition:=119.0);
+    fbStage1.arrFilters[6].fFilterThickness_um := 6.18;
+    fbStage1.arrFilters[6].sFilterMaterial     := 'Al';
+
+    fbStateSetup(stPositionState:=fbStage1.stFilter7, sName:='(7) 2.85 um Al', fPosition:=135.0);
+    fbStage1.arrFilters[7].fFilterThickness_um := 2.85;
+    fbStage1.arrFilters[7].sFilterMaterial     := 'Al';
+
+    fbStateSetup(stPositionState:=fbStage1.stFilter8, sName:='(8) 1.52 um Al', fPosition:=150.0);
+    fbStage1.arrFilters[8].fFilterThickness_um := 1.52;
+    fbStage1.arrFilters[8].sFilterMaterial     := 'Al';
+
+    fbStage1(stAxis:=Main.M2, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1, bEnable:=TRUE);
+
+
+    (* State setup - stage 2 *)
+    fbStateSetup(stPositionState:=fbStage2.stOut, sName:='Out', fPosition:=27.72);
+
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:='Filter 1');
+    fbStage2.arrFilters[1].fFilterThickness_um := 0;
+    fbStage2.arrFilters[1].sFilterMaterial     := '';
+
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter2, sName:='Filter 2');
+    fbStage2.arrFilters[2].fFilterThickness_um := 0;
+    fbStage2.arrFilters[2].sFilterMaterial     := '';
+
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter3, sName:='Filter 3');
+    fbStage2.arrFilters[3].fFilterThickness_um := 0;
+    fbStage2.arrFilters[3].sFilterMaterial     := '';
+
+    fbBadStateSetup(stPositionState:=fbStage2.stFilter4, sName:='Filter 4');
+    fbStage2.arrFilters[4].fFilterThickness_um := 0;
+    fbStage2.arrFilters[4].sFilterMaterial     := '';
+
+    fbStateSetup(stPositionState:=fbStage2.stFilter5, sName:='(5) 6.18 um Al', fPosition:=103.0);
+    fbStage2.arrFilters[5].fFilterThickness_um := 6.18;
+    fbStage2.arrFilters[5].sFilterMaterial     := 'Al';
+
+    fbStateSetup(stPositionState:=fbStage2.stFilter6, sName:='(6) 2.85 um Al', fPosition:=119.0);
+    fbStage2.arrFilters[6].fFilterThickness_um := 2.85;
+    fbStage2.arrFilters[6].sFilterMaterial     := 'Al';
+
+    fbStateSetup(stPositionState:=fbStage2.stFilter7, sName:='(7) 1.52 um Al', fPosition:=135.0);
+    fbStage2.arrFilters[7].fFilterThickness_um := 1.52;
+    fbStage2.arrFilters[7].sFilterMaterial     := 'Al';
+
+    fbStateSetup(stPositionState:=fbStage2.stFilter8, sName:='(8) 0.78 um Al', fPosition:=150.0);
+    fbStage2.arrFilters[8].fFilterThickness_um := 0.78;
+    fbStage2.arrFilters[8].sFilterMaterial     := 'Al';
+
+    fbStage2(stAxis:=Main.M3, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1, bEnable:=TRUE);
+
+
+    (* State setup - stage 3 *)
+    fbStateSetup(stPositionState:=fbStage3.stOut, sName:='Out', fPosition:=27.00);
+
+    fbBadStateSetup(stPositionState:=fbStage3.stFilter1, sName:='Filter 1');
+    fbStage3.arrFilters[1].fFilterThickness_um := 0;
+    fbStage3.arrFilters[1].sFilterMaterial     := '';
+
+    fbBadStateSetup(stPositionState:=fbStage3.stFilter2, sName:='Filter 2');
+    fbStage3.arrFilters[2].fFilterThickness_um := 0;
+    fbStage3.arrFilters[2].sFilterMaterial     := '';
+
+    fbBadStateSetup(stPositionState:=fbStage3.stFilter3, sName:='Filter 3');
+    fbStage3.arrFilters[3].fFilterThickness_um := 0;
+    fbStage3.arrFilters[3].sFilterMaterial     := '';
+
+    fbBadStateSetup(stPositionState:=fbStage3.stFilter4, sName:='Filter 4');
+    fbStage3.arrFilters[4].fFilterThickness_um := 0;
+    fbStage3.arrFilters[4].sFilterMaterial     := '';
+
+    fbStateSetup(stPositionState:=fbStage3.stFilter5, sName:='(5) 2.85 um Al', fPosition:=103.0);
+    fbStage3.arrFilters[5].fFilterThickness_um := 2.85;
+    fbStage3.arrFilters[5].sFilterMaterial     := 'Al';
+
+    fbStateSetup(stPositionState:=fbStage3.stFilter6, sName:='(6) 1.52 um Al', fPosition:=119.0);
+    fbStage3.arrFilters[6].fFilterThickness_um := 1.52;
+    fbStage3.arrFilters[6].sFilterMaterial     := 'Al';
+
+    fbStateSetup(stPositionState:=fbStage3.stFilter7, sName:='(7) 0.78 um Al', fPosition:=135.0);
+    fbStage3.arrFilters[7].fFilterThickness_um := 0.78;
+    fbStage3.arrFilters[7].sFilterMaterial     := 'Al';
+
+    fbStateSetup(stPositionState:=fbStage3.stFilter8, sName:='(8) 0.39 um Al', fPosition:=150.0);
+    fbStage3.arrFilters[8].fFilterThickness_um := 0.39;
+    fbStage3.arrFilters[8].sFilterMaterial     := 'Al';
+
+    fbStage3(stAxis:=Main.M4, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1, bEnable:=TRUE);
+
+
+    (* State setup - stage 4 *)
+    fbStateSetup(stPositionState:=fbStage4.stOut, sName:='Out', fPosition:=28.03);
+
+    fbBadStateSetup(stPositionState:=fbStage4.stFilter1, sName:='Filter 1');
+    fbStage4.arrFilters[1].fFilterThickness_um := 0;
+    fbStage4.arrFilters[1].sFilterMaterial     := '';
+
+    fbBadStateSetup(stPositionState:=fbStage4.stFilter2, sName:='Filter 2');
+    fbStage4.arrFilters[2].fFilterThickness_um := 0;
+    fbStage4.arrFilters[2].sFilterMaterial     := '';
+
+    fbBadStateSetup(stPositionState:=fbStage4.stFilter3, sName:='Filter 3');
+    fbStage4.arrFilters[3].fFilterThickness_um := 0;
+    fbStage4.arrFilters[3].sFilterMaterial     := '';
+
+    fbBadStateSetup(stPositionState:=fbStage4.stFilter4, sName:='Filter 4');
+    fbStage4.arrFilters[4].fFilterThickness_um := 0;
+    fbStage4.arrFilters[4].sFilterMaterial     := '';
+
+    fbStateSetup(stPositionState:=fbStage4.stFilter5, sName:='(5) 1.52 um Al', fPosition:=103.0);
+    fbStage4.arrFilters[5].fFilterThickness_um := 1.52;
+    fbStage4.arrFilters[5].sFilterMaterial     := 'Al';
+
+    fbStateSetup(stPositionState:=fbStage4.stFilter6, sName:='(6) 0.78 um Al', fPosition:=119.0);
+    fbStage4.arrFilters[6].fFilterThickness_um := 0.78;
+    fbStage4.arrFilters[6].sFilterMaterial     := 'Al';
+
+    fbStateSetup(stPositionState:=fbStage4.stFilter7, sName:='(7) 0.39 um Al', fPosition:=135.0);
+    fbStage4.arrFilters[7].fFilterThickness_um := 0.39;
+    fbStage4.arrFilters[7].sFilterMaterial     := 'Al';
+
+    fbStateSetup(stPositionState:=fbStage4.stFilter8, sName:='(8) 0.20 um Al', fPosition:=150.0);
+    fbStage4.arrFilters[8].fFilterThickness_um := 0.20;
+    fbStage4.arrFilters[8].sFilterMaterial     := 'Al';
+
+    fbStage4(stAxis:=Main.M5, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1, bEnable:=TRUE);
+
+
+    GVL.rCurTrans[PMPS.K_Attenuators.AT2K2].nTran := LREAL_TO_REAL(
+        fbStage1.fTransmission *
+        fbStage2.fTransmission *
+        fbStage3.fTransmission *
+        fbStage4.fTransmission
+    );
+
+    fbFlowMeter();
+
+    END_PROGRAM
+
+
+Related:
+    * `GVL`_
+
+
+PRG_LOG
+^^^^^^^
+
+::
+
+    PROGRAM PRG_LOG
+    VAR
+        fbLogHandler: FB_LogHandler;
+    END_VAR
+    fbLogHandler();
+
+    END_PROGRAM
+
+
+
+
+PRG_PMPS
+^^^^^^^^
+
+::
+
+    PROGRAM PRG_PMPS
+    VAR
+        fbArbiterIO: FB_SubSysToArbiter_IO;
+
+        {attribute 'TcLinkTo' := 'TIIB[PMPS_PRE]^IO Outputs^FFO'}
+        FFO AT %Q*:BOOL; //temp code until faults are in MPS crate
+    END_VAR
+    GVL.fbFastFaultOutput1.Execute(i_xVeto := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN]
+                                          AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT])
+                                           OR PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_OUT]
+                                          AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN]);
+    fbArbiterIO(
+        i_bVeto := (PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN]
+                                          AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_OUT])
+                                           OR PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K3_OUT]
+                                          AND NOT PMPS_GVL.stCurrentBeamParameters.aVetoDevices[PMPS.K_Stopper.MR1K1_IN],
+        Arbiter:=GVL.fbArbiter1,
+        fbFFHWO:=GVL.fbFastFaultOutput1);
+
+    GVL.fbArbiter1.AddRequest(nReqID := 16#FAF7, stReqBp := PMPS_GVL.cstFullBeam, sDevName := 'plc-kfe-txi-mot');
+
+    //TEMP FFO to arbiter
+    FFO:= GVL.fbFastFaultOutput1.q_xFastFaultOut;
+
+    END_PROGRAM
+
+
+Related:
+    * `GVL`_
+
+
+PRG_SL1K3_SCATTER
+^^^^^^^^^^^^^^^^^
+
+::
+
+    PROGRAM PRG_SL1K3_SCATTER
+    VAR
+        {attribute 'pytmc' := '
+            pv: SL1K3:SCATTER
+            io: io
+        '}
+        fbSL1K3: FB_SLITS;
+        //GET PMPS Move Ok bit
+        // Default True until it is properly linked to PMPS bit
+        bMoveOk:BOOL :=TRUE;
+        {attribute 'pytmc' := '
+        pv: SL1K3:SCATTER:GO;
+        io: io;
+        field: ZNAM False;
+        field: ONAM True;
+        '}
+        bExecuteMotion :BOOL :=FALSE;
+        bTest:BOOL:=FALSE;
+
+
+        rEncoderOffsetTop: INT;
+        rEncoderOffsetBottom: REAL := -15; (* 0+(-15)*)
+        rEncoderOffsetNorth: REAL := -15;(* 0+(-15)*)
+        rEncoderOffsetSouth: REAL := -15;(* 0+(-15)*)
+
+    END_VAR
+    // M10, Axis 10
+    // M11, Axis 11
+    // M12, Axis 12
+    // M13, Axis 13
+
+
+    fbSL1K3.bMoveOk := bMoveOk;
+
+
+    //Homing routine parameters
+    Main.M7.fHomePosition:= 0;
+    Main.M6.fHomePosition:= -30.6;
+    Main.M8.fHomePosition:= 0;
+    Main.M9.fHomePosition:= -30.5;
+
+    Main.M7.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
+    Main.M6.nHomingMode := ENUM_EpicsHomeCmd.LOW_LIMIT;
+    Main.M8.nHomingMode := ENUM_EpicsHomeCmd.HIGH_LIMIT;
+    Main.M9.nHomingMode := ENUM_EpicsHomeCmd.LOW_LIMIT;
+
+    fbSL1K3.rEncoderOffsetTop := rEncoderOffsetTop;
+    fbSL1K3.rEncoderOffsetBottom := rEncoderOffsetBottom;
+    fbSL1K3.rEncoderOffsetNorth := rEncoderOffsetNorth;
+    fbSL1K3.rEncoderOffsetSouth := rEncoderOffsetSouth;
+
+    fbSL1K3(stTopBlade:=  Main.M7,
+            stBottomBlade:= Main.M6,
+            stNorthBlade:=  Main.M8,
+            stSouthBlade:=  Main.M9,
+            bExecuteMotion:=bExecuteMotion,
+            io_fbFFHWO := GVL.fbFastFaultOutput1,
+            fbArbiter := GVL.fbArbiter1);
+
+    fbSL1K3.M_CheckPMPS(2);
+
+    END_PROGRAM
+
+
+Related:
+    * `FB_SLITS`_
+    * `GVL`_
+
