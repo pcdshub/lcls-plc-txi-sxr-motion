@@ -8,9 +8,8 @@
 #    Project hash: unknown
 #     PLC IP/host: 172.21.136.36
 #      PLC Net ID: 172.21.136.36.1.1
-# ** DEVELOPMENT MODE IOC **
-# * Using IOC boot directory for autosave.
-# * Archiver settings will not be configured.
+#  ** Production mode IOC **
+#  Using /cds/data/iocData for autosave and archiver settings.
 #
 # Libraries:
 #
@@ -28,9 +27,12 @@
 epicsEnvSet("ADS_IOC_TOP", "$(TOP)" )
 
 epicsEnvSet("ENGINEER", "" )
-epicsEnvSet("LOCATION", "PLC:lcls-plc-txi-sxr-motion" )
+epicsEnvSet("LOCATION", "PLC:TXI:SXR:MOTION " )
 epicsEnvSet("IOCSH_PS1", "$(IOC)> " )
 epicsEnvSet("ACF_FILE", "$(ADS_IOC_TOP)/iocBoot/templates/unrestricted.acf")
+
+# Run common startup commands for linux soft IOC's
+< /reg/d/iocCommon/All/pre_linux.cmd
 
 # Register all support components
 dbLoadDatabase("$(ADS_IOC_TOP)/dbd/adsIoc.dbd")
@@ -78,7 +80,7 @@ cd "$(ADS_IOC_TOP)/db"
 
 
 epicsEnvSet("MOTOR_PORT",     "PLC_ADS")
-epicsEnvSet("PREFIX",         "PLC:lcls-plc-txi-sxr-motion:")
+epicsEnvSet("PREFIX",         "PLC:TXI:SXR:MOTION :")
 epicsEnvSet("NUMAXES",        "9")
 epicsEnvSet("MOVE_POLL_RATE", "200")
 epicsEnvSet("IDLE_POLL_RATE", "1000")
@@ -246,54 +248,61 @@ dbLoadRecords("EthercatMCreadback.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME
 dbLoadRecords("EthercatMCdebug.template", "PREFIX=$(MOTOR_PREFIX), MOTOR_NAME=$(MOTOR_NAME), MOTOR_PORT=$(MOTOR_PORT), AXIS_NO=$(AXIS_NO), PREC=3")
 
 
-dbLoadRecords("iocSoft.db", "IOC=PLC:lcls-plc-txi-sxr-motion")
-dbLoadRecords("save_restoreStatus.db", "P=PLC:lcls-plc-txi-sxr-motion:")
+dbLoadRecords("iocSoft.db", "IOC=PLC:TXI:SXR:MOTION ")
+dbLoadRecords("save_restoreStatus.db", "P=PLC:TXI:SXR:MOTION :")
 dbLoadRecords("caPutLog.db", "IOC=$(IOC)")
 
 ## TwinCAT task, application, and project information databases ##
-dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:lcls-plc-txi-sxr-motion,IDX=2,TASK_PORT=351")
-dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:lcls-plc-txi-sxr-motion")
+dbLoadRecords("TwinCAT_TaskInfo.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TXI:SXR:MOTION ,IDX=2,TASK_PORT=351")
+dbLoadRecords("TwinCAT_AppInfo.db", "PORT=$(ASYN_PORT), PREFIX=PLC:TXI:SXR:MOTION ")
 
-dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,PROJECT=lcls-plc-txi-sxr-motion.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.18.2,PLC_HOST=172.21.136.36")
+dbLoadRecords("TwinCAT_Project.db", "PREFIX=PLC:TXI:SXR:MOTION ,PROJECT=lcls-plc-txi-sxr-motion.tsproj,HASH=unknown,VERSION=unknown,PYTMC=2.18.2,PLC_HOST=172.21.136.36")
 
 #   LCLS General: * -> 2.10.0 (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=LCLS_General,VERSION=2.10.0,VENDOR=SLAC")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:SXR:MOTION ,DEPENDENCY=LCLS_General,VERSION=2.10.0,VENDOR=SLAC")
 #   lcls-twincat-common-components: * -> 3.5.0 (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=lcls-twincat-common-components,VERSION=3.5.0,VENDOR=SLAC")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:SXR:MOTION ,DEPENDENCY=lcls-twincat-common-components,VERSION=3.5.0,VENDOR=SLAC")
 #   lcls-twincat-motion: * -> 4.0.8 (SLAC)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=lcls-twincat-motion,VERSION=4.0.8,VENDOR=SLAC")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:SXR:MOTION ,DEPENDENCY=lcls-twincat-motion,VERSION=4.0.8,VENDOR=SLAC")
 #   PMPS: * -> 3.3.0 (SLAC - LCLS)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=PMPS,VERSION=3.3.0,VENDOR=SLAC - LCLS")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:SXR:MOTION ,DEPENDENCY=PMPS,VERSION=3.3.0,VENDOR=SLAC - LCLS")
 #   Tc2_Standard: * -> 3.3.3.0 (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=Tc2_Standard,VERSION=3.3.3.0,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:SXR:MOTION ,DEPENDENCY=Tc2_Standard,VERSION=3.3.3.0,VENDOR=Beckhoff Automation GmbH")
 #   Tc2_System: * -> 3.4.26.0 (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=Tc2_System,VERSION=3.4.26.0,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:SXR:MOTION ,DEPENDENCY=Tc2_System,VERSION=3.4.26.0,VENDOR=Beckhoff Automation GmbH")
 #   Tc3_Module: * -> 3.3.21.0 (Beckhoff Automation GmbH)
-dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:lcls-plc-txi-sxr-motion,DEPENDENCY=Tc3_Module,VERSION=3.3.21.0,VENDOR=Beckhoff Automation GmbH")
+dbLoadRecords("TwinCAT_Dependency.db", "PREFIX=PLC:TXI:SXR:MOTION ,DEPENDENCY=Tc3_Module,VERSION=3.3.21.0,VENDOR=Beckhoff Automation GmbH")
 
 cd "$(IOC_TOP)"
 
 ## PLC Project Database files ##
-dbLoadRecords("lcls-plc-txi-sxr-motion.db", "PORT=$(ASYN_PORT),PREFIX=PLC:lcls-plc-txi-sxr-motion:,IOCNAME=$(IOC),IOC=$(IOC)")
+dbLoadRecords("lcls-plc-txi-sxr-motion.db", "PORT=$(ASYN_PORT),PREFIX=PLC:TXI:SXR:MOTION :,IOCNAME=$(IOC),IOC=$(IOC)")
 
 # Total records: 2279
 callbackSetQueueSize(6558)
 
 # Autosave and archive settings:
-save_restoreSet_status_prefix("PLC:lcls-plc-txi-sxr-motion:")
+save_restoreSet_status_prefix("PLC:TXI:SXR:MOTION :")
 save_restoreSet_IncompleteSetsOk(1)
 save_restoreSet_DatedBackupFiles(1)
 set_pass0_restoreFile("info_positions.sav")
 set_pass1_restoreFile("info_settings.sav")
 
-# ** Development IOC Settings **
-# Development IOC autosave and archive files go in the IOC top directory:
-cd "$(IOC_TOP)"
+# ** Production IOC Settings **
+set_savefile_path("$(IOC_DATA)/$(IOC)/autosave")
+set_requestfile_path("$(IOC_DATA)/$(IOC)/autosave")
 
-# (Development mode) Create info_positions.req and info_settings.req
+# Production IOC autosave files go in iocData:
+cd "$(IOC_DATA)/$(IOC)/autosave"
+
+# Create info_positions.req and info_settings.req
 makeAutosaveFiles()
-# (Development mode) Create the archiver file
+
+cd "$(IOC_DATA)/$(IOC)/archive"
+
+# Create $(IOC).archive
 makeArchiveFromDbInfo("$(IOC).archive", "archive")
+cd "$(IOC_TOP)"
 
 # Configure access security: this is required for caPutLog.
 asSetFilename("$(ACF_FILE)")
@@ -318,4 +327,7 @@ caPutLogInit("$(EPICS_CAPUTLOG_HOST):$(EPICS_CAPUTLOG_PORT)", 0)
 # Start autosave backups
 create_monitor_set( "info_positions.req", 10, "" )
 create_monitor_set( "info_settings.req", 60, "" )
+
+# All IOCs should dump some common info after initial startup.
+< /reg/d/iocCommon/All/post_linux.cmd
 
