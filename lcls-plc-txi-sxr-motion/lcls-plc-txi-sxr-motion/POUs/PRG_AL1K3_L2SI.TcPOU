@@ -21,7 +21,7 @@ END_VAR
 fbStateSetup(stPositionState:=stDefault, bSetDefault:=TRUE);
 
 fbStateSetup(stPositionState:=fbAL1K3.stOut, fPosition:=-33.5, sPmpsState:='AL1K3:L2SI-OUT');
-fbStateSetup(stPositionState:=fbAL1K3.stIn, fPosition:=-75, sPmpsState:='AL1K3:L2SI-IN');
+fbStateSetup(stPositionState:=fbAL1K3.stIn, fPosition:=-83, sPmpsState:='AL1K3:L2SI-IN');
 
 fbAL1K3(
     fbFFHWO := GVL.fbFastFaultOutput1,
