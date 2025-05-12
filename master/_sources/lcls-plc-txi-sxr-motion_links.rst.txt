@@ -312,57 +312,57 @@ Links
         , Enc^Outputs^Out^nDataOut1[0], TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL5101-E4, ENC Control compact^Set counter value
         , Enc^Outputs^Out^nDataOut1[0], TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL5101-E6, ENC Control compact^Set counter value
         , Enc^Outputs^Out^nDataOut1[0], TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL5101-E8, ENC Control compact^Set counter value
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M1.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 1 AL1K3-L2SI-MMS, Outputs^ToPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M1.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL7041-E1, STM Status^Status^Digital input 2
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M1.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL7041-E1, STM Status^Status^Digital input 1
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M1.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL5042-E2, FB Inputs Channel 1^Position
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M2.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 2  AT2K2-SOLID-MMS-01, Outputs^ToPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M2.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-04, STM Status^Status^Digital input 2
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M2.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-04, STM Status^Status^Digital input 1
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M2.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL5042-02, FB Inputs Channel 2^Position
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M3.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 3  AT2K2-SOLID-MMS-02, Outputs^ToPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M3.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-03, STM Status^Status^Digital input 2
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M3.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-03, STM Status^Status^Digital input 1
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M3.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL5042-02, FB Inputs Channel 1^Position
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M4.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 4  AT2K2-SOLID-MMS-03, Outputs^ToPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M4.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-02, STM Status^Status^Digital input 2
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M4.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-02, STM Status^Status^Digital input 1
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M4.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL5042-01, FB Inputs Channel 2^Position
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M5.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 5  AT2K2-SOLID-MMS-04, Outputs^ToPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M5.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-01, STM Status^Status^Digital input 2
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M5.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-01, STM Status^Status^Digital input 1
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M5.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL5042-01, FB Inputs Channel 1^Position
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M6.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^SL1K3-BOTTOM-M6, Outputs^ToPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M6.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E1, STM Status^Status^Digital input 1
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M6.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E1, STM Status^Status^Digital input 2
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M6.nRawEncoderUINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL5101-E2, ENC Status compact^Counter value
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M7.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^SL1K3-TOP-M7, Outputs^ToPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M7.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E3, STM Status^Status^Digital input 1
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M7.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E3, STM Status^Status^Digital input 2
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M7.nRawEncoderUINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL5101-E4, ENC Status compact^Counter value
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M8.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^SL1K3-NORTH-M8, Outputs^ToPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M8.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E5, STM Status^Status^Digital input 2
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M8.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E5, STM Status^Status^Digital input 1
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M8.nRawEncoderUINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL5101-E6, ENC Status compact^Counter value
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M9.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^SL1K3-SOUTH-M9, Outputs^ToPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M9.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E7, STM Status^Status^Digital input 2
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M9.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E7, STM Status^Status^Digital input 1
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M9.nRawEncoderUINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL5101-E8, ENC Status compact^Counter value
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^PRG_PMPS.fbArbiterIO.i_stCurrentBP, TIID^Device 1 (EtherCAT)^Term 7 (EK1200)^PMPS_PRE, IO Inputs^CurrentBP
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^PRG_PMPS.fbArbiterIO.xTxPDO_state, TIID^Device 1 (EtherCAT)^Term 7 (EK1200)^PMPS_PRE, SYNC Inputs^TxPDO state
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^PRG_PMPS.fbArbiterIO.xTxPDO_toggle, TIID^Device 1 (EtherCAT)^Term 7 (EK1200)^PMPS_PRE, SYNC Inputs^TxPDO toggle
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^GVL.fbFastFaultOutput1.q_xFastFaultOut, TIID^Device 1 (EtherCAT)^Term 7 (EK1200)^PMPS_FFO, Channel 1^Output
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M1.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 1 AL1K3-L2SI-MMS, Inputs^FromPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M1.bBrakeRelease, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL2004-E3, Channel 1^Output
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M2.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 2  AT2K2-SOLID-MMS-01, Inputs^FromPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M3.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 3  AT2K2-SOLID-MMS-02, Inputs^FromPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M4.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 4  AT2K2-SOLID-MMS-03, Inputs^FromPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M5.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 5  AT2K2-SOLID-MMS-04, Inputs^FromPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M6.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^SL1K3-BOTTOM-M6, Inputs^FromPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M7.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^SL1K3-TOP-M7, Inputs^FromPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M8.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^SL1K3-NORTH-M8, Inputs^FromPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M9.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^SL1K3-SOUTH-M9, Inputs^FromPlc
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^PRG_AL1K3_L2SI.fbAL1K3.fbLaser.iLaserINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL4004-E4, AO Outputs Channel 1^Analog output
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^PRG_AL1K3_L2SI.fbAL1K3.fbLaser.iShutdownINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL4004-E4, AO Outputs Channel 2^Analog output
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^PRG_PMPS.FFO, TIID^Device 1 (EtherCAT)^Term 7 (EK1200)^PMPS_PRE, IO Outputs^FFO
-        TIPC^lcls-plc-txi-sxr-motion^lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^PRG_PMPS.fbArbiterIO.q_stRequestedBP, TIID^Device 1 (EtherCAT)^Term 7 (EK1200)^PMPS_PRE, IO Outputs^RequestedBP
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M1.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 1 AL1K3-L2SI-MMS, Outputs^ToPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M1.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL7041-E1, STM Status^Status^Digital input 2
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M1.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL7041-E1, STM Status^Status^Digital input 1
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M1.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL5042-E2, FB Inputs Channel 1^Position
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M2.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 2  AT2K2-SOLID-MMS-01, Outputs^ToPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M2.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-04, STM Status^Status^Digital input 2
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M2.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-04, STM Status^Status^Digital input 1
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M2.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL5042-02, FB Inputs Channel 2^Position
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M3.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 3  AT2K2-SOLID-MMS-02, Outputs^ToPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M3.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-03, STM Status^Status^Digital input 2
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M3.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-03, STM Status^Status^Digital input 1
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M3.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL5042-02, FB Inputs Channel 1^Position
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M4.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 4  AT2K2-SOLID-MMS-03, Outputs^ToPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M4.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-02, STM Status^Status^Digital input 2
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M4.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-02, STM Status^Status^Digital input 1
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M4.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL5042-01, FB Inputs Channel 2^Position
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M5.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^Axis 5  AT2K2-SOLID-MMS-04, Outputs^ToPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M5.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-01, STM Status^Status^Digital input 2
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M5.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL7047-01, STM Status^Status^Digital input 1
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M5.nRawEncoderULINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AT1K3-SOLID (EK1100)^AT1K3-EL5042-01, FB Inputs Channel 1^Position
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M6.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^SL1K3-BOTTOM-M6, Outputs^ToPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M6.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E1, STM Status^Status^Digital input 1
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M6.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E1, STM Status^Status^Digital input 2
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M6.nRawEncoderUINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL5101-E2, ENC Status compact^Counter value
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M7.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^SL1K3-TOP-M7, Outputs^ToPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M7.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E3, STM Status^Status^Digital input 1
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M7.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E3, STM Status^Status^Digital input 2
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M7.nRawEncoderUINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL5101-E4, ENC Status compact^Counter value
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M8.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^SL1K3-NORTH-M8, Outputs^ToPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M8.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E5, STM Status^Status^Digital input 2
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M8.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E5, STM Status^Status^Digital input 1
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M8.nRawEncoderUINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL5101-E6, ENC Status compact^Counter value
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M9.Axis.NcToPlc, TINC^NC-Task 1 SAF^Axes^SL1K3-SOUTH-M9, Outputs^ToPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M9.bLimitBackwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E7, STM Status^Status^Digital input 2
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M9.bLimitForwardEnable, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL7031-E7, STM Status^Status^Digital input 1
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^MAIN.M9.nRawEncoderUINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 31 (EK1122)^SL1K3-SCATTER (EK1100)^SL1K3-EL5101-E8, ENC Status compact^Counter value
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^PRG_PMPS.fbArbiterIO.i_stCurrentBP, TIID^Device 1 (EtherCAT)^Term 7 (EK1200)^PMPS_PRE, IO Inputs^CurrentBP
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^PRG_PMPS.fbArbiterIO.xTxPDO_state, TIID^Device 1 (EtherCAT)^Term 7 (EK1200)^PMPS_PRE, SYNC Inputs^TxPDO state
+        lcls-plc-txi-sxr-motion Instance, PlcTask Inputs^PRG_PMPS.fbArbiterIO.xTxPDO_toggle, TIID^Device 1 (EtherCAT)^Term 7 (EK1200)^PMPS_PRE, SYNC Inputs^TxPDO toggle
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^GVL.fbFastFaultOutput1.q_xFastFaultOut, TIID^Device 1 (EtherCAT)^Term 7 (EK1200)^PMPS_FFO, Channel 1^Output
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M1.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 1 AL1K3-L2SI-MMS, Inputs^FromPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M1.bBrakeRelease, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL2004-E3, Channel 1^Output
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M2.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 2  AT2K2-SOLID-MMS-01, Inputs^FromPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M3.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 3  AT2K2-SOLID-MMS-02, Inputs^FromPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M4.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 4  AT2K2-SOLID-MMS-03, Inputs^FromPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M5.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^Axis 5  AT2K2-SOLID-MMS-04, Inputs^FromPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M6.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^SL1K3-BOTTOM-M6, Inputs^FromPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M7.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^SL1K3-TOP-M7, Inputs^FromPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M8.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^SL1K3-NORTH-M8, Inputs^FromPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^MAIN.M9.Axis.PlcToNc, TINC^NC-Task 1 SAF^Axes^SL1K3-SOUTH-M9, Inputs^FromPlc
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^PRG_AL1K3_L2SI.fbAL1K3.fbLaser.iLaserINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL4004-E4, AO Outputs Channel 1^Analog output
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^PRG_AL1K3_L2SI.fbAL1K3.fbLaser.iShutdownINT, TIID^Device 1 (EtherCAT)^Term 13 (EK1100)^Term 14 (EK1122)^AL1K3-L2SI (EK1100)^AL1K3-EL4004-E4, AO Outputs Channel 2^Analog output
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^PRG_PMPS.FFO, TIID^Device 1 (EtherCAT)^Term 7 (EK1200)^PMPS_PRE, IO Outputs^FFO
+        lcls-plc-txi-sxr-motion Instance, PlcTask Outputs^PRG_PMPS.fbArbiterIO.q_stRequestedBP, TIID^Device 1 (EtherCAT)^Term 7 (EK1200)^PMPS_PRE, IO Outputs^RequestedBP
