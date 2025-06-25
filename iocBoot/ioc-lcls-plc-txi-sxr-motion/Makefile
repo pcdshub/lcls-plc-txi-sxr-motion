@@ -9,7 +9,7 @@ PROJECT_PATH := ../../lcls-plc-txi-sxr-motion/lcls-plc-txi-sxr-motion.tsproj
 PLC := lcls-plc-txi-sxr-motion
 
 PYTMC_OPTS :=
-PREFIX := PLC:TXI:SXR:MOTION 
+PREFIX := PLC:TXI:SXR:MOTION
 # With two $$, as in $$(IOC) below, this will be expanded in the
 # environment of st.cmd:
 DB_PARAMETERS := 'PREFIX=$(PREFIX):,IOCNAME=$$(IOC),IOC=$$(IOC)'
