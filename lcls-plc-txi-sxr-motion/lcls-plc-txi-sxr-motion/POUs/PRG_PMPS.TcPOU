@@ -22,6 +22,15 @@ fbArbiterIO(
     Arbiter:=GVL.fbArbiter1,
     fbFFHWO:=GVL.fbFastFaultOutput1);
 
+IF NOT IsFinite(x := F_REAL(PMPS_GVL.stCurrentBeamParameters.nTran)) THEN
+    MEMSET(
+        destAddr := ADR(PMPS_GVL.stCurrentBeamParameters.nTran),
+        fillByte := 0,
+        n := SIZEOF(PMPS_GVL.stCurrentBeamParameters.nTran)
+    );
+    PMPS_GVL.stCurrentBeamParameters.nTran := 1.0;
+END_IF
+
 GVL.fbArbiter1.AddRequest(nReqID := 16#FAF7, stReqBp := PMPS_GVL.cstFullBeam, sDevName := 'plc-kfe-txi-mot');
 
 //TEMP FFO to arbiter
