@@ -1,0 +1,1700 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DUTs &mdash; pcdshub/lcls-plc-txi-sxr-motion  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/tree.css?v=837a00b9" />
+      <link rel="stylesheet" type="text/css" href="_static/width.css?v=ab210c7a" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/docs-versions-menu.js?v=3d6a1aea"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Data Types" href="lcls-plc-txi-sxr-motion_lcls-plc-txi-sxr-motion_epics.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pcdshub/lcls-plc-txi-sxr-motion
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">lcls-plc-txi-sxr-motion</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-txi-sxr-motion_pragmas.html">Pragmas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-txi-sxr-motion_nc.html">NC Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-txi-sxr-motion_ethercat.html">EtherCAT Terminals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-txi-sxr-motion_boxes.html">Boxes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-txi-sxr-motion_links.html">Links</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">lcls-plc-txi-sxr-motion</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-txi-sxr-motion_lcls-plc-txi-sxr-motion_summary.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-txi-sxr-motion_lcls-plc-txi-sxr-motion_summary.html#pragmas">Pragmas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-txi-sxr-motion_lcls-plc-txi-sxr-motion_summary.html#libraries">Libraries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-txi-sxr-motion_lcls-plc-txi-sxr-motion_summary.html#symbols">Symbols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-txi-sxr-motion_lcls-plc-txi-sxr-motion_epics.html">Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lcls-plc-txi-sxr-motion_lcls-plc-txi-sxr-motion_epics.html#database-records">Database Records</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">DUTs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#gvls">GVLs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#global-version">Global_Version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gvl">GVL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main">MAIN</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#pous">POUs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#fb-slits">FB_SLITS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fb-slits-power">FB_SLITS_POWER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fb-slits-scatter">FB_SLITS_SCATTER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fb-zoneplate-states">FB_ZonePlate_States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-01-plctask">PRG_01_PLCTASK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-al1k3-l2si">PRG_AL1K3_L2SI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-at1k3-solid">PRG_AT1K3_SOLID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-log">PRG_LOG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-pmps">PRG_PMPS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prg-sl1k3-scatter">PRG_SL1K3_SCATTER</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pcdshub/lcls-plc-txi-sxr-motion</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">DUTs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/lcls-plc-txi-sxr-motion_lcls-plc-txi-sxr-motion_source.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="duts">
+<h1>DUTs<a class="headerlink" href="#duts" title="Link to this heading"></a></h1>
+</section>
+<section id="gvls">
+<h1>GVLs<a class="headerlink" href="#gvls" title="Link to this heading"></a></h1>
+<section id="global-version">
+<h2>Global_Version<a class="headerlink" href="#global-version" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcGenerated&#39;</span><span class="p">}</span>
+<span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;no-analysis&#39;</span><span class="p">}</span>
+<span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;linkalways&#39;</span><span class="p">}</span>
+<span class="o">//</span> <span class="n">This</span> <span class="n">function</span> <span class="n">has</span> <span class="n">been</span> <span class="n">automatically</span> <span class="n">generated</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span> <span class="n">project</span> <span class="n">information</span><span class="o">.</span>
+<span class="n">VAR_GLOBAL</span> <span class="n">CONSTANT</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;const_non_replaced&#39;</span><span class="p">}</span>
+    <span class="n">stLibVersion_lcls_plc_txi_sxr_motion</span> <span class="p">:</span> <span class="n">ST_LibVersion</span> <span class="o">:=</span> <span class="p">(</span><span class="n">iMajor</span> <span class="o">:=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">iMinor</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">iBuild</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">iRevision</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">nFlags</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sVersion</span> <span class="o">:=</span> <span class="s1">&#39;2.0.0&#39;</span><span class="p">);</span>
+<span class="n">END_VAR</span>
+</pre></div>
+</div>
+</section>
+<section id="gvl">
+<h2>GVL<a class="headerlink" href="#gvl" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;qualified_only&#39;</span><span class="p">}</span>
+<span class="n">VAR_GLOBAL</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:TXI:SXR:MOTION:ARB:01&#39;</span><span class="p">}</span>
+    <span class="n">fbArbiter1</span><span class="p">:</span> <span class="n">FB_Arbiter</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+    <span class="o">//</span> <span class="n">For</span> <span class="nb">all</span> <span class="n">devices</span> <span class="n">after</span> <span class="n">Stopper</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:TXI:SXR:MOTION:FFO:01&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.q_xFastFaultOut:=TIIB[PMPS_FFO]^Channel 1^Output&#39;</span><span class="p">}</span>
+    <span class="n">fbFastFaultOutput1</span><span class="p">:</span> <span class="n">FB_HardwareFFOutput</span> <span class="o">:=</span> <span class="p">(</span><span class="n">bAutoReset</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">i_sNetID</span><span class="o">:=</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:TXI:K:MOTION:PMPS:ReqTrans&#39;</span><span class="p">}</span>
+    <span class="n">rReqTrans</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span>                <span class="p">:</span> <span class="n">ARRAY</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">AUX_ATTENUATORS</span><span class="p">]</span> <span class="n">OF</span> <span class="n">ST_PMPS_Attenuator_IO</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: PLC:TXI:K:MOTION:PMPS:CurTrans&#39;</span><span class="p">}</span>
+    <span class="n">rCurTrans</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span>                <span class="p">:</span> <span class="n">ARRAY</span> <span class="p">[</span><span class="mf">1.</span><span class="o">.</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">AUX_ATTENUATORS</span><span class="p">]</span> <span class="n">OF</span> <span class="n">ST_PMPS_Attenuator_IO</span><span class="p">;</span>
+
+
+<span class="n">END_VAR</span>
+</pre></div>
+</div>
+</section>
+<section id="main">
+<h2>MAIN<a class="headerlink" href="#main" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{attribute &#39;qualified_only&#39;}
+VAR_GLOBAL
+
+// AL1K3-L2SI: 1 Axis
+    {attribute &#39;pytmc&#39; := &#39;pv: AL1K3:L2SI:MMS&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;.bLimitForwardEnable  := TIIB[AL1K3-EL7041-E1]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[AL1K3-EL7041-E1]^STM Status^Status^Digital input 2;
+                              .bBrakeRelease        := TIIB[AL1K3-EL2004-E3]^Channel 1^Output;
+                              .nRawEncoderULINT     := TIIB[AL1K3-EL5042-E2]^FB Inputs Channel 1^Position&#39;}
+    M1: ST_MotionStage := (sName := &#39;AL1K3:L2SI:MMS&#39;);
+
+
+
+    // AT1K3-SOLID: 4 axes
+    //Copied form AT1K4 and need to confirm the order
+    (* Important note
+
+     AT1K2 Solid Attenuator notes (JJ-xray SN-??????????)
+
+        JJ    Label   EPICS    Stage     NC   Location
+
+        1087      1   MMS:01   fbStage1  M2  Upstream-most
+        1088      2   MMS:02   fbStage2  M3
+        1086      3   MMS:03   fbStage3  M4
+           1089      4   MMS:04   fbStage4  M5  Downstream-most
+
+    *)
+    {attribute &#39;pytmc&#39; := &#39;pv: AT1K3:L2SI:MMS:01&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;
+        .bLimitForwardEnable  := TIIB[AT1K3-EL7047-04]^STM Status^Status^Digital input 1;
+        .bLimitBackwardEnable := TIIB[AT1K3-EL7047-04]^STM Status^Status^Digital input 2;
+        .nRawEncoderULINT     := TIIB[AT1K3-EL5042-02]^FB Inputs Channel 2^Position;
+    &#39;}
+    M2: ST_MotionStage := (sName := &#39;AT1K3:L2SI:MMS:01&#39;);
+
+    {attribute &#39;pytmc&#39; := &#39;pv: AT1K3:L2SI:MMS:02&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;
+        .bLimitForwardEnable  := TIIB[AT1K3-EL7047-03]^STM Status^Status^Digital input 1;
+        .bLimitBackwardEnable := TIIB[AT1K3-EL7047-03]^STM Status^Status^Digital input 2;
+        .nRawEncoderULINT     := TIIB[AT1K3-EL5042-02]^FB Inputs Channel 1^Position;
+    &#39;}
+    M3: ST_MotionStage := (sName := &#39;AT1K3:L2SI:MMS:02&#39;);
+
+    {attribute &#39;pytmc&#39; := &#39;pv: AT1K3:L2SI:MMS:03&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;
+        .bLimitForwardEnable  := TIIB[AT1K3-EL7047-02]^STM Status^Status^Digital input 1;
+        .bLimitBackwardEnable := TIIB[AT1K3-EL7047-02]^STM Status^Status^Digital input 2;
+        .nRawEncoderULINT     := TIIB[AT1K3-EL5042-01]^FB Inputs Channel 2^Position;
+    &#39;}
+    M4: ST_MotionStage := (sName := &#39;AT1K3:L2SI:MMS:03&#39;);
+
+    {attribute &#39;pytmc&#39; := &#39;pv: AT1K3:L2SI:MMS:04&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;
+        .bLimitForwardEnable  := TIIB[AT1K3-EL7047-01]^STM Status^Status^Digital input 1;
+        .bLimitBackwardEnable := TIIB[AT1K3-EL7047-01]^STM Status^Status^Digital input 2;
+        .nRawEncoderULINT     := TIIB[AT1K3-EL5042-01]^FB Inputs Channel 1^Position;
+    &#39;}
+    M5: ST_MotionStage := (sName := &#39;AT1K3:L2SI:MMS:04&#39;);
+
+
+    // SL1K3-SCATTER: 4 Axes
+    {attribute &#39;pytmc&#39; := &#39;pv: SL1K3:SCATTER:MMS:BOTTOM&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;.bLimitForwardEnable  := TIIB[SL1K3-EL7031-E1]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable := TIIB[SL1K3-EL7031-E1]^STM Status^Status^Digital input 1;
+                              .nRawEncoderUINT      := TIIB[SL1K3-EL5101-E2]^ENC Status compact^Counter value&#39;}
+    M6: ST_MotionStage := (sName := &#39;SL1K3:SCATTER:MMS:BOTTOM&#39;);
+    {attribute &#39;pytmc&#39; := &#39;pv: SL1K3:SCATTER:MMS:TOP&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;.bLimitForwardEnable  := TIIB[SL1K3-EL7031-E3]^STM Status^Status^Digital input 2;
+                              .bLimitBackwardEnable := TIIB[SL1K3-EL7031-E3]^STM Status^Status^Digital input 1;
+                              .nRawEncoderUINT      := TIIB[SL1K3-EL5101-E4]^ENC Status compact^Counter value&#39;}
+    M7: ST_MotionStage := (sName := &#39;SL1K3:SCATTER:MMS:TOP&#39;);
+    {attribute &#39;pytmc&#39; := &#39;pv: SL1K3:SCATTER:MMS:NORTH&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;.bLimitForwardEnable  := TIIB[SL1K3-EL7031-E5]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[SL1K3-EL7031-E5]^STM Status^Status^Digital input 2;
+                              .nRawEncoderUINT      := TIIB[SL1K3-EL5101-E6]^ENC Status compact^Counter value&#39;}
+    M8: ST_MotionStage := (sName := &#39;SL1K4:SCATTER:MMS:NORTH&#39;);
+    {attribute &#39;pytmc&#39; := &#39;pv: SL1K3:SCATTER:MMS:SOUTH&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;.bLimitForwardEnable  := TIIB[SL1K3-EL7031-E7]^STM Status^Status^Digital input 1;
+                              .bLimitBackwardEnable := TIIB[SL1K3-EL7031-E7]^STM Status^Status^Digital input 2;
+                              .nRawEncoderUINT      := TIIB[SL1K3-EL5101-E8]^ENC Status compact^Counter value&#39;}
+    M9: ST_MotionStage := (sName := &#39;SL1K3:SCATTER:MMS:SOUTH&#39;);
+
+END_VAR
+</pre></div>
+</div>
+</section>
+</section>
+<section id="pous">
+<h1>POUs<a class="headerlink" href="#pous" title="Link to this heading"></a></h1>
+<section id="fb-slits">
+<h2>FB_SLITS<a class="headerlink" href="#fb-slits" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_SLITS</span>
+<span class="n">VAR_IN_OUT</span>
+    <span class="n">stTopBlade</span><span class="p">:</span> <span class="n">ST_MotionStage</span><span class="p">;</span>
+    <span class="n">stBottomBlade</span><span class="p">:</span> <span class="n">ST_MotionStage</span><span class="p">;</span>
+    <span class="n">stNorthBlade</span><span class="p">:</span> <span class="n">ST_MotionStage</span><span class="p">;</span>
+    <span class="n">stSouthBlade</span><span class="p">:</span> <span class="n">ST_MotionStage</span><span class="p">;</span>
+    <span class="n">bExecuteMotion</span><span class="p">:</span><span class="n">BOOL</span> <span class="p">;</span>
+    <span class="n">io_fbFFHWO</span>    <span class="p">:</span>    <span class="n">FB_HardwareFFOutput</span><span class="p">;</span>
+    <span class="n">fbArbiter</span><span class="p">:</span> <span class="n">FB_Arbiter</span><span class="p">();</span>
+<span class="n">END_VAR</span>
+
+<span class="n">VAR_INPUT</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">PMPS_OK</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">i</span><span class="p">;</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="kc">False</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="kc">True</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bMoveOk</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span>
+
+        <span class="p">(</span><span class="o">*</span><span class="n">Offsets</span><span class="o">*</span><span class="p">)</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">Offset_Top</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rEncoderOffsetTop</span><span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">ZeroOffset_Bottom</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rEncoderOffsetBottom</span><span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">ZeroOffset_North</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rEncoderOffsetNorth</span><span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">ZeroOffset_South</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rEncoderOffsetSouth</span><span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+    <span class="n">i_DevName</span> <span class="p">:</span> <span class="n">STRING</span><span class="p">;</span> <span class="o">//</span><span class="n">device</span> <span class="n">name</span> <span class="k">for</span> <span class="n">FFO</span> <span class="ow">and</span> <span class="n">PMPS</span> <span class="n">diagnostics</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">Home</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">i</span><span class="p">;</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="kc">False</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="kc">True</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bHome</span><span class="p">:</span><span class="n">BOOL</span><span class="o">:=</span><span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+
+<span class="n">VAR</span>
+    <span class="n">fbTopBlade</span><span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+    <span class="n">fbBottomBlade</span><span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+    <span class="n">fbNorthBlade</span><span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+    <span class="n">fbSouthBlade</span><span class="p">:</span> <span class="n">FB_MotionStage</span><span class="p">;</span>
+    <span class="n">fPosTopBlade</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="n">fPosBottomBlade</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="n">fPosNorthBlade</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="n">fPosSouthBlade</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+
+    <span class="p">(</span><span class="o">*</span><span class="n">Motion</span> <span class="n">Parameters</span><span class="o">*</span><span class="p">)</span>
+    <span class="n">fSmallDelta</span><span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">0.01</span><span class="p">;</span>
+    <span class="n">fBigDelta</span><span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">fMaxVelocity</span><span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">0.2</span><span class="p">;</span>
+    <span class="n">fHighAccel</span><span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">0.8</span><span class="p">;</span>
+    <span class="n">fLowAccel</span><span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mf">0.1</span><span class="p">;</span>
+
+    <span class="n">stTop</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stBOTTOM</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stNorth</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stSouth</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: TOP&#39;</span><span class="p">}</span>
+    <span class="n">fbTop</span><span class="p">:</span> <span class="n">FB_StatePTPMove</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: BOTTOM&#39;</span><span class="p">}</span>
+    <span class="n">fbBottom</span><span class="p">:</span> <span class="n">FB_StatePTPMove</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: NORTH&#39;</span><span class="p">}</span>
+    <span class="n">fbNorth</span><span class="p">:</span> <span class="n">FB_StatePTPMove</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: SOUTH&#39;</span><span class="p">}</span>
+    <span class="n">fbSouth</span><span class="p">:</span> <span class="n">FB_StatePTPMove</span><span class="p">;</span>
+
+    <span class="p">(</span><span class="o">*</span><span class="n">EPICS</span> <span class="n">pvs</span><span class="o">*</span><span class="p">)</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">XWID_REQ</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rReqApertureSizeX</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">YWID_REQ</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rReqApertureSizeY</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">XCEN_REQ</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rReqCenterX</span><span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">YCEN_REQ</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rReqCenterY</span><span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">ACTUAL_XWIDTH</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rActApertureSizeX</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">ACTUAL_YWIDTH</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rActApertureSizeY</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">ACTUAL_XCENTER</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rActCenterX</span><span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">ACTUAL_YCENTER</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rActCenterY</span><span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">XCEN_SETZERO</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rSetCenterX</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">YCEN_SETZERO</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">rSetCenterY</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">OPEN</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="kc">False</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="kc">True</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bOpen</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">CLOSE</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="kc">False</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="kc">True</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bClose</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">BLOCK</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="kc">False</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="kc">True</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bBlock</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+
+
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">HOME_READY</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">i</span><span class="p">;</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="kc">False</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="kc">True</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bHomeReady</span><span class="p">:</span><span class="n">BOOL</span><span class="o">:=</span><span class="n">FALSE</span><span class="p">;</span>
+
+
+        <span class="o">//</span><span class="n">Local</span> <span class="n">variables</span>
+    <span class="n">bInit</span><span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span><span class="n">true</span><span class="p">;</span>
+    <span class="n">rTrig_Block</span><span class="p">:</span> <span class="n">R_TRIG</span><span class="p">;</span>
+    <span class="n">rTrig_Open</span><span class="p">:</span> <span class="n">R_TRIG</span><span class="p">;</span>
+    <span class="n">rTrig_Close</span><span class="p">:</span> <span class="n">R_TRIG</span><span class="p">;</span>
+
+    <span class="o">//</span><span class="n">old</span> <span class="n">values</span>
+    <span class="n">rOldReqApertureSizeX</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+    <span class="n">rOldReqApertureSizeY</span> <span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+    <span class="n">rOldReqCenterX</span><span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+    <span class="n">rOldReqCenterY</span><span class="p">:</span> <span class="n">REAL</span><span class="p">;</span>
+
+    <span class="n">bExecuteMotionX</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+    <span class="n">bExecuteMotionY</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+
+
+    <span class="n">fPosBlock</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="n">fPosClose</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+    <span class="n">fPosOpen</span><span class="p">:</span> <span class="n">LREAL</span><span class="p">;</span>
+
+
+    <span class="o">//</span> <span class="n">For</span> <span class="n">logging</span>
+    <span class="n">fbLogger</span> <span class="p">:</span> <span class="n">FB_LogMessage</span> <span class="o">:=</span> <span class="p">(</span><span class="n">eSubsystem</span><span class="o">:=</span><span class="n">E_SubSystem</span><span class="o">.</span><span class="n">MOTION</span><span class="p">);</span>
+    <span class="n">tErrorPresent</span> <span class="p">:</span> <span class="n">R_TRIG</span><span class="p">;</span>
+    <span class="n">tAction</span> <span class="p">:</span> <span class="n">R_TRIG</span><span class="p">;</span>
+    <span class="n">tOverrideActivated</span> <span class="p">:</span> <span class="n">R_TRIG</span><span class="p">;</span>
+
+    <span class="n">FFO</span>    <span class="p">:</span>    <span class="n">FB_FastFault</span> <span class="o">:=</span><span class="p">(</span>
+        <span class="n">i_DevName</span> <span class="o">:=</span> <span class="s1">&#39;Slits&#39;</span><span class="p">,</span>
+        <span class="n">i_Desc</span> <span class="o">:=</span> <span class="s1">&#39;Fault occurs when slits gap or center is in an unsafe condition&#39;</span><span class="p">,</span>
+        <span class="n">i_TypeCode</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#1010);</span>
+
+
+    <span class="n">bTest</span><span class="p">:</span> <span class="n">BOOL</span><span class="p">;</span>
+
+    <span class="n">AptArrayStatus</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span> <span class="p">:</span> <span class="n">ST_PMPS_Aperture_IO</span><span class="p">;</span>
+    <span class="n">AptArrayReq</span> <span class="n">AT</span> <span class="o">%</span><span class="n">I</span><span class="o">*</span> <span class="p">:</span> <span class="n">ST_PMPS_Aperture_IO</span><span class="p">;</span>
+
+<span class="n">END_VAR</span>
+<span class="n">ACT_init</span><span class="p">();</span>
+
+<span class="o">//</span> <span class="n">Instantiate</span> <span class="n">Function</span> <span class="n">block</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">blades</span>
+<span class="n">ACT_Motion</span><span class="p">();</span>
+<span class="o">//</span><span class="n">SET</span> <span class="ow">and</span> <span class="n">GET</span> <span class="n">the</span> <span class="n">requested</span> <span class="ow">and</span> <span class="n">Actual</span> <span class="n">values</span>
+<span class="n">ACT_CalculatePositions</span><span class="p">();</span>
+<span class="o">//</span><span class="n">ACT_BLOCK</span><span class="p">();</span>
+
+<span class="n">END_FUNCTION_BLOCK</span>
+
+<span class="n">ACTION</span> <span class="n">ACT_BLOCK</span><span class="p">:</span>
+<span class="n">rTrig_Block</span> <span class="p">(</span><span class="n">CLK</span><span class="o">:=</span> <span class="n">bBlock</span><span class="p">);</span>
+<span class="n">rTrig_Open</span> <span class="p">(</span><span class="n">CLK</span><span class="o">:=</span> <span class="n">bOpen</span><span class="p">);</span>
+<span class="n">rTrig_Close</span> <span class="p">(</span><span class="n">CLK</span><span class="o">:=</span> <span class="n">bClose</span><span class="p">);</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">rTrig_Block</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="o">//</span><span class="n">BLOCK</span>
+
+    <span class="n">bBlock</span> <span class="o">:=</span> <span class="n">false</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">rTrig_Open</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span> <span class="n">THEN</span>
+
+
+    <span class="n">bOpen</span> <span class="o">:=</span> <span class="n">false</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">rTrig_Close</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span> <span class="n">THEN</span>
+
+
+    <span class="n">bClose</span> <span class="o">:=</span> <span class="n">false</span><span class="p">;</span>
+<span class="n">END_IF</span>
+<span class="n">END_ACTION</span>
+
+<span class="n">ACTION</span> <span class="n">ACT_CalculatePositions</span><span class="p">:</span>
+<span class="o">//</span><span class="n">check</span> <span class="k">if</span> <span class="n">requested</span> <span class="n">center</span> <span class="ow">or</span> <span class="n">gap</span> <span class="n">has</span> <span class="n">changed</span>
+<span class="o">//</span><span class="n">check</span> <span class="n">that</span> <span class="n">the</span> <span class="n">requested</span> <span class="n">values</span> <span class="n">are</span> <span class="n">within</span> <span class="n">acceptable</span> <span class="n">motion</span> <span class="nb">range</span>
+<span class="n">IF</span> <span class="p">(</span><span class="n">rOldReqApertureSizeX</span> <span class="o">&lt;&gt;</span> <span class="n">rReqApertureSizeX</span><span class="p">)</span> <span class="n">THEN</span>
+        <span class="n">rOldReqApertureSizeX</span> <span class="o">:=</span> <span class="n">rReqApertureSizeX</span><span class="p">;</span>
+        <span class="n">bExecuteMotionX</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbLogger</span><span class="p">(</span><span class="n">sMsg</span><span class="o">:=</span><span class="s1">&#39;Requested new X gap.&#39;</span><span class="p">,</span> <span class="n">eSevr</span><span class="o">:=</span><span class="n">TcEventSeverity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">);</span>
+<span class="n">END_IF</span>
+
+<span class="n">IF</span> <span class="p">(</span><span class="n">rOldReqCenterX</span> <span class="o">&lt;&gt;</span> <span class="n">rReqCenterX</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">rOldReqCenterX</span> <span class="o">:=</span> <span class="n">rReqCenterX</span><span class="p">;</span>
+    <span class="n">bExecuteMotionX</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">fbLogger</span><span class="p">(</span><span class="n">sMsg</span><span class="o">:=</span><span class="s1">&#39;Requested new X center&#39;</span><span class="p">,</span> <span class="n">eSevr</span><span class="o">:=</span><span class="n">TcEventSeverity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">);</span>
+   <span class="o">//</span> <span class="n">ELSE</span>
+      <span class="o">//</span>  <span class="n">rReqCenterX</span> <span class="o">:=</span> <span class="n">rActCenterX</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="n">IF</span> <span class="p">(</span><span class="n">rOldReqApertureSizeY</span> <span class="o">&lt;&gt;</span> <span class="n">rReqApertureSizeY</span><span class="p">)</span> <span class="n">THEN</span>
+        <span class="n">rOldReqApertureSizeY</span> <span class="o">:=</span> <span class="n">rReqApertureSizeY</span><span class="p">;</span>
+        <span class="n">bExecuteMotionY</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbLogger</span><span class="p">(</span><span class="n">sMsg</span><span class="o">:=</span><span class="s1">&#39;Requested new Y gap.&#39;</span><span class="p">,</span> <span class="n">eSevr</span><span class="o">:=</span><span class="n">TcEventSeverity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">);</span>
+
+<span class="n">END_IF</span>
+
+<span class="n">IF</span> <span class="p">(</span><span class="n">rOldReqCenterY</span> <span class="o">&lt;&gt;</span> <span class="n">rReqCenterY</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">rOldReqCenterY</span> <span class="o">:=</span> <span class="n">rReqCenterY</span><span class="p">;</span>
+    <span class="n">bExecuteMotionY</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">fbLogger</span><span class="p">(</span><span class="n">sMsg</span><span class="o">:=</span><span class="s1">&#39;Requested new Y center.&#39;</span><span class="p">,</span> <span class="n">eSevr</span><span class="o">:=</span><span class="n">TcEventSeverity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">);</span>
+   <span class="o">//</span> <span class="n">ELSE</span>
+      <span class="o">//</span>  <span class="n">rReqCenterY</span> <span class="o">:=</span> <span class="n">rActCenterY</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+
+<span class="o">//</span><span class="n">Calculate</span> <span class="n">requested</span> <span class="n">target</span> <span class="n">positions</span> <span class="kn">from</span><span class="w"> </span><span class="nn">requested</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span>
+<span class="n">fPosTopBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="n">rReqApertureSizeY</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterY</span> <span class="o">+</span> <span class="n">rEncoderOffsetTop</span><span class="p">)</span> <span class="p">;</span>
+<span class="n">fPosBottomBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">rReqApertureSizeY</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterY</span><span class="o">+</span><span class="n">rEncoderOffsetBottom</span><span class="p">);</span>
+
+<span class="n">fPosNorthBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="n">rReqApertureSizeX</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterX</span> <span class="o">+</span> <span class="n">rEncoderOffsetNorth</span><span class="p">);</span>
+<span class="n">fPosSouthBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">rReqApertureSizeX</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterX</span> <span class="o">+</span> <span class="n">rEncoderOffsetSouth</span><span class="p">);</span>
+
+
+<span class="o">//</span><span class="n">Calculate</span> <span class="n">actual</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span> <span class="kn">from</span><span class="w"> </span><span class="nn">actual</span> <span class="n">stages</span> <span class="n">positions</span>
+<span class="n">rActApertureSizeX</span> <span class="o">:=</span> <span class="n">LREAL_TO_REAL</span><span class="p">((</span><span class="n">stNorthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetNorth</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">stSouthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span><span class="o">-</span> <span class="n">rEncoderOffsetSouth</span><span class="p">));</span>
+
+<span class="n">rActApertureSizeY</span> <span class="o">:=</span> <span class="n">LREAL_TO_REAL</span><span class="p">((</span><span class="n">stTopBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetTop</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">stBottomBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetBottom</span><span class="p">));</span>
+
+<span class="n">rActCenterX</span> <span class="o">:=</span> <span class="n">LREAL_TO_REAL</span><span class="p">((((</span><span class="n">stNorthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetNorth</span><span class="p">)</span>  <span class="o">+</span> <span class="p">(</span><span class="n">stSouthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetSouth</span> <span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">));</span>
+
+<span class="n">rActCenterY</span> <span class="o">:=</span> <span class="n">LREAL_TO_REAL</span><span class="p">((((</span><span class="n">stTopBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetTop</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">stBottomBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetBottom</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">));</span>
+
+
+
+<span class="o">//</span><span class="n">Update</span> <span class="n">PMPS</span> <span class="n">Arbiter</span> <span class="k">with</span> <span class="n">the</span> <span class="n">Actual</span> <span class="n">Size</span> <span class="ow">and</span> <span class="n">Center</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Aperture</span>
+<span class="n">END_ACTION</span>
+
+<span class="n">ACTION</span> <span class="n">ACT_Home</span><span class="p">:</span>
+
+<span class="n">END_ACTION</span>
+
+<span class="n">ACTION</span> <span class="n">ACT_Init</span><span class="p">:</span>
+<span class="o">//</span>  <span class="n">init</span> <span class="n">the</span> <span class="n">motion</span> <span class="n">stages</span> <span class="n">parameters</span>
+<span class="n">IF</span> <span class="p">(</span> <span class="n">bInit</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">stTopBlade</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stBottomBlade</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stNorthBlade</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stSouthBlade</span><span class="o">.</span><span class="n">bHardwareEnable</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stTopBlade</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span><span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stBottomBlade</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span><span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stNorthBlade</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span><span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stSouthBlade</span><span class="o">.</span><span class="n">bPowerSelf</span> <span class="o">:=</span><span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">stTopBlade</span><span class="o">.</span><span class="n">nBrakeMode</span> <span class="o">:=</span> <span class="n">ENUM_StageBrakeMode</span><span class="o">.</span><span class="n">NO_BRAKE</span><span class="p">;</span>
+    <span class="n">stBottomBlade</span><span class="o">.</span><span class="n">nBrakeMode</span> <span class="o">:=</span> <span class="n">ENUM_StageBrakeMode</span><span class="o">.</span><span class="n">NO_BRAKE</span><span class="p">;</span>
+    <span class="n">stNorthBlade</span><span class="o">.</span><span class="n">nBrakeMode</span> <span class="o">:=</span> <span class="n">ENUM_StageBrakeMode</span><span class="o">.</span><span class="n">NO_BRAKE</span><span class="p">;</span>
+    <span class="n">stSouthBlade</span><span class="o">.</span><span class="n">nBrakeMode</span> <span class="o">:=</span> <span class="n">ENUM_StageBrakeMode</span><span class="o">.</span><span class="n">NO_BRAKE</span><span class="p">;</span>
+    <span class="n">FFO</span><span class="o">.</span><span class="n">i_DevName</span> <span class="o">:=</span> <span class="n">i_DevName</span><span class="p">;</span>
+<span class="n">END_IF</span>
+<span class="n">END_ACTION</span>
+
+<span class="n">ACTION</span> <span class="n">ACT_Motion</span><span class="p">:</span>
+<span class="o">//</span> <span class="n">Instantiate</span> <span class="n">Function</span> <span class="n">block</span> <span class="k">for</span> <span class="nb">all</span> <span class="n">the</span> <span class="n">blades</span>
+<span class="n">fbTopBlade</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stTopBlade</span><span class="p">);</span>
+<span class="n">fbBottomBlade</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stBottomBlade</span><span class="p">);</span>
+<span class="n">fbNorthBlade</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stNorthBlade</span><span class="p">);</span>
+<span class="n">fbSouthBlade</span><span class="p">(</span><span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stSouthBlade</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">PTP</span> <span class="n">Motion</span> <span class="k">for</span> <span class="n">each</span> <span class="n">blade</span>
+<span class="n">stTop</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;Top&#39;</span><span class="p">;</span>
+<span class="n">stTop</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="n">fPosTopBlade</span><span class="p">;</span>
+<span class="n">stTop</span><span class="o">.</span><span class="n">fDelta</span> <span class="o">:=</span> <span class="n">fSmallDelta</span><span class="p">;</span>
+<span class="n">stTop</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">fMaxVelocity</span><span class="p">;</span>
+<span class="n">stTop</span><span class="o">.</span><span class="n">fAccel</span> <span class="o">:=</span> <span class="n">fHighAccel</span><span class="p">;</span>
+<span class="n">stTop</span><span class="o">.</span><span class="n">fDecel</span> <span class="o">:=</span> <span class="n">fHighAccel</span><span class="p">;</span>
+
+<span class="n">stBOTTOM</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;Bottom&#39;</span><span class="p">;</span>
+<span class="n">stBOTTOM</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="n">fPosBottomBlade</span><span class="p">;</span>
+<span class="n">stBOTTOM</span><span class="o">.</span><span class="n">fDelta</span> <span class="o">:=</span> <span class="n">fSmallDelta</span><span class="p">;</span>
+<span class="n">stBOTTOM</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">fMaxVelocity</span><span class="p">;</span>
+<span class="n">stBOTTOM</span><span class="o">.</span><span class="n">fAccel</span> <span class="o">:=</span> <span class="n">fHighAccel</span><span class="p">;</span>
+<span class="n">stBOTTOM</span><span class="o">.</span><span class="n">fDecel</span> <span class="o">:=</span> <span class="n">fHighAccel</span><span class="p">;</span>
+
+<span class="n">stNorth</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;North&#39;</span><span class="p">;</span>
+<span class="n">stNorth</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="n">fPosNorthBlade</span><span class="p">;</span>
+<span class="n">stNorth</span><span class="o">.</span><span class="n">fDelta</span> <span class="o">:=</span> <span class="n">fSmallDelta</span><span class="p">;</span>
+<span class="n">stNorth</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">fMaxVelocity</span><span class="p">;</span>
+<span class="n">stNorth</span><span class="o">.</span><span class="n">fAccel</span> <span class="o">:=</span> <span class="n">fHighAccel</span><span class="p">;</span>
+<span class="n">stNorth</span><span class="o">.</span><span class="n">fDecel</span> <span class="o">:=</span> <span class="n">fHighAccel</span><span class="p">;</span>
+
+<span class="n">stSouth</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;South&#39;</span><span class="p">;</span>
+<span class="n">stSouth</span><span class="o">.</span><span class="n">fPosition</span> <span class="o">:=</span> <span class="n">fPosSouthBlade</span><span class="p">;</span>
+<span class="n">stSouth</span><span class="o">.</span><span class="n">fDelta</span> <span class="o">:=</span> <span class="n">fSmallDelta</span><span class="p">;</span>
+<span class="n">stSouth</span><span class="o">.</span><span class="n">fVelocity</span> <span class="o">:=</span> <span class="n">fMaxVelocity</span><span class="p">;</span>
+<span class="n">stSouth</span><span class="o">.</span><span class="n">fAccel</span> <span class="o">:=</span> <span class="n">fHighAccel</span><span class="p">;</span>
+<span class="n">stSouth</span><span class="o">.</span><span class="n">fDecel</span> <span class="o">:=</span> <span class="n">fHighAccel</span><span class="p">;</span>
+
+<span class="n">IF</span> <span class="p">(</span><span class="n">bExecuteMotionY</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">fbTop</span><span class="o">.</span><span class="n">bExecute</span> <span class="o">:=</span> <span class="n">fbBottom</span><span class="o">.</span><span class="n">bExecute</span> <span class="o">:=</span> <span class="n">bExecuteMotionY</span><span class="p">;</span>
+    <span class="n">bExecuteMotionY</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="n">IF</span> <span class="p">(</span><span class="n">bExecuteMotionX</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">fbNorth</span><span class="o">.</span><span class="n">bExecute</span> <span class="o">:=</span> <span class="n">fbSouth</span><span class="o">.</span><span class="n">bExecute</span> <span class="o">:=</span> <span class="n">bExecuteMotionX</span><span class="p">;</span>
+    <span class="n">bExecuteMotionX</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+
+<span class="n">fbTop</span><span class="p">(</span>
+    <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stTop</span><span class="p">,</span>
+    <span class="n">bMoveOk</span><span class="o">:=</span><span class="n">bMoveOk</span><span class="p">,</span>
+    <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stTopBlade</span><span class="p">);</span>
+
+<span class="n">fbBottom</span><span class="p">(</span>
+    <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stBOTTOM</span><span class="p">,</span>
+    <span class="n">bMoveOk</span><span class="o">:=</span><span class="n">bMoveOk</span><span class="p">,</span>
+    <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stBottomBlade</span><span class="p">);</span>
+
+<span class="n">fbNorth</span><span class="p">(</span>
+    <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stNorth</span><span class="p">,</span>
+    <span class="n">bMoveOk</span><span class="o">:=</span><span class="n">bMoveOk</span><span class="p">,</span>
+    <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stNorthBlade</span><span class="p">);</span>
+
+<span class="n">fbSouth</span><span class="p">(</span>
+    <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stSouth</span><span class="p">,</span>
+    <span class="n">bMoveOk</span><span class="o">:=</span><span class="n">bMoveOk</span><span class="p">,</span>
+    <span class="n">stMotionStage</span><span class="o">:=</span><span class="n">stSouthBlade</span><span class="p">);</span>
+<span class="n">END_ACTION</span>
+
+<span class="n">ACTION</span> <span class="n">ACT_Zero</span><span class="p">:</span>
+<span class="o">//</span><span class="n">ZERO</span> <span class="n">BIAS</span>
+
+<span class="o">//</span> <span class="n">Set</span> <span class="n">Y</span> <span class="n">center</span> <span class="n">to</span> <span class="n">zero</span>
+
+<span class="o">//</span> <span class="n">Set</span> <span class="n">X</span> <span class="n">center</span> <span class="n">to</span> <span class="n">zero</span>
+<span class="p">(</span><span class="o">*</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">rSetCenterY</span><span class="p">)</span><span class="n">THEN</span>
+        <span class="n">rSetCenterY</span> <span class="o">:=</span> <span class="n">false</span><span class="p">;</span>
+        <span class="o">//</span> <span class="n">Set</span> <span class="n">Current</span> <span class="n">Position</span>
+        <span class="n">fbSetPosition_TOP</span><span class="o">.</span><span class="n">Position</span> <span class="o">:=</span>  <span class="n">stTopBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rActCenterY</span> <span class="p">;</span>
+        <span class="n">fbSetPosition_TOP</span><span class="o">.</span><span class="n">Execute</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbSetPosition_Bottom</span><span class="o">.</span><span class="n">Position</span> <span class="o">:=</span> <span class="n">stBottomBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rActCenterY</span><span class="p">;</span>
+        <span class="n">fbSetPosition_Bottom</span><span class="o">.</span><span class="n">Execute</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">rSetCenterX</span><span class="p">)</span><span class="n">THEN</span>
+        <span class="n">rSetCenterX</span> <span class="o">:=</span> <span class="n">false</span><span class="p">;</span>
+        <span class="o">//</span> <span class="n">Set</span> <span class="n">Current</span> <span class="n">Position</span>
+        <span class="n">fbSetPosition_North</span><span class="o">.</span><span class="n">Position</span> <span class="o">:=</span> <span class="n">stNorthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rActCenterX</span> <span class="p">;</span>
+        <span class="n">fbSetPosition_North</span><span class="o">.</span><span class="n">Execute</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbSetPosition_South</span><span class="o">.</span><span class="n">Position</span> <span class="o">:=</span> <span class="n">stSouthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rActCenterX</span> <span class="p">;</span> <span class="p">;</span>
+        <span class="n">fbSetPosition_South</span><span class="o">.</span><span class="n">Execute</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+
+<span class="o">//</span><span class="n">Reset</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">fbSetPosition_TOP</span><span class="o">.</span><span class="n">Done</span> <span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">fbSetPosition_TOP</span><span class="o">.</span><span class="n">Execute</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">fbSetPosition_Bottom</span><span class="o">.</span><span class="n">Done</span> <span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">fbSetPosition_Bottom</span><span class="o">.</span><span class="n">Execute</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">fbSetPosition_North</span><span class="o">.</span><span class="n">Done</span> <span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">fbSetPosition_North</span><span class="o">.</span><span class="n">Execute</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">fbSetPosition_South</span><span class="o">.</span><span class="n">Done</span> <span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">fbSetPosition_South</span><span class="o">.</span><span class="n">Execute</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="o">//</span> <span class="n">Set</span> <span class="n">Encoder</span> <span class="n">Position</span>
+<span class="o">//</span><span class="n">Clear</span> <span class="n">position</span> <span class="n">lag</span> <span class="n">error</span>
+<span class="n">stSetPositionOptions</span><span class="o">.</span><span class="n">ClearPositionLag</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">fbSetPosition_TOP</span><span class="p">(</span>
+    <span class="n">Axis</span><span class="o">:=</span>  <span class="n">stTopBlade</span><span class="o">.</span><span class="n">Axis</span> <span class="p">,</span>
+    <span class="n">Execute</span><span class="o">:=</span> <span class="p">,</span>
+    <span class="n">Position</span><span class="o">:=</span> <span class="mi">0</span> <span class="p">,</span>
+    <span class="n">Mode</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">,</span>
+    <span class="n">Options</span><span class="o">:=</span> <span class="n">stSetPositionOptions</span><span class="p">,</span>
+    <span class="n">Done</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">Busy</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">Error</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">ErrorID</span><span class="o">=&gt;</span> <span class="p">);</span>
+<span class="n">fbSetPosition_Bottom</span><span class="p">(</span>
+    <span class="n">Axis</span><span class="o">:=</span> <span class="n">stBottomBlade</span><span class="o">.</span><span class="n">Axis</span> <span class="p">,</span>
+    <span class="n">Execute</span><span class="o">:=</span> <span class="p">,</span>
+    <span class="n">Position</span><span class="o">:=</span> <span class="mi">0</span> <span class="p">,</span>
+    <span class="n">Mode</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">,</span>
+    <span class="n">Options</span><span class="o">:=</span> <span class="n">stSetPositionOptions</span><span class="p">,</span>
+    <span class="n">Done</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">Busy</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">Error</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">ErrorID</span><span class="o">=&gt;</span> <span class="p">);</span>
+<span class="n">fbSetPosition_North</span><span class="p">(</span>
+    <span class="n">Axis</span><span class="o">:=</span> <span class="n">stNorthBlade</span><span class="o">.</span><span class="n">Axis</span> <span class="p">,</span>
+    <span class="n">Execute</span><span class="o">:=</span> <span class="p">,</span>
+    <span class="n">Position</span><span class="o">:=</span> <span class="mi">0</span> <span class="p">,</span>
+    <span class="n">Mode</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">,</span>
+    <span class="n">Options</span><span class="o">:=</span> <span class="n">stSetPositionOptions</span><span class="p">,</span>
+    <span class="n">Done</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">Busy</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">Error</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">ErrorID</span><span class="o">=&gt;</span> <span class="p">);</span>
+<span class="n">fbSetPosition_South</span><span class="p">(</span>
+    <span class="n">Axis</span><span class="o">:=</span> <span class="n">stSouthBlade</span><span class="o">.</span><span class="n">Axis</span> <span class="p">,</span>
+    <span class="n">Execute</span><span class="o">:=</span> <span class="p">,</span>
+    <span class="n">Position</span><span class="o">:=</span> <span class="mi">0</span> <span class="p">,</span>
+    <span class="n">Mode</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">,</span>
+    <span class="n">Options</span><span class="o">:=</span> <span class="n">stSetPositionOptions</span><span class="p">,</span>
+    <span class="n">Done</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">Busy</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">Error</span><span class="o">=&gt;</span> <span class="p">,</span>
+    <span class="n">ErrorID</span><span class="o">=&gt;</span> <span class="p">);</span>
+
+    <span class="o">*</span><span class="p">)</span>
+<span class="n">END_ACTION</span>
+
+<span class="n">METHOD</span> <span class="n">M_CheckPMPS</span> <span class="p">:</span> <span class="n">BOOL</span>
+<span class="n">VAR_INPUT</span>
+     <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="n">IF</span><span class="p">(</span><span class="n">rActApertureSizeX</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">astApertures</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">Width</span><span class="p">)</span><span class="o">+</span><span class="mf">0.001</span><span class="p">)</span>
+    <span class="n">OR</span> <span class="p">(</span><span class="n">rActApertureSizeY</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">astApertures</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">Height</span><span class="p">)</span><span class="o">+</span><span class="mf">0.001</span><span class="p">)</span> <span class="n">THEN</span>
+        <span class="n">FFO</span><span class="o">.</span><span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">ELSE</span>
+        <span class="n">FFO</span><span class="o">.</span><span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="p">(</span><span class="o">*</span><span class="n">FAST</span> <span class="n">FAULT</span><span class="o">*</span><span class="p">)</span>
+<span class="n">FFO</span><span class="p">(</span><span class="n">i_xOK</span> <span class="o">:=</span> <span class="p">,</span>
+    <span class="n">i_xReset</span> <span class="o">:=</span> <span class="p">,</span>
+    <span class="n">i_xAutoReset</span> <span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">this</span><span class="o">^.</span><span class="n">io_fbFFHWO</span><span class="p">);</span>
+<span class="n">END_METHOD</span>
+
+<span class="n">METHOD</span> <span class="n">M_UpdatePMPS</span> <span class="p">:</span> <span class="n">BOOL</span>
+<span class="n">VAR_INPUT</span>
+    <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="o">//</span><span class="n">Keep</span> <span class="n">updating</span> <span class="n">the</span> <span class="n">status</span> <span class="n">of</span> <span class="n">the</span> <span class="n">apertures</span> <span class="n">PMPS</span>
+<span class="n">This</span><span class="o">^.</span><span class="n">AptArrayStatus</span><span class="o">.</span><span class="n">Height</span> <span class="o">:=</span> <span class="n">This</span><span class="o">^.</span><span class="n">rActApertureSizeY</span><span class="p">;</span>
+<span class="n">This</span><span class="o">^.</span><span class="n">AptArrayStatus</span><span class="o">.</span><span class="n">Width</span> <span class="o">:=</span> <span class="n">This</span><span class="o">^.</span><span class="n">rActApertureSizeX</span><span class="p">;</span>
+<span class="n">This</span><span class="o">^.</span><span class="n">AptArrayStatus</span><span class="o">.</span><span class="n">xOK</span> <span class="o">:=</span> <span class="n">NOT</span> <span class="p">(</span><span class="n">This</span><span class="o">^.</span><span class="n">stTopBlade</span><span class="o">.</span><span class="n">bError</span><span class="p">)</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="p">(</span><span class="n">This</span><span class="o">^.</span><span class="n">stBottomBlade</span><span class="o">.</span><span class="n">bError</span><span class="p">)</span>
+                                 <span class="n">AND</span> <span class="n">NOT</span> <span class="p">(</span><span class="n">This</span><span class="o">^.</span><span class="n">stNorthBlade</span><span class="o">.</span><span class="n">bError</span><span class="p">)</span> <span class="n">AND</span> <span class="n">NOT</span> <span class="p">(</span><span class="n">This</span><span class="o">^.</span><span class="n">stNorthBlade</span><span class="o">.</span><span class="n">bError</span><span class="p">);</span>
+
+<span class="o">//</span><span class="n">Evaluate</span> <span class="n">that</span> <span class="n">the</span> <span class="n">current</span> <span class="n">center</span> <span class="n">on</span> <span class="n">the</span> <span class="n">X</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">y</span> <span class="n">direction</span> <span class="n">didn</span><span class="s1">&#39;t exceed limits</span>
+<span class="o">//</span><span class="n">Fast</span> <span class="n">fault</span> <span class="n">when</span> <span class="n">it</span> <span class="n">does</span><span class="o">.</span>
+<span class="n">IF</span><span class="p">(</span><span class="n">rActCenterX</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">astApertures</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">Width</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">OR</span> <span class="p">(</span><span class="n">rActCenterY</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">astApertures</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">Height</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="n">THEN</span>
+        <span class="n">FFO</span><span class="o">.</span><span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">ELSE</span>
+        <span class="n">FFO</span><span class="o">.</span><span class="n">i_xOK</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="o">//</span><span class="n">Evaluate</span> <span class="n">that</span> <span class="n">the</span> <span class="n">requested</span> <span class="n">gaps</span> <span class="n">on</span> <span class="n">the</span> <span class="n">X</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">y</span> <span class="n">direction</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">larger</span> <span class="n">than</span> <span class="n">the</span> <span class="n">current</span> <span class="n">gap</span>
+<span class="o">//</span> <span class="n">narrow</span>  <span class="n">the</span> <span class="n">gap</span> <span class="k">if</span> <span class="n">the</span> <span class="n">requested</span> <span class="ow">is</span> <span class="n">larger</span>
+<span class="n">IF</span><span class="p">(</span><span class="n">bTest</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">IF</span> <span class="p">(</span><span class="n">This</span><span class="o">^.</span><span class="n">rActApertureSizeX</span> <span class="o">&gt;</span> <span class="n">AptArrayReq</span><span class="o">.</span><span class="n">Width</span><span class="p">)</span> <span class="n">THEN</span>
+        <span class="n">rReqApertureSizeX</span> <span class="o">:=</span> <span class="n">AptArrayReq</span><span class="o">.</span><span class="n">Width</span><span class="p">;</span>
+    <span class="n">END_IF</span>
+    <span class="n">IF</span> <span class="p">(</span><span class="n">This</span><span class="o">^.</span><span class="n">rActApertureSizeY</span> <span class="o">&gt;</span> <span class="n">AptArrayReq</span><span class="o">.</span><span class="n">Height</span><span class="p">)</span> <span class="n">THEN</span>
+         <span class="n">rReqApertureSizeY</span> <span class="o">:=</span> <span class="n">AptArrayReq</span><span class="o">.</span><span class="n">Height</span><span class="p">;</span>
+    <span class="n">END_IF</span>
+<span class="n">END_IF</span>
+
+
+<span class="p">(</span><span class="o">*</span><span class="n">FAST</span> <span class="n">FAULT</span><span class="o">*</span><span class="p">)</span>
+<span class="n">FFO</span><span class="p">(</span><span class="n">i_xOK</span> <span class="o">:=</span> <span class="p">,</span>
+    <span class="n">i_xReset</span> <span class="o">:=</span> <span class="p">,</span>
+    <span class="n">i_xAutoReset</span> <span class="o">:=</span><span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">io_fbFFHWO</span><span class="p">);</span>
+<span class="n">END_METHOD</span>
+</pre></div>
+</div>
+</section>
+<section id="fb-slits-power">
+<h2>FB_SLITS_POWER<a class="headerlink" href="#fb-slits-power" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_SLITS_POWER</span> <span class="n">EXTENDS</span> <span class="n">FB_SLITS</span>
+<span class="n">VAR_INPUT</span>
+<span class="n">END_VAR</span>
+<span class="n">VAR</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">FSW</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbFlowSwitch</span><span class="p">:</span> <span class="n">FB_XTES_Flowswitch</span><span class="p">;</span>
+
+
+
+    <span class="o">//</span><span class="n">RTDs</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">TOP</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">01</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">RTD_TOP_1</span><span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">TOP</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">02</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">RTD_TOP_2</span><span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">BOTTOM</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">01</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">RTD_Bottom_1</span><span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">BOTTOM</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">02</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">RTD_Bottom_2</span><span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">NORTH</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">01</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">RTD_North_1</span><span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">NORTH</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">02</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">RTD_North_2</span><span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SOUTH</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">01</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">RTD_South_1</span><span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SOUTH</span><span class="p">:</span><span class="n">RTD</span><span class="p">:</span><span class="mi">02</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">RTD_South_2</span><span class="p">:</span> <span class="n">FB_TempSensor</span><span class="p">;</span>
+
+
+
+<span class="n">END_VAR</span>
+<span class="n">ACT_RTDs</span><span class="p">();</span>
+
+<span class="n">END_FUNCTION_BLOCK</span>
+
+<span class="n">ACTION</span> <span class="n">ACT_CalculatePositions</span><span class="p">:</span>
+<span class="o">//</span><span class="n">check</span> <span class="k">if</span> <span class="n">requested</span> <span class="n">center</span> <span class="ow">or</span> <span class="n">gap</span> <span class="n">has</span> <span class="n">changed</span>
+<span class="o">//</span><span class="n">check</span> <span class="n">that</span> <span class="n">the</span> <span class="n">requested</span> <span class="n">values</span> <span class="n">are</span> <span class="n">within</span> <span class="n">acceptable</span> <span class="n">motion</span> <span class="nb">range</span>
+<span class="n">IF</span> <span class="p">(</span><span class="n">rOldReqApertureSizeX</span> <span class="o">&lt;&gt;</span> <span class="n">rReqApertureSizeX</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">IF</span> <span class="p">(</span><span class="n">rReqApertureSizeX</span> <span class="o">&lt;=</span> <span class="n">AptArrayReq</span><span class="o">.</span><span class="n">Width</span><span class="p">)</span>  <span class="n">THEN</span>
+        <span class="n">rOldReqApertureSizeX</span> <span class="o">:=</span> <span class="n">rReqApertureSizeX</span><span class="p">;</span>
+        <span class="n">bExecuteMotionX</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbLogger</span><span class="p">(</span><span class="n">sMsg</span><span class="o">:=</span><span class="s1">&#39;Requested new X gap.&#39;</span><span class="p">,</span> <span class="n">eSevr</span><span class="o">:=</span><span class="n">TcEventSeverity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">);</span>
+    <span class="n">ELSE</span>
+        <span class="n">fbLogger</span><span class="p">(</span><span class="n">sMsg</span><span class="o">:=</span><span class="s1">&#39;Requested new X gap is larger than PMPS request.&#39;</span><span class="p">,</span> <span class="n">eSevr</span><span class="o">:=</span><span class="n">TcEventSeverity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">);</span>
+    <span class="n">END_IF</span>
+  <span class="o">//</span>  <span class="n">ELSE</span>
+    <span class="o">//</span>    <span class="n">rReqApertureSizeX</span> <span class="o">:=</span> <span class="n">rActApertureSizeX</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="n">IF</span> <span class="p">(</span><span class="n">rOldReqCenterX</span> <span class="o">&lt;&gt;</span> <span class="n">rReqCenterX</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">rOldReqCenterX</span> <span class="o">:=</span> <span class="n">rReqCenterX</span><span class="p">;</span>
+    <span class="n">bExecuteMotionX</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">fbLogger</span><span class="p">(</span><span class="n">sMsg</span><span class="o">:=</span><span class="s1">&#39;Requested new X center&#39;</span><span class="p">,</span> <span class="n">eSevr</span><span class="o">:=</span><span class="n">TcEventSeverity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">);</span>
+   <span class="o">//</span> <span class="n">ELSE</span>
+      <span class="o">//</span>  <span class="n">rReqCenterX</span> <span class="o">:=</span> <span class="n">rActCenterX</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="n">IF</span> <span class="p">(</span><span class="n">rOldReqApertureSizeY</span> <span class="o">&lt;&gt;</span> <span class="n">rReqApertureSizeY</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">IF</span> <span class="n">rReqApertureSizeY</span> <span class="o">&lt;=</span> <span class="n">AptArrayReq</span><span class="o">.</span><span class="n">Height</span> <span class="n">THEN</span>
+        <span class="n">rOldReqApertureSizeY</span> <span class="o">:=</span> <span class="n">rReqApertureSizeY</span><span class="p">;</span>
+        <span class="n">bExecuteMotionY</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbLogger</span><span class="p">(</span><span class="n">sMsg</span><span class="o">:=</span><span class="s1">&#39;Requested new Y gap.&#39;</span><span class="p">,</span> <span class="n">eSevr</span><span class="o">:=</span><span class="n">TcEventSeverity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">);</span>
+    <span class="n">ELSE</span>
+        <span class="n">fbLogger</span><span class="p">(</span><span class="n">sMsg</span><span class="o">:=</span><span class="s1">&#39;Requested new Y gap is larger than PMPS request.&#39;</span><span class="p">,</span> <span class="n">eSevr</span><span class="o">:=</span><span class="n">TcEventSeverity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">);</span>
+    <span class="n">END_IF</span>
+   <span class="o">//</span> <span class="n">ELSE</span>
+       <span class="o">//</span> <span class="n">rReqApertureSizeY</span> <span class="o">:=</span> <span class="n">rActApertureSizeY</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+<span class="n">IF</span> <span class="p">(</span><span class="n">rOldReqCenterY</span> <span class="o">&lt;&gt;</span> <span class="n">rReqCenterY</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">rOldReqCenterY</span> <span class="o">:=</span> <span class="n">rReqCenterY</span><span class="p">;</span>
+    <span class="n">bExecuteMotionY</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">fbLogger</span><span class="p">(</span><span class="n">sMsg</span><span class="o">:=</span><span class="s1">&#39;Requested new Y center.&#39;</span><span class="p">,</span> <span class="n">eSevr</span><span class="o">:=</span><span class="n">TcEventSeverity</span><span class="o">.</span><span class="n">Verbose</span><span class="p">);</span>
+   <span class="o">//</span> <span class="n">ELSE</span>
+      <span class="o">//</span>  <span class="n">rReqCenterY</span> <span class="o">:=</span> <span class="n">rActCenterY</span><span class="p">;</span>
+<span class="n">END_IF</span>
+
+
+<span class="o">//</span><span class="n">Calculate</span> <span class="n">requested</span> <span class="n">target</span> <span class="n">positions</span> <span class="kn">from</span><span class="w"> </span><span class="nn">requested</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span>
+<span class="n">fPosTopBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="n">rReqApertureSizeY</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterY</span> <span class="o">+</span> <span class="n">rEncoderOffsetTop</span><span class="p">)</span> <span class="p">;</span>
+<span class="n">fPosBottomBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">rReqApertureSizeY</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterY</span><span class="o">+</span><span class="n">rEncoderOffsetBottom</span><span class="p">);</span>
+
+<span class="n">fPosNorthBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="n">rReqApertureSizeX</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterX</span> <span class="o">+</span> <span class="n">rEncoderOffsetNorth</span><span class="p">);</span>
+<span class="n">fPosSouthBlade</span> <span class="o">:=</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">rReqApertureSizeX</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">rReqCenterX</span> <span class="o">+</span> <span class="n">rEncoderOffsetSouth</span><span class="p">);</span>
+
+
+<span class="o">//</span><span class="n">Calculate</span> <span class="n">actual</span> <span class="n">gap</span> <span class="ow">and</span> <span class="n">center</span> <span class="kn">from</span><span class="w"> </span><span class="nn">actual</span> <span class="n">stages</span> <span class="n">positions</span>
+<span class="n">rActApertureSizeX</span> <span class="o">:=</span> <span class="n">LREAL_TO_REAL</span><span class="p">((</span><span class="n">stNorthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetNorth</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">stSouthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span><span class="o">-</span> <span class="n">rEncoderOffsetSouth</span><span class="p">));</span>
+
+<span class="n">rActApertureSizeY</span> <span class="o">:=</span> <span class="n">LREAL_TO_REAL</span><span class="p">((</span><span class="n">stTopBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetTop</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">stBottomBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetBottom</span><span class="p">));</span>
+
+<span class="n">rActCenterX</span> <span class="o">:=</span> <span class="n">LREAL_TO_REAL</span><span class="p">((((</span><span class="n">stNorthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetNorth</span><span class="p">)</span>  <span class="o">+</span> <span class="p">(</span><span class="n">stSouthBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetSouth</span> <span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">));</span>
+
+<span class="n">rActCenterY</span> <span class="o">:=</span> <span class="n">LREAL_TO_REAL</span><span class="p">((((</span><span class="n">stTopBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetTop</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">stBottomBlade</span><span class="o">.</span><span class="n">stAxisStatus</span><span class="o">.</span><span class="n">fActPosition</span> <span class="o">-</span> <span class="n">rEncoderOffsetBottom</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">));</span>
+
+
+
+<span class="o">//</span><span class="n">Update</span> <span class="n">PMPS</span> <span class="n">Arbiter</span> <span class="k">with</span> <span class="n">the</span> <span class="n">Actual</span> <span class="n">Size</span> <span class="ow">and</span> <span class="n">Center</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Aperture</span>
+<span class="n">END_ACTION</span>
+
+<span class="n">ACTION</span> <span class="n">ACT_RTDs</span><span class="p">:</span>
+<span class="o">////</span><span class="n">RTDs</span>
+<span class="n">RTD_TOP_1</span><span class="p">();</span>
+<span class="n">RTD_TOP_2</span><span class="p">();</span>
+<span class="n">RTD_Bottom_1</span><span class="p">();</span>
+<span class="n">RTD_Bottom_2</span><span class="p">();</span>
+<span class="n">RTD_North_1</span><span class="p">();</span>
+<span class="n">RTD_North_2</span><span class="p">();</span>
+<span class="n">RTD_South_1</span><span class="p">();</span>
+<span class="n">RTD_South_2</span><span class="p">();</span>
+
+<span class="o">//</span><span class="n">Flow</span> <span class="n">Switch</span>
+<span class="n">fbFlowSwitch</span><span class="p">();</span>
+<span class="n">END_ACTION</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#fb-slits">FB_SLITS</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="fb-slits-scatter">
+<h2>FB_SLITS_SCATTER<a class="headerlink" href="#fb-slits-scatter" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_SLITS_SCATTER</span> <span class="n">EXTENDS</span> <span class="n">FB_SLITS</span>
+<span class="n">VAR_INPUT</span>
+<span class="n">END_VAR</span>
+<span class="n">VAR</span>
+
+
+
+<span class="n">END_VAR</span>
+
+
+<span class="n">END_FUNCTION_BLOCK</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#fb-slits">FB_SLITS</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="fb-zoneplate-states">
+<h2>FB_ZonePlate_States<a class="headerlink" href="#fb-zoneplate-states" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">FUNCTION_BLOCK</span> <span class="n">FB_ZonePlate_States</span> <span class="n">EXTENDS</span> <span class="n">FB_PositionStateBase_WithPMPS</span>
+<span class="n">VAR_INPUT</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SET</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">enumSet</span><span class="p">:</span> <span class="n">ENUM_ZonePlate_States</span><span class="p">;</span>
+    <span class="n">stOut</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stYag</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stNe1</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stNe2</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stNe3</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">st3w1</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">st3w2</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stO1</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stO2</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stTi1</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stTi2</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stN1</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stN2</span><span class="p">:</span><span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stC1</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stC2</span><span class="p">:</span> <span class="n">DUT_PositionState</span><span class="p">;</span>
+    <span class="n">stW1</span><span class="p">:</span> <span class="n">DuT_PositionState</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="n">VAR_OUTPUT</span>
+     <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">GET</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">i</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">enumGet</span><span class="p">:</span> <span class="n">ENUM_ZonePlate_States</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="n">VAR</span>
+    <span class="n">bInittwo</span><span class="p">:</span> <span class="n">BOOL</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+    <span class="n">fbStateDefaults</span><span class="p">:</span> <span class="n">FB_PositionState_Defaults</span><span class="p">;</span>
+    <span class="o">//</span> <span class="n">These</span> <span class="n">are</span> <span class="n">the</span> <span class="n">default</span> <span class="n">values</span>
+    <span class="o">//</span> <span class="n">Set</span> <span class="n">values</span> <span class="n">on</span> <span class="n">states</span> <span class="n">prior</span> <span class="n">to</span> <span class="n">passing</span> <span class="ow">in</span> <span class="k">for</span> <span class="n">non</span><span class="o">-</span><span class="n">default</span> <span class="n">values</span>
+    <span class="o">//</span><span class="n">TODO</span> <span class="n">correct</span> <span class="n">these</span> <span class="n">default</span> <span class="n">positions</span>
+    <span class="n">fDelta</span><span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">fVelocity</span><span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="n">fAccel</span><span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mi">200</span><span class="p">;</span>
+    <span class="n">fDecel</span><span class="p">:</span> <span class="n">LREAL</span> <span class="o">:=</span> <span class="mi">25</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="o">//</span><span class="n">State</span> <span class="n">init</span>
+<span class="n">IF</span> <span class="p">(</span><span class="n">bInittwo</span><span class="p">)</span> <span class="n">THEN</span>
+    <span class="n">bInittwo</span> <span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="o">//</span><span class="n">Set</span> <span class="n">theses</span> <span class="k">for</span> <span class="n">every</span> <span class="n">state</span>
+    <span class="n">stOut</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;OUT&#39;</span><span class="p">;</span>
+    <span class="n">stOut</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stOut</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stOut</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="n">stYag</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;Yag&#39;</span><span class="p">;</span>
+    <span class="n">stYag</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stYag</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stYag</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="n">stNe1</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;Ne1&#39;</span><span class="p">;</span>
+    <span class="n">stNe1</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stNe1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stNe1</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="n">stNe2</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;Ne2&#39;</span><span class="p">;</span>
+    <span class="n">stNe2</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stNe2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stNe2</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="n">stNe3</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;Ne3&#39;</span><span class="p">;</span>
+    <span class="n">stNe3</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stNe3</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stNe3</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="n">st3w1</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;3w1&#39;</span><span class="p">;</span>
+    <span class="n">st3w1</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">st3w1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">st3w1</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="n">st3w2</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;3w2&#39;</span><span class="p">;</span>
+    <span class="n">st3w2</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">st3w2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">st3w2</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="n">stO1</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;O1&#39;</span><span class="p">;</span>
+    <span class="n">stO1</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stO1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stO1</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="n">stO2</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;O2&#39;</span><span class="p">;</span>
+    <span class="n">stO2</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stO2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stO2</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+
+    <span class="n">stTi1</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;Ti1&#39;</span><span class="p">;</span>
+    <span class="n">stTi1</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stTi1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stTi1</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="n">stTi2</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;Ti2&#39;</span><span class="p">;</span>
+    <span class="n">stTi2</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stTi2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stTi2</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="n">stN1</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;N1&#39;</span><span class="p">;</span>
+    <span class="n">stN1</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stN1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stN1</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="n">stN2</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;N2&#39;</span><span class="p">;</span>
+    <span class="n">stN2</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stN2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stN2</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="n">stC1</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;C1&#39;</span><span class="p">;</span>
+    <span class="n">stC1</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stC1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stC1</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="n">stC2</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;C2&#39;</span><span class="p">;</span>
+    <span class="n">stC2</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stC2</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stC2</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+    <span class="n">stW1</span><span class="o">.</span><span class="n">sName</span> <span class="o">:=</span> <span class="s1">&#39;W1&#39;</span><span class="p">;</span>
+    <span class="n">stW1</span><span class="o">.</span><span class="n">bUseRawCounts</span><span class="o">:=</span> <span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">stW1</span><span class="o">.</span><span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">;</span>
+        <span class="n">fbStateDefaults</span><span class="p">(</span>
+        <span class="n">stPositionState</span><span class="o">:=</span><span class="n">stW1</span><span class="p">,</span>
+        <span class="n">fVeloDefault</span><span class="o">:=</span><span class="n">fVelocity</span><span class="p">,</span>
+        <span class="n">fDeltaDefault</span><span class="o">:=</span><span class="n">fDelta</span><span class="p">,</span>
+        <span class="n">fAccelDefault</span><span class="o">:=</span><span class="n">fAccel</span><span class="p">,</span>
+        <span class="n">fDecelDefault</span><span class="o">:=</span><span class="n">fDecel</span><span class="p">,</span>
+    <span class="p">);</span>
+
+<span class="o">//</span><span class="n">Add</span> <span class="nb">all</span> <span class="n">states</span>
+
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stOut</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stYag</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stNe1</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stNe2</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stNe3</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">:=</span> <span class="n">st3w1</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">:=</span> <span class="n">st3w2</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stO1</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stO2</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stTi1</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stTi2</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stN1</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stN2</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stC1</span><span class="p">;</span>
+    <span class="n">arrStates</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stC2</span><span class="p">;</span>
+ <span class="o">//</span>   <span class="n">arrStates</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span> <span class="o">:=</span> <span class="n">stW1</span><span class="p">;</span>
+
+<span class="n">END_IF</span>
+
+<span class="n">setState</span> <span class="o">:=</span> <span class="n">enumSet</span><span class="p">;</span>
+<span class="n">Exec</span><span class="p">();</span>
+<span class="n">enumGet</span> <span class="o">:=</span> <span class="n">getState</span><span class="p">;</span>
+<span class="n">enumSet</span> <span class="o">:=</span> <span class="n">setState</span><span class="p">;</span>
+
+<span class="n">END_FUNCTION_BLOCK</span>
+</pre></div>
+</div>
+</section>
+<section id="prg-01-plctask">
+<h2>PRG_01_PLCTASK<a class="headerlink" href="#prg-01-plctask" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_01_PLCTASK</span>
+<span class="n">VAR</span>
+     <span class="n">fbLogHandler</span><span class="p">:</span> <span class="n">FB_LogHandler</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="n">PRG_AL1K3_L2SI</span><span class="p">();</span>
+<span class="n">PRG_SL1K3_SCATTER</span><span class="p">();</span>
+<span class="o">//</span><span class="n">PRG_AT1K3_SOLID</span><span class="p">();</span>
+<span class="n">PRG_PMPS</span><span class="p">();</span>
+<span class="n">fbLogHandler</span><span class="p">();</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#prg-al1k3-l2si">PRG_AL1K3_L2SI</a></p></li>
+<li><p><a class="reference internal" href="#prg-at1k3-solid">PRG_AT1K3_SOLID</a></p></li>
+<li><p><a class="reference internal" href="#prg-pmps">PRG_PMPS</a></p></li>
+<li><p><a class="reference internal" href="#prg-sl1k3-scatter">PRG_SL1K3_SCATTER</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="prg-al1k3-l2si">
+<h2>PRG_AL1K3_L2SI<a class="headerlink" href="#prg-al1k3-l2si" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_AL1K3_L2SI</span>
+<span class="n">VAR</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;pv: AL1K3:L2SI&#39;</span><span class="p">}</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;.fbLaser.iLaserINT := TIIB[AL1K3-EL4004-E4]^AO Outputs Channel 1^Analog output;</span>
+                              <span class="o">.</span><span class="n">fbLaser</span><span class="o">.</span><span class="n">iShutdownINT</span> <span class="o">:=</span> <span class="n">TIIB</span><span class="p">[</span><span class="n">AL1K3</span><span class="o">-</span><span class="n">EL4004</span><span class="o">-</span><span class="n">E4</span><span class="p">]</span><span class="o">^</span><span class="n">AO</span> <span class="n">Outputs</span> <span class="n">Channel</span> <span class="mi">2</span><span class="o">^</span><span class="n">Analog</span> <span class="n">output</span><span class="s1">&#39;}</span>
+    <span class="n">fbAL1K3</span><span class="p">:</span> <span class="n">FB_REF</span><span class="p">;</span>
+
+    <span class="n">fbStateSetup</span><span class="p">:</span> <span class="n">FB_StateSetupHelper</span><span class="p">;</span>
+    <span class="n">stDefault</span><span class="p">:</span> <span class="n">ST_PositionState</span> <span class="o">:=</span> <span class="p">(</span>
+        <span class="n">fVelocity</span> <span class="o">:=</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="n">bMoveOk</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+        <span class="n">bValid</span> <span class="o">:=</span> <span class="n">TRUE</span>
+    <span class="p">);</span>
+<span class="n">END_VAR</span>
+<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">stDefault</span><span class="p">,</span> <span class="n">bSetDefault</span><span class="o">:=</span><span class="n">TRUE</span><span class="p">);</span>
+
+<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbAL1K3</span><span class="o">.</span><span class="n">stOut</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=-</span><span class="mf">33.5</span><span class="p">,</span> <span class="n">sPmpsState</span><span class="o">:=</span><span class="s1">&#39;AL1K3:L2SI-OUT&#39;</span><span class="p">);</span>
+<span class="n">fbStateSetup</span><span class="p">(</span><span class="n">stPositionState</span><span class="o">:=</span><span class="n">fbAL1K3</span><span class="o">.</span><span class="n">stIn</span><span class="p">,</span> <span class="n">fPosition</span><span class="o">:=-</span><span class="mi">83</span><span class="p">,</span> <span class="n">fDelta</span><span class="o">:=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sPmpsState</span><span class="o">:=</span><span class="s1">&#39;AL1K3:L2SI-IN&#39;</span><span class="p">);</span>
+
+<span class="n">fbAL1K3</span><span class="p">(</span>
+    <span class="n">fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">,</span>
+    <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+    <span class="n">stYStage</span> <span class="o">:=</span> <span class="n">MAIN</span><span class="o">.</span><span class="n">M1</span><span class="p">,</span>
+    <span class="n">sDeviceName</span> <span class="o">:=</span> <span class="s1">&#39;AL1K3:L2SI&#39;</span><span class="p">,</span>
+    <span class="n">sTransitionKey</span> <span class="o">:=</span> <span class="s1">&#39;AL1K3:L2SI-TRANSITION&#39;</span><span class="p">,</span>
+    <span class="n">bEnableMotion</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">bEnableBeamParams</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+    <span class="n">bEnablePositionLimits</span> <span class="o">:=</span> <span class="n">TRUE</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#gvl">GVL</a></p></li>
+<li><p><a class="reference internal" href="#main">MAIN</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="prg-at1k3-solid">
+<h2>PRG_AT1K3_SOLID<a class="headerlink" href="#prg-at1k3-solid" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PROGRAM PRG_AT1K3_SOLID
+VAR
+    (* NOTE: use FALSE for simulation and production *)
+    (* NOTE: use TRUE when relying on visualization + actual hardware *)
+    bDebug : BOOL := FALSE;
+
+    nEnableMode : E_StageEnableMode;
+
+    {attribute &#39;pytmc&#39; := &#39;
+        pv: AT1K3:L2SI:MMS:01
+
+    &#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;
+
+        .fbRTD_1.iRaw := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 1^Value;
+        .fbRTD_1.bError := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 1^Status^Error;
+        .fbRTD_1.bUnderrange := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 1^Status^Underrange;
+        .fbRTD_1.bOverrange := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 1^Status^Overrange;
+
+        .fbRTD_2.iRaw := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 2^Value;
+        .fbRTD_2.bError := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 2^Status^Error;
+        .fbRTD_2.bUnderrange := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 2^Status^Underrange;
+        .fbRTD_2.bOverrange := TIIB[AT1K3-EL3202-04]^RTD Inputs Channel 2^Status^Overrange
+
+    &#39;}
+    fbStage1: FB_SXR_SATT_Stage;
+
+    {attribute &#39;pytmc&#39; := &#39;pv: AT1K3:L2SI:MMS:02&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;
+
+        .fbRTD_1.iRaw := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 1^Value;
+        .fbRTD_1.bError := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 1^Status^Error;
+        .fbRTD_1.bUnderrange := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 1^Status^Underrange;
+        .fbRTD_1.bOverrange := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 1^Status^Overrange;
+
+        .fbRTD_2.iRaw := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 2^Value;
+        .fbRTD_2.bError := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 2^Status^Error;
+        .fbRTD_2.bUnderrange := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 2^Status^Underrange;
+        .fbRTD_2.bOverrange := TIIB[AT1K3-EL3202-03]^RTD Inputs Channel 2^Status^Overrange
+
+    &#39;}
+    fbStage2: FB_SXR_SATT_Stage;
+
+    {attribute &#39;pytmc&#39; := &#39;pv: AT1K3:L2SI:MMS:03&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;
+
+        .fbRTD_1.iRaw := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 1^Value;
+        .fbRTD_1.bError := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 1^Status^Error;
+        .fbRTD_1.bUnderrange := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 1^Status^Underrange;
+        .fbRTD_1.bOverrange := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 1^Status^Overrange;
+
+        .fbRTD_2.iRaw := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 2^Value;
+        .fbRTD_2.bError := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 2^Status^Error;
+        .fbRTD_2.bUnderrange := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 2^Status^Underrange;
+        .fbRTD_2.bOverrange := TIIB[AT1K3-EL3202-02]^RTD Inputs Channel 2^Status^Overrange
+    &#39;}
+    fbStage3: FB_SXR_SATT_Stage;
+
+    {attribute &#39;pytmc&#39; := &#39;pv: AT1K3:L2SI:MMS:04&#39;}
+    {attribute &#39;TcLinkTo&#39; := &#39;
+
+        .fbRTD_1.iRaw := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 1^Value;
+        .fbRTD_1.bError := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 1^Status^Error;
+        .fbRTD_1.bUnderrange := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 1^Status^Underrange;
+        .fbRTD_1.bOverrange := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 1^Status^Overrange;
+
+        .fbRTD_2.iRaw := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 2^Value;
+        .fbRTD_2.bError := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 2^Status^Error;
+        .fbRTD_2.bUnderrange := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 2^Status^Underrange;
+        .fbRTD_2.bOverrange := TIIB[AT1K3-EL3202-01]^RTD Inputs Channel 2^Status^Overrange
+    &#39;}
+    fbStage4: FB_SXR_SATT_Stage;
+
+    fbStateSetup: FB_StateSetupHelper;
+    stDefaultGood: ST_PositionState := (
+        fDelta := 0.2,
+        fVelocity := 1,
+        bMoveOk := TRUE,
+        bValid := TRUE
+    );
+    fbBadStateSetup: FB_StateSetupHelper;
+    stDefaultBad: ST_PositionState := (
+        fPosition := 500,
+        fDelta := 0.2,
+        fVelocity := 1,
+        bMoveOk := FALSE,
+        bValid := FALSE
+    );
+
+    {attribute &#39;pytmc&#39; :=&#39;pv: AT1K3:L2SI:FWM&#39;}
+
+    fbFlowMeter: FB_AnalogInput := (iTermBits:=15, fTermMax:=60, fTermMin:=0);
+END_VAR
+IF bDebug THEN
+    // NEVER: checkouts with the TwinCAT NC GUI.
+    nEnableMode := E_StageEnableMode.NEVER;
+ELSE
+    // ALWAYS: want active position correction at all times
+    nEnableMode := E_StageEnableMode.ALWAYS;
+END_IF
+
+(*
+
+    Solid Attenuator notes
+
+    AT2K2 is JJ-xray SN-11344.
+
+    JJ    Label   EPICS    Stage     NC   Location
+
+    10??      1   MMS:01   fbStage1  M2  Upstream-most
+    10??      2   MMS:02   fbStage2  M3
+    10??      3   MMS:03   fbStage3  M4
+    10??      4   MMS:04   fbStage4  M5  Downstream-most
+
+*)
+
+fbStateSetup(stPositionState:=stDefaultGood, bSetDefault:=TRUE);
+fbBadStateSetup(stPositionState:=stDefaultBad, bSetDefault:=TRUE);
+
+
+(* State setup - stage 1 *)
+fbStateSetup(stPositionState:=fbStage1.stOut, sName:=&#39;Out&#39;, fPosition:=27.00);
+
+fbBadStateSetup(stPositionState:=fbStage1.stFilter1, sName:=&#39;Filter 1&#39;);
+fbStage1.arrFilters[1].fFilterThickness_um := 0;
+fbStage1.arrFilters[1].sFilterMaterial     := &#39;&#39;;
+
+fbBadStateSetup(stPositionState:=fbStage1.stFilter2, sName:=&#39;Filter 2&#39;);
+fbStage1.arrFilters[2].fFilterThickness_um := 0;
+fbStage1.arrFilters[2].sFilterMaterial     := &#39;&#39;;
+
+fbBadStateSetup(stPositionState:=fbStage1.stFilter3, sName:=&#39;Filter 3&#39;);
+fbStage1.arrFilters[3].fFilterThickness_um := 0;
+fbStage1.arrFilters[3].sFilterMaterial     := &#39;&#39;;
+
+fbBadStateSetup(stPositionState:=fbStage1.stFilter4, sName:=&#39;Filter 4&#39;);
+fbStage1.arrFilters[4].fFilterThickness_um := 0;
+fbStage1.arrFilters[4].sFilterMaterial     := &#39;&#39;;
+
+fbStateSetup(stPositionState:=fbStage1.stFilter5, sName:=&#39;(5) 11.5 um Al&#39;, fPosition:=103.0);
+fbStage1.arrFilters[5].fFilterThickness_um := 11.5;
+fbStage1.arrFilters[5].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage1.stFilter6, sName:=&#39;(6) 6.18 um Al&#39;, fPosition:=119.0);
+fbStage1.arrFilters[6].fFilterThickness_um := 6.18;
+fbStage1.arrFilters[6].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage1.stFilter7, sName:=&#39;(7) 2.85 um Al&#39;, fPosition:=135.0);
+fbStage1.arrFilters[7].fFilterThickness_um := 2.85;
+fbStage1.arrFilters[7].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage1.stFilter8, sName:=&#39;(8) 1.52 um Al&#39;, fPosition:=150.0);
+fbStage1.arrFilters[8].fFilterThickness_um := 1.52;
+fbStage1.arrFilters[8].sFilterMaterial     := &#39;Al&#39;;
+
+fbStage1(stAxis:=Main.M2, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1, bEnable:=TRUE);
+
+
+(* State setup - stage 2 *)
+fbStateSetup(stPositionState:=fbStage2.stOut, sName:=&#39;Out&#39;, fPosition:=27.72);
+
+fbBadStateSetup(stPositionState:=fbStage2.stFilter1, sName:=&#39;Filter 1&#39;);
+fbStage2.arrFilters[1].fFilterThickness_um := 0;
+fbStage2.arrFilters[1].sFilterMaterial     := &#39;&#39;;
+
+fbBadStateSetup(stPositionState:=fbStage2.stFilter2, sName:=&#39;Filter 2&#39;);
+fbStage2.arrFilters[2].fFilterThickness_um := 0;
+fbStage2.arrFilters[2].sFilterMaterial     := &#39;&#39;;
+
+fbBadStateSetup(stPositionState:=fbStage2.stFilter3, sName:=&#39;Filter 3&#39;);
+fbStage2.arrFilters[3].fFilterThickness_um := 0;
+fbStage2.arrFilters[3].sFilterMaterial     := &#39;&#39;;
+
+fbBadStateSetup(stPositionState:=fbStage2.stFilter4, sName:=&#39;Filter 4&#39;);
+fbStage2.arrFilters[4].fFilterThickness_um := 0;
+fbStage2.arrFilters[4].sFilterMaterial     := &#39;&#39;;
+
+fbStateSetup(stPositionState:=fbStage2.stFilter5, sName:=&#39;(5) 6.18 um Al&#39;, fPosition:=103.0);
+fbStage2.arrFilters[5].fFilterThickness_um := 6.18;
+fbStage2.arrFilters[5].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage2.stFilter6, sName:=&#39;(6) 2.85 um Al&#39;, fPosition:=119.0);
+fbStage2.arrFilters[6].fFilterThickness_um := 2.85;
+fbStage2.arrFilters[6].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage2.stFilter7, sName:=&#39;(7) 1.52 um Al&#39;, fPosition:=135.0);
+fbStage2.arrFilters[7].fFilterThickness_um := 1.52;
+fbStage2.arrFilters[7].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage2.stFilter8, sName:=&#39;(8) 0.78 um Al&#39;, fPosition:=150.0);
+fbStage2.arrFilters[8].fFilterThickness_um := 0.78;
+fbStage2.arrFilters[8].sFilterMaterial     := &#39;Al&#39;;
+
+fbStage2(stAxis:=Main.M3, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1, bEnable:=TRUE);
+
+
+(* State setup - stage 3 *)
+fbStateSetup(stPositionState:=fbStage3.stOut, sName:=&#39;Out&#39;, fPosition:=27.00);
+
+fbBadStateSetup(stPositionState:=fbStage3.stFilter1, sName:=&#39;Filter 1&#39;);
+fbStage3.arrFilters[1].fFilterThickness_um := 0;
+fbStage3.arrFilters[1].sFilterMaterial     := &#39;&#39;;
+
+fbBadStateSetup(stPositionState:=fbStage3.stFilter2, sName:=&#39;Filter 2&#39;);
+fbStage3.arrFilters[2].fFilterThickness_um := 0;
+fbStage3.arrFilters[2].sFilterMaterial     := &#39;&#39;;
+
+fbBadStateSetup(stPositionState:=fbStage3.stFilter3, sName:=&#39;Filter 3&#39;);
+fbStage3.arrFilters[3].fFilterThickness_um := 0;
+fbStage3.arrFilters[3].sFilterMaterial     := &#39;&#39;;
+
+fbBadStateSetup(stPositionState:=fbStage3.stFilter4, sName:=&#39;Filter 4&#39;);
+fbStage3.arrFilters[4].fFilterThickness_um := 0;
+fbStage3.arrFilters[4].sFilterMaterial     := &#39;&#39;;
+
+fbStateSetup(stPositionState:=fbStage3.stFilter5, sName:=&#39;(5) 2.85 um Al&#39;, fPosition:=103.0);
+fbStage3.arrFilters[5].fFilterThickness_um := 2.85;
+fbStage3.arrFilters[5].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage3.stFilter6, sName:=&#39;(6) 1.52 um Al&#39;, fPosition:=119.0);
+fbStage3.arrFilters[6].fFilterThickness_um := 1.52;
+fbStage3.arrFilters[6].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage3.stFilter7, sName:=&#39;(7) 0.78 um Al&#39;, fPosition:=135.0);
+fbStage3.arrFilters[7].fFilterThickness_um := 0.78;
+fbStage3.arrFilters[7].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage3.stFilter8, sName:=&#39;(8) 0.39 um Al&#39;, fPosition:=150.0);
+fbStage3.arrFilters[8].fFilterThickness_um := 0.39;
+fbStage3.arrFilters[8].sFilterMaterial     := &#39;Al&#39;;
+
+fbStage3(stAxis:=Main.M4, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1, bEnable:=TRUE);
+
+
+(* State setup - stage 4 *)
+fbStateSetup(stPositionState:=fbStage4.stOut, sName:=&#39;Out&#39;, fPosition:=28.03);
+
+fbBadStateSetup(stPositionState:=fbStage4.stFilter1, sName:=&#39;Filter 1&#39;);
+fbStage4.arrFilters[1].fFilterThickness_um := 0;
+fbStage4.arrFilters[1].sFilterMaterial     := &#39;&#39;;
+
+fbBadStateSetup(stPositionState:=fbStage4.stFilter2, sName:=&#39;Filter 2&#39;);
+fbStage4.arrFilters[2].fFilterThickness_um := 0;
+fbStage4.arrFilters[2].sFilterMaterial     := &#39;&#39;;
+
+fbBadStateSetup(stPositionState:=fbStage4.stFilter3, sName:=&#39;Filter 3&#39;);
+fbStage4.arrFilters[3].fFilterThickness_um := 0;
+fbStage4.arrFilters[3].sFilterMaterial     := &#39;&#39;;
+
+fbBadStateSetup(stPositionState:=fbStage4.stFilter4, sName:=&#39;Filter 4&#39;);
+fbStage4.arrFilters[4].fFilterThickness_um := 0;
+fbStage4.arrFilters[4].sFilterMaterial     := &#39;&#39;;
+
+fbStateSetup(stPositionState:=fbStage4.stFilter5, sName:=&#39;(5) 1.52 um Al&#39;, fPosition:=103.0);
+fbStage4.arrFilters[5].fFilterThickness_um := 1.52;
+fbStage4.arrFilters[5].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage4.stFilter6, sName:=&#39;(6) 0.78 um Al&#39;, fPosition:=119.0);
+fbStage4.arrFilters[6].fFilterThickness_um := 0.78;
+fbStage4.arrFilters[6].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage4.stFilter7, sName:=&#39;(7) 0.39 um Al&#39;, fPosition:=135.0);
+fbStage4.arrFilters[7].fFilterThickness_um := 0.39;
+fbStage4.arrFilters[7].sFilterMaterial     := &#39;Al&#39;;
+
+fbStateSetup(stPositionState:=fbStage4.stFilter8, sName:=&#39;(8) 0.20 um Al&#39;, fPosition:=150.0);
+fbStage4.arrFilters[8].fFilterThickness_um := 0.20;
+fbStage4.arrFilters[8].sFilterMaterial     := &#39;Al&#39;;
+
+fbStage4(stAxis:=Main.M5, nEnableMode:=nEnableMode, fbFFHWO:=GVL.fbFastFaultOutput1, bEnable:=TRUE);
+
+
+GVL.rCurTrans[PMPS.K_Attenuators.AT2K2].nTran := LREAL_TO_REAL(
+    fbStage1.fTransmission *
+    fbStage2.fTransmission *
+    fbStage3.fTransmission *
+    fbStage4.fTransmission
+);
+
+fbFlowMeter();
+
+END_PROGRAM
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#gvl">GVL</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="prg-log">
+<h2>PRG_LOG<a class="headerlink" href="#prg-log" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_LOG</span>
+<span class="n">VAR</span>
+    <span class="n">fbLogHandler</span><span class="p">:</span> <span class="n">FB_LogHandler</span><span class="p">;</span>
+<span class="n">END_VAR</span>
+<span class="n">fbLogHandler</span><span class="p">();</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+</section>
+<section id="prg-pmps">
+<h2>PRG_PMPS<a class="headerlink" href="#prg-pmps" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_PMPS</span>
+<span class="n">VAR</span>
+    <span class="n">fbArbiterIO</span><span class="p">:</span> <span class="n">FB_SubSysToArbiter_IO</span><span class="p">;</span>
+
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;TcLinkTo&#39;</span> <span class="o">:=</span> <span class="s1">&#39;TIIB[PMPS_PRE]^IO Outputs^FFO&#39;</span><span class="p">}</span>
+    <span class="n">FFO</span> <span class="n">AT</span> <span class="o">%</span><span class="n">Q</span><span class="o">*</span><span class="p">:</span><span class="n">BOOL</span><span class="p">;</span> <span class="o">//</span><span class="n">temp</span> <span class="n">code</span> <span class="n">until</span> <span class="n">faults</span> <span class="n">are</span> <span class="ow">in</span> <span class="n">MPS</span> <span class="n">crate</span>
+<span class="n">END_VAR</span>
+<span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="o">.</span><span class="n">Execute</span><span class="p">(</span><span class="n">i_xVeto</span> <span class="o">:=</span> <span class="p">(</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_IN</span><span class="p">]</span>
+                                      <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_OUT</span><span class="p">])</span>
+                                       <span class="n">OR</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K3_OUT</span><span class="p">]</span>
+                                      <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_IN</span><span class="p">]);</span>
+<span class="n">fbArbiterIO</span><span class="p">(</span>
+    <span class="n">i_bVeto</span> <span class="o">:=</span> <span class="p">(</span><span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_IN</span><span class="p">]</span>
+                                      <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_OUT</span><span class="p">])</span>
+                                       <span class="n">OR</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K3_OUT</span><span class="p">]</span>
+                                      <span class="n">AND</span> <span class="n">NOT</span> <span class="n">PMPS_GVL</span><span class="o">.</span><span class="n">stCurrentBeamParameters</span><span class="o">.</span><span class="n">aVetoDevices</span><span class="p">[</span><span class="n">PMPS</span><span class="o">.</span><span class="n">K_Stopper</span><span class="o">.</span><span class="n">MR1K1_IN</span><span class="p">],</span>
+    <span class="n">Arbiter</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">,</span>
+    <span class="n">fbFFHWO</span><span class="o">:=</span><span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">);</span>
+
+<span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="o">.</span><span class="n">AddRequest</span><span class="p">(</span><span class="n">nReqID</span> <span class="o">:=</span> <span class="mi">16</span><span class="c1">#FAF7, stReqBp := PMPS_GVL.cstFullBeam, sDevName := &#39;plc-kfe-txi-mot&#39;);</span>
+
+<span class="o">//</span><span class="n">TEMP</span> <span class="n">FFO</span> <span class="n">to</span> <span class="n">arbiter</span>
+<span class="n">FFO</span><span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="o">.</span><span class="n">q_xFastFaultOut</span><span class="p">;</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#gvl">GVL</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="prg-sl1k3-scatter">
+<h2>PRG_SL1K3_SCATTER<a class="headerlink" href="#prg-sl1k3-scatter" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PROGRAM</span> <span class="n">PRG_SL1K3_SCATTER</span>
+<span class="n">VAR</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+        <span class="n">pv</span><span class="p">:</span> <span class="n">SL1K3</span><span class="p">:</span><span class="n">SCATTER</span>
+        <span class="n">io</span><span class="p">:</span> <span class="n">io</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">fbSL1K3</span><span class="p">:</span> <span class="n">FB_SLITS</span><span class="p">;</span>
+    <span class="o">//</span><span class="n">GET</span> <span class="n">PMPS</span> <span class="n">Move</span> <span class="n">Ok</span> <span class="n">bit</span>
+    <span class="o">//</span> <span class="n">Default</span> <span class="kc">True</span> <span class="n">until</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">properly</span> <span class="n">linked</span> <span class="n">to</span> <span class="n">PMPS</span> <span class="n">bit</span>
+    <span class="n">bMoveOk</span><span class="p">:</span><span class="n">BOOL</span> <span class="o">:=</span><span class="n">TRUE</span><span class="p">;</span>
+    <span class="p">{</span><span class="n">attribute</span> <span class="s1">&#39;pytmc&#39;</span> <span class="o">:=</span> <span class="s1">&#39;</span>
+    <span class="n">pv</span><span class="p">:</span> <span class="n">SL1K3</span><span class="p">:</span><span class="n">SCATTER</span><span class="p">:</span><span class="n">GO</span><span class="p">;</span>
+    <span class="n">io</span><span class="p">:</span> <span class="n">io</span><span class="p">;</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ZNAM</span> <span class="kc">False</span><span class="p">;</span>
+    <span class="n">field</span><span class="p">:</span> <span class="n">ONAM</span> <span class="kc">True</span><span class="p">;</span>
+    <span class="s1">&#39;}</span>
+    <span class="n">bExecuteMotion</span> <span class="p">:</span><span class="n">BOOL</span> <span class="o">:=</span><span class="n">FALSE</span><span class="p">;</span>
+    <span class="n">bTest</span><span class="p">:</span><span class="n">BOOL</span><span class="o">:=</span><span class="n">FALSE</span><span class="p">;</span>
+
+
+    <span class="n">rEncoderOffsetTop</span><span class="p">:</span> <span class="n">INT</span><span class="p">;</span>
+    <span class="n">rEncoderOffsetBottom</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">15</span><span class="p">;</span> <span class="p">(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
+    <span class="n">rEncoderOffsetNorth</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">15</span><span class="p">;(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
+    <span class="n">rEncoderOffsetSouth</span><span class="p">:</span> <span class="n">REAL</span> <span class="o">:=</span> <span class="o">-</span><span class="mi">15</span><span class="p">;(</span><span class="o">*</span> <span class="mi">0</span><span class="o">+</span><span class="p">(</span><span class="o">-</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="p">)</span>
+
+<span class="n">END_VAR</span>
+<span class="o">//</span> <span class="n">M10</span><span class="p">,</span> <span class="n">Axis</span> <span class="mi">10</span>
+<span class="o">//</span> <span class="n">M11</span><span class="p">,</span> <span class="n">Axis</span> <span class="mi">11</span>
+<span class="o">//</span> <span class="n">M12</span><span class="p">,</span> <span class="n">Axis</span> <span class="mi">12</span>
+<span class="o">//</span> <span class="n">M13</span><span class="p">,</span> <span class="n">Axis</span> <span class="mi">13</span>
+
+
+<span class="n">fbSL1K3</span><span class="o">.</span><span class="n">bMoveOk</span> <span class="o">:=</span> <span class="n">bMoveOk</span><span class="p">;</span>
+
+
+<span class="o">//</span><span class="n">Homing</span> <span class="n">routine</span> <span class="n">parameters</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M7</span><span class="o">.</span><span class="n">fHomePosition</span><span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M6</span><span class="o">.</span><span class="n">fHomePosition</span><span class="o">:=</span> <span class="o">-</span><span class="mf">30.6</span><span class="p">;</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M8</span><span class="o">.</span><span class="n">fHomePosition</span><span class="o">:=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M9</span><span class="o">.</span><span class="n">fHomePosition</span><span class="o">:=</span> <span class="o">-</span><span class="mf">30.5</span><span class="p">;</span>
+
+<span class="n">Main</span><span class="o">.</span><span class="n">M7</span><span class="o">.</span><span class="n">nHomingMode</span> <span class="o">:=</span> <span class="n">ENUM_EpicsHomeCmd</span><span class="o">.</span><span class="n">HIGH_LIMIT</span><span class="p">;</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M6</span><span class="o">.</span><span class="n">nHomingMode</span> <span class="o">:=</span> <span class="n">ENUM_EpicsHomeCmd</span><span class="o">.</span><span class="n">LOW_LIMIT</span><span class="p">;</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M8</span><span class="o">.</span><span class="n">nHomingMode</span> <span class="o">:=</span> <span class="n">ENUM_EpicsHomeCmd</span><span class="o">.</span><span class="n">HIGH_LIMIT</span><span class="p">;</span>
+<span class="n">Main</span><span class="o">.</span><span class="n">M9</span><span class="o">.</span><span class="n">nHomingMode</span> <span class="o">:=</span> <span class="n">ENUM_EpicsHomeCmd</span><span class="o">.</span><span class="n">LOW_LIMIT</span><span class="p">;</span>
+
+<span class="n">fbSL1K3</span><span class="o">.</span><span class="n">rEncoderOffsetTop</span> <span class="o">:=</span> <span class="n">rEncoderOffsetTop</span><span class="p">;</span>
+<span class="n">fbSL1K3</span><span class="o">.</span><span class="n">rEncoderOffsetBottom</span> <span class="o">:=</span> <span class="n">rEncoderOffsetBottom</span><span class="p">;</span>
+<span class="n">fbSL1K3</span><span class="o">.</span><span class="n">rEncoderOffsetNorth</span> <span class="o">:=</span> <span class="n">rEncoderOffsetNorth</span><span class="p">;</span>
+<span class="n">fbSL1K3</span><span class="o">.</span><span class="n">rEncoderOffsetSouth</span> <span class="o">:=</span> <span class="n">rEncoderOffsetSouth</span><span class="p">;</span>
+
+<span class="n">fbSL1K3</span><span class="p">(</span><span class="n">stTopBlade</span><span class="o">:=</span>  <span class="n">Main</span><span class="o">.</span><span class="n">M7</span><span class="p">,</span>
+        <span class="n">stBottomBlade</span><span class="o">:=</span> <span class="n">Main</span><span class="o">.</span><span class="n">M6</span><span class="p">,</span>
+        <span class="n">stNorthBlade</span><span class="o">:=</span>  <span class="n">Main</span><span class="o">.</span><span class="n">M8</span><span class="p">,</span>
+        <span class="n">stSouthBlade</span><span class="o">:=</span>  <span class="n">Main</span><span class="o">.</span><span class="n">M9</span><span class="p">,</span>
+        <span class="n">bExecuteMotion</span><span class="o">:=</span><span class="n">bExecuteMotion</span><span class="p">,</span>
+        <span class="n">io_fbFFHWO</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbFastFaultOutput1</span><span class="p">,</span>
+        <span class="n">fbArbiter</span> <span class="o">:=</span> <span class="n">GVL</span><span class="o">.</span><span class="n">fbArbiter1</span><span class="p">);</span>
+
+<span class="n">fbSL1K3</span><span class="o">.</span><span class="n">M_CheckPMPS</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="n">END_PROGRAM</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Related:</dt><dd><ul class="simple">
+<li><p><a class="reference internal" href="#fb-slits">FB_SLITS</a></p></li>
+<li><p><a class="reference internal" href="#gvl">GVL</a></p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lcls-plc-txi-sxr-motion_lcls-plc-txi-sxr-motion_epics.html" class="btn btn-neutral float-left" title="Data Types" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, SLAC National Accelerator Laboratory.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
